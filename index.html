@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Bunty Kaka Bhavnagari – Bhavnagari Bateta Bhungla</title>
+<meta name="description" content="Authentic Bhavnagari Bateta Bhungla. Open 5:30 PM – 11:00 PM."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+/* root vars, reset */
+:root{
+  --ink:#0F0E0C;--ink-s:#1A1916;--ink-m:#252320;--ink-d:#3A3835;
+  --gold:#E8A04A;--gold-l:#F5C97A;--gold-p:#FBF0DC;--gold-g:rgba(232,160,74,.15);
+  --ivory:#FAF7F2;--ivory-d:#F0EBE1;--cream:#E8E0D2;
+  --ash:#9A9690;--ash-l:#C8C4BC;
+  --border:rgba(255,255,255,.07);--border-g:rgba(232,160,74,.22);
+  --r:14px;--rsm:8px;--rlg:20px;
+  --ease:cubic-bezier(.4,0,.2,1);--spring:cubic-bezier(.34,1.56,.64,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px;-webkit-font-smoothing:antialiased}
+body{font-family:'Outfit',sans-serif;background:var(--ink);color:var(--ivory);overflow-x:hidden;cursor:none}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+button{font-family:inherit}
+/* noise */
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");opacity:.026;pointer-events:none;z-index:9998}
+
+/* cursor */
+#cur{position:fixed;width:10px;height:10px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:width .25s,height .25s,background .25s}
+#cur-ring{position:fixed;width:34px;height:34px;border:1.5px solid rgba(232,160,74,.45);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:width .3s,height .3s}
+
+/* loader */
+#loader{position:fixed;inset:0;z-index:99997;background:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;transition:opacity .7s var(--ease),transform .7s var(--ease)}
+#loader.gone{opacity:0;pointer-events:none;transform:scale(1.03)}
+.ld-ring{width:64px;height:64px;border-radius:50%;border:2px solid var(--border-g);border-top-color:var(--gold);animation:spin 1.2s linear infinite;display:flex;align-items:center;justify-content:center}
+.ld-logo{width:44px;height:44px;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;background:var(--gold-g)}
+.ld-logo img{width:100%;height:100%;object-fit:cover}
+.ld-logo-fb{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:700;color:var(--gold)}
+.ld-name{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--ivory)}
+.ld-bar{width:160px;height:1.5px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden}
+.ld-bar-fill{height:100%;width:0;background:var(--gold);animation:ldfill 1.8s var(--ease) forwards}
+.ld-tag{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--ash);animation:ldfade 2s ease forwards}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes ldfill{to{width:100%}}
+@keyframes ldfade{0%,60%{opacity:0}100%{opacity:1}}
+
+/* NAV */
+#nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 40px;height:66px;display:flex;align-items:center;justify-content:space-between;transition:background .4s,border-bottom .4s}
+#nav.sc{background:rgba(15,14,12,.94);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-brand{display:flex;align-items:center;gap:11px;cursor:pointer}
+.nav-logo{width:36px;height:36px;border-radius:50%;overflow:hidden;border:1.5px solid var(--border-g);background:var(--gold-g);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.nav-logo img{width:100%;height:100%;object-fit:cover}
+.nav-logo-fb{font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:700;color:var(--gold)}
+.nav-title{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;color:var(--ivory);line-height:1.2}
+.nav-sub{font-size:9px;color:var(--ash);letter-spacing:2px;text-transform:uppercase}
+.nav-links{display:flex;gap:2px}
+.nav-links a{padding:8px 15px;border-radius:var(--rsm);font-size:13px;color:var(--ash);transition:all .25s var(--ease);position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:5px;left:50%;right:50%;height:1px;background:var(--gold);transition:all .25s var(--ease)}
+.nav-links a:hover{color:var(--ivory)}
+.nav-links a:hover::after{left:15px;right:15px}
+.nav-cart{display:flex;align-items:center;gap:8px;background:transparent;border:1px solid var(--border-g);color:var(--gold);padding:8px 18px;border-radius:var(--rsm);font-size:13px;font-weight:500;cursor:pointer;transition:all .3s var(--ease)}
+.nav-cart:hover{background:var(--gold);color:var(--ink)}
+.cart-bub{background:var(--gold);color:var(--ink);border-radius:50%;width:19px;height:19px;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;transition:transform .3s var(--spring)}
+.cart-bub.bump{transform:scale(1.5)}
+.hbg{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+.hbg span{display:block;width:21px;height:1.5px;background:var(--ivory);transition:all .3s var(--ease);transform-origin:center}
+.hbg.open span:nth-child(1){transform:translateY(6.5px)rotate(45deg)}
+.hbg.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hbg.open span:nth-child(3){transform:translateY(-6.5px)rotate(-45deg)}
+.mob-nav{position:fixed;inset:0;z-index:999;background:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;opacity:0;pointer-events:none;transition:opacity .4s}
+.mob-nav.open{opacity:1;pointer-events:auto}
+.mob-nav a{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,6vw,3.2rem);font-weight:300;color:var(--ivory);letter-spacing:2px;transition:color .25s}
+.mob-nav a:hover{color:var(--gold)}
+.mob-close{position:absolute;top:22px;right:22px;background:none;border:1px solid var(--border);border-radius:50%;width:38px;height:38px;color:var(--ash);cursor:pointer;font-size:17px;display:flex;align-items:center;justify-content:center;transition:all .25s}
+.mob-close:hover{border-color:var(--gold);color:var(--gold)}
+
+/* HERO */
+#hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;position:relative;overflow:hidden}
+.hglow{position:absolute;border-radius:50%;pointer-events:none}
+.hg1{width:680px;height:680px;background:radial-gradient(circle,rgba(232,160,74,.11) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);animation:breathe 7s ease infinite}
+.hg2{width:280px;height:280px;background:radial-gradient(circle,rgba(232,160,74,.07) 0%,transparent 70%);top:18%;right:12%;animation:breathe 9s 2s ease infinite}
+.hg3{width:180px;height:180px;background:radial-gradient(circle,rgba(232,160,74,.06) 0%,transparent 70%);bottom:22%;left:8%;animation:breathe 8s 1s ease infinite}
+@keyframes breathe{0%,100%{opacity:.5}50%{opacity:1}}
+.h-line{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(232,160,74,.12),transparent)}
+.h-line-t{top:14%}.h-line-b{bottom:14%}
+.h-dots{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.h-dot{position:absolute;width:2px;height:2px;background:var(--gold);border-radius:50%;opacity:.22;animation:dotup linear infinite}
+@keyframes dotup{0%{opacity:.22;transform:translateY(0)}100%{opacity:0;transform:translateY(-100px)}}
+.h-eye{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:28px;animation:fup .8s .2s var(--ease) both}
+.h-eye::before,.h-eye::after{content:'';display:block;width:30px;height:1px;background:var(--border-g)}
+.h-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3.6rem,9.5vw,8.5rem);font-weight:300;line-height:.9;color:var(--ivory);letter-spacing:-2px;margin-bottom:8px;animation:fup .9s .3s var(--ease) both}
+.h-title em{font-style:italic;color:var(--gold);display:block;font-weight:300}
+.h-sub{font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,2.2vw,1.4rem);font-weight:300;font-style:italic;color:var(--ash-l);letter-spacing:1px;margin-bottom:36px;animation:fup .9s .4s var(--ease) both}
+.h-meta{display:flex;align-items:center;justify-content:center;gap:28px;margin-bottom:44px;flex-wrap:wrap;animation:fup .9s .5s var(--ease) both}
+.h-meta-i{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--ash);letter-spacing:1.5px;text-transform:uppercase}
+.h-meta-dot{width:3px;height:3px;border-radius:50%;background:var(--gold);opacity:.5}
+.h-acts{display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center;animation:fup .9s .6s var(--ease) both}
+.btn-g{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--gold);color:var(--ink);padding:14px 34px;border-radius:var(--rsm);font-size:13px;font-weight:600;letter-spacing:.5px;border:none;cursor:pointer;transition:all .3s var(--ease);position:relative;overflow:hidden}
+.btn-g::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.2),transparent);opacity:0;transition:opacity .3s}
+.btn-g:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(232,160,74,.28)}
+.btn-g:hover::before{opacity:1}
+.btn-o{display:inline-flex;align-items:center;justify-content:center;background:transparent;color:var(--ivory);padding:13px 34px;border-radius:var(--rsm);font-size:13px;font-weight:400;letter-spacing:.5px;border:1px solid var(--border);cursor:pointer;transition:all .3s var(--ease)}
+.btn-o:hover{border-color:var(--gold);color:var(--gold)}
+.scroll-h{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:7px;animation:fup 1s .9s var(--ease) both}
+.scroll-h span{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--ash)}
+.scroll-l{width:1px;height:44px;background:linear-gradient(to bottom,var(--border-g),transparent);animation:sdrop 2s ease infinite}
+@keyframes sdrop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@keyframes fup{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+/* TICKER */
+.ticker{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:13px 0;background:var(--ink-s);overflow:hidden;white-space:nowrap;position:relative}
+.ticker::before,.ticker::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:1;pointer-events:none}
+.ticker::before{left:0;background:linear-gradient(90deg,var(--ink-s),transparent)}
+.ticker::after{right:0;background:linear-gradient(-90deg,var(--ink-s),transparent)}
+.t-track{display:inline-flex;animation:tsroll 30s linear infinite}
+.t-item{display:inline-flex;align-items:center;gap:20px;padding:0 36px;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--ash);font-weight:400}
+.t-item .td{color:var(--gold);font-size:7px}
+.t-item strong{color:var(--gold-l);font-weight:500}
+@keyframes tsroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* PILLARS */
+.pillars{padding:64px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--ink-s)}
+.container{max-width:1160px;margin:0 auto;padding:0 32px}
+.p-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border)}
+.pillar{background:var(--ink-s);padding:34px 26px;position:relative;overflow:hidden;transition:background .3s}
+.pillar::before{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+.pillar:hover{background:var(--ink-m)}
+.pillar:hover::before{transform:scaleX(1)}
+.p-num{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:18px;font-weight:500}
+.p-icon{font-size:1.5rem;margin-bottom:12px;display:block}
+.pillar h3{font-size:14px;font-weight:600;margin-bottom:7px;color:var(--ivory-d)}
+.pillar p{font-size:12px;color:var(--ash);line-height:1.7}
+
+/* SECTION SHARED */
+.section{padding:96px 0}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}.rd4{transition-delay:.4s}
+.sec-eye{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:11px;margin-bottom:18px}
+.sec-eye::after{content:'';display:block;width:36px;height:1px;background:var(--border-g)}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4.5vw,3.6rem);font-weight:300;line-height:1.1;color:var(--ivory);margin-bottom:14px}
+.sec-title em{font-style:italic;color:var(--gold)}
+
+/* MENU */
+.menu-s{padding:96px 0;background:var(--ink)}
+.m-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:52px;gap:20px;flex-wrap:wrap}
+.cat-tabs{display:flex;gap:4px;background:var(--ink-s);border:1px solid var(--border);border-radius:var(--rsm);padding:4px}
+.cat-t{padding:8px 18px;border-radius:6px;font-size:12px;font-weight:500;letter-spacing:.4px;color:var(--ash);background:transparent;border:none;cursor:pointer;transition:all .25s var(--ease)}
+.cat-t.on{background:var(--gold);color:var(--ink)}
+.cat-t:hover:not(.on){color:var(--ivory)}
+.m-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:2px;background:var(--border);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.m-item{background:var(--ink-s);padding:26px 22px;position:relative;overflow:hidden;cursor:pointer;transition:background .3s;display:flex;flex-direction:column;gap:8px}
+.m-item::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--gold-g),transparent);opacity:0;transition:opacity .4s}
+.m-item:hover{background:var(--ink-m)}
+.m-item:hover::after{opacity:1}
+.m-img{width:100%;height:148px;border-radius:var(--rsm);overflow:hidden;background:var(--ink-m);margin-bottom:2px;flex-shrink:0;position:relative}
+.m-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+.m-item:hover .m-img img{transform:scale(1.06)}
+.m-img-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:2rem;background:linear-gradient(135deg,var(--ink-m),var(--ink-d))}
+.m-top{display:flex;align-items:flex-start;gap:7px;flex-wrap:wrap;position:relative;z-index:1}
+.badge{font-size:9px;letter-spacing:1px;text-transform:uppercase;font-weight:600;padding:3px 7px;border-radius:4px}
+.bs{background:rgba(192,57,43,.13);color:#E57060;border:1px solid rgba(192,57,43,.22)}
+.bj{background:rgba(45,122,74,.12);color:#6DBF8A;border:1px solid rgba(45,122,74,.22)}
+.bf{background:rgba(232,160,74,.12);color:var(--gold);border:1px solid var(--border-g)}
+.bv{background:rgba(139,100,60,.12);color:#C8A878;border:1px solid rgba(139,100,60,.25)}
+.m-name{font-family:'Cormorant Garamond',serif;font-size:1.18rem;font-weight:600;color:var(--ivory);line-height:1.2;position:relative;z-index:1}
+.m-sub{font-size:12px;color:var(--ash);line-height:1.4;position:relative;z-index:1}
+.m-tag{font-size:12px;color:var(--ash-l);font-style:italic;flex:1;position:relative;z-index:1}
+.m-foot{display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid var(--border);margin-top:auto;position:relative;z-index:1}
+.m-price{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:600;color:var(--gold)}
+.m-price sup{font-size:.65em;font-weight:400}
+.atc{width:34px;height:34px;border-radius:50%;background:var(--gold-g);border:1px solid var(--border-g);color:var(--gold);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:19px;font-weight:300;line-height:1;transition:all .3s var(--spring)}
+.atc:hover,.atc.done{background:var(--gold);color:var(--ink);transform:scale(1.1)}
+.parcel-note{margin-top:28px;display:flex;align-items:center;justify-content:center;gap:11px;padding:15px 22px;background:var(--ink-s);border:1px solid var(--border);border-radius:var(--rsm);font-size:13px;color:var(--ash);letter-spacing:.4px}
+.parcel-note strong{color:var(--gold-l)}
+
+/* ABOUT */
+.about-s{padding:96px 0;background:var(--ink-s);border-top:1px solid var(--border)}
+.ab-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.ab-frame{position:relative}
+.ab-frame::before{content:'';position:absolute;top:-14px;left:-14px;right:14px;bottom:14px;border:1px solid var(--border-g);border-radius:var(--rlg);pointer-events:none;z-index:0}
+.ab-photo{position:relative;z-index:1;width:100%;border-radius:var(--rlg);background:var(--ink-m);min-height:460px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.ab-photo img{width:100%;height:100%;object-fit:cover;border-radius:var(--rlg)}
+.ab-ph{display:flex;flex-direction:column;align-items:center;gap:14px;padding:52px}
+.ab-logo-big{width:110px;height:110px;border-radius:50%;overflow:hidden;border:2px solid var(--border-g);background:var(--gold-g);display:flex;align-items:center;justify-content:center}
+.ab-logo-big img{width:100%;height:100%;object-fit:cover}
+.ab-logo-fb{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:700;color:var(--gold)}
+.ab-ph-label{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--ash-l);text-align:center}
+.ab-badge{position:absolute;bottom:-18px;right:-18px;z-index:2;background:var(--ink);border:1px solid var(--border-g);border-radius:var(--r);padding:18px 22px;text-align:center;box-shadow:0 20px 40px rgba(0,0,0,.4)}
+.ab-badge-num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:600;color:var(--gold);line-height:1}
+.ab-badge-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--ash)}
+.ab-content p{font-size:14.5px;color:var(--ash);line-height:1.9;margin-bottom:16px}
+.ab-content p em{color:var(--ivory-d);font-style:normal}
+.ab-content p strong{color:var(--gold-l);font-weight:500}
+.ab-quote{margin:24px 0;padding:22px 26px;border-left:2px solid var(--gold);background:linear-gradient(90deg,var(--gold-g),transparent);border-radius:0 var(--rsm) var(--rsm) 0}
+.ab-quote blockquote{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-style:italic;font-weight:300;color:var(--ivory-d);line-height:1.5;margin-bottom:8px}
+.ab-quote cite{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
+.ab-cert{display:inline-flex;align-items:center;gap:8px;background:rgba(45,122,74,.08);border:1px solid rgba(45,122,74,.28);border-radius:50px;padding:7px 14px;font-size:12px;color:#6DBF8A;font-weight:500;letter-spacing:.4px}
+
+/* CONTACT */
+.contact-s{padding:96px 0;background:var(--ink);border-top:1px solid var(--border)}
+.c-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:44px}
+.c-card{background:var(--ink-s);padding:38px 30px;transition:background .3s;position:relative;overflow:hidden}
+.c-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+.c-card:hover{background:var(--ink-m)}
+.c-card:hover::before{transform:scaleX(1)}
+.c-icon{font-size:1.5rem;margin-bottom:18px;display:block}
+.c-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:9px}
+.c-val{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--ivory-d);line-height:1.5}
+.c-val a{color:var(--ivory-d);transition:color .25s}
+.c-val a:hover{color:var(--gold)}
+.c-val strong{color:var(--ivory)}
+.soc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}
+.soc-card{display:flex;align-items:center;gap:13px;padding:19px 22px;border:1px solid var(--border);border-radius:var(--rsm);background:var(--ink-s);transition:all .3s;text-decoration:none;color:var(--ivory-d)}
+.soc-card:hover{border-color:var(--gold);background:var(--ink-m);transform:translateY(-2px)}
+.soc-icon{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.s-yt{background:rgba(255,0,0,.1)}.s-fb{background:rgba(24,119,242,.1)}.s-ig{background:rgba(228,64,95,.1)}
+.soc-name{font-size:13px;font-weight:500;color:var(--ivory)}
+.soc-handle{font-size:11px;color:var(--ash)}
+
+/* FOOTER */
+footer{padding:44px 0 28px;border-top:1px solid var(--border);background:var(--ink)}
+.f-inner{display:flex;flex-direction:column;align-items:center;gap:24px;text-align:center}
+.f-logo-row{display:flex;align-items:center;gap:13px}
+.f-logo{width:44px;height:44px;border-radius:50%;overflow:hidden;border:1.5px solid var(--border-g);background:var(--gold-g);display:flex;align-items:center;justify-content:center}
+.f-logo img{width:100%;height:100%;object-fit:cover}
+.f-logo-fb{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:700;color:var(--gold)}
+.f-name{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:var(--ivory)}
+.f-sub{font-size:10px;color:var(--ash);letter-spacing:1.5px;text-transform:uppercase}
+.f-links{display:flex;gap:28px;flex-wrap:wrap;justify-content:center}
+.f-links a{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ash);transition:color .25s}
+.f-links a:hover{color:var(--gold)}
+.f-copy{font-size:11px;color:var(--ink-d);padding-top:22px;border-top:1px solid var(--border);width:100%;text-align:center}
+
+/* CART DRAWER */
+.d-overlay{position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.68);backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .4s}
+.d-overlay.open{opacity:1;pointer-events:auto}
+.cart-d{position:fixed;top:0;right:0;bottom:0;z-index:2001;width:100%;max-width:410px;background:var(--ink-s);border-left:1px solid var(--border);display:flex;flex-direction:column;transform:translateX(100%);transition:transform .4s var(--ease)}
+.cart-d.open{transform:translateX(0)}
+.d-head{padding:22px 22px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.d-head h3{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:var(--ivory)}
+.d-close{width:34px;height:34px;border-radius:50%;background:var(--ink-m);border:1px solid var(--border);color:var(--ash);cursor:pointer;font-size:17px;display:flex;align-items:center;justify-content:center;transition:all .25s}
+.d-close:hover{border-color:var(--gold);color:var(--gold)}
+.d-body{flex:1;overflow-y:auto;padding:18px 22px}
+.d-empty{text-align:center;padding:56px 18px;font-size:13px;color:var(--ash);line-height:2}
+.d-empty span{font-size:2.2rem;display:block;margin-bottom:10px}
+.c-line{display:flex;align-items:center;gap:11px;padding:13px 0;border-bottom:1px solid var(--border);animation:fup .3s var(--ease)}
+.c-line-info{flex:1;min-width:0}
+.c-line-name{font-size:13px;font-weight:500;color:var(--ivory-d);margin-bottom:2px;line-height:1.3}
+.c-line-unit{font-size:11px;color:var(--ash)}
+.c-qty{display:flex;align-items:center;gap:7px;flex-shrink:0}
+.q-btn{width:27px;height:27px;border-radius:6px;background:var(--ink-m);border:1px solid var(--border);color:var(--ash-l);cursor:pointer;font-size:15px;display:flex;align-items:center;justify-content:center;transition:all .25s;line-height:1;font-weight:300}
+.q-btn:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.q-val{font-size:13px;font-weight:600;color:var(--ivory);min-width:17px;text-align:center}
+.c-price{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:var(--gold);min-width:48px;text-align:right}
+.d-foot{padding:18px 22px;border-top:1px solid var(--border);flex-shrink:0}
+.d-sub{display:flex;justify-content:space-between;font-size:12px;color:var(--ash);margin-bottom:6px}
+.d-total{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px}
+.d-total span:first-child{font-size:13px;color:var(--ivory-d);font-weight:500}
+.d-total span:last-child{font-family:'Cormorant Garamond',serif;font-size:1.75rem;font-weight:600;color:var(--gold)}
+.d-co{width:100%;display:flex;align-items:center;justify-content:center;gap:7px;background:var(--gold);color:var(--ink);padding:14px;border-radius:var(--rsm);font-size:14px;font-weight:600;letter-spacing:.4px;border:none;cursor:pointer;transition:all .3s var(--ease)}
+.d-co:hover{background:var(--gold-l);transform:translateY(-1px);box-shadow:0 8px 22px rgba(232,160,74,.28)}
+.d-co:disabled{opacity:.38;cursor:not-allowed;transform:none}
+
+/* FLOAT CART */
+.fl-cart{position:fixed;bottom:22px;right:22px;z-index:1500;width:54px;height:54px;border-radius:50%;background:var(--gold);color:var(--ink);border:none;cursor:pointer;display:none;align-items:center;justify-content:center;box-shadow:0 8px 26px rgba(232,160,74,.38);transition:all .3s var(--spring)}
+.fl-cart:hover{transform:scale(1.08)}
+.fl-cnt{position:absolute;top:-4px;right:-4px;background:#C0392B;color:#fff;border-radius:50%;width:19px;height:19px;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;border:2px solid var(--ink)}
+
+/* MODAL */
+.m-mask{position:fixed;inset:0;z-index:3000;background:rgba(0,0,0,.8);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:18px;opacity:0;pointer-events:none;transition:opacity .4s}
+.m-mask.open{opacity:1;pointer-events:auto}
+.co-panel{background:var(--ink-s);border:1px solid var(--border);border-radius:var(--rlg);width:100%;max-width:540px;max-height:90vh;overflow-y:auto;animation:scaleup .35s var(--spring)}
+@keyframes scaleup{from{transform:scale(.94);opacity:0}to{transform:scale(1);opacity:1}}
+.cp-head{padding:22px 26px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:var(--ink-s);z-index:1}
+.cp-head h3{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--ivory)}
+.cp-steps{display:flex;align-items:center;gap:6px}
+.cp-dot{width:7px;height:7px;border-radius:50%;background:var(--ink-d);border:1px solid var(--border);transition:all .3s}
+.cp-dot.on{background:var(--gold);border-color:var(--gold)}
+.cp-dot.done{background:var(--ash);border-color:var(--ash)}
+.cp-body{padding:26px}
+.s-pane{display:none}
+.s-pane.on{display:block}
+.s-title{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:300;color:var(--ivory);margin-bottom:22px;line-height:1.2}
+.s-title em{font-style:italic;color:var(--gold)}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:7px;font-weight:500}
+.field input,.field textarea{width:100%;padding:13px 15px;background:var(--ink-m);border:1px solid var(--border);border-radius:var(--rsm);color:var(--ivory);font-family:'Outfit',sans-serif;font-size:14px;resize:none;transition:border-color .25s,box-shadow .25s}
+.field input::placeholder,.field textarea::placeholder{color:var(--ink-d)}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(232,160,74,.09)}
+.field input.err{border-color:#C0392B}
+.ot-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-bottom:22px}
+.ot{padding:22px 18px;border:1px solid var(--border);border-radius:var(--rsm);background:var(--ink-m);cursor:pointer;text-align:center;transition:all .3s}
+.ot:hover{border-color:var(--border-g)}
+.ot.sel{border-color:var(--gold);background:var(--gold-g)}
+.ot-ic{font-size:1.8rem;margin-bottom:8px;display:block}
+.ot-name{font-size:13px;font-weight:600;color:var(--ivory);margin-bottom:3px}
+.ot-desc{font-size:11px;color:var(--ash)}
+.info-b{padding:14px 16px;border-radius:var(--rsm);font-size:13px;line-height:1.7;margin-bottom:18px}
+.ib-blue{background:rgba(60,110,160,.08);border:1px solid rgba(60,110,160,.22);color:#90C0E8}
+.ib-amb{background:rgba(232,160,74,.07);border:1px solid var(--border-g);color:var(--gold-l)}
+.info-b.hide{display:none}
+.cb-wrap{display:flex;align-items:flex-start;gap:9px;margin-top:11px;cursor:pointer}
+.cb-wrap input{width:15px;height:15px;margin-top:2px;accent-color:var(--gold);cursor:pointer;flex-shrink:0}
+.cb-wrap span{font-size:12px;color:var(--ash-l);line-height:1.5}
+.s-rows{margin-bottom:18px}
+.s-row{display:flex;align-items:center;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--border);gap:7px}
+.s-row:last-child{border-bottom:none}
+.s-rname{font-size:13px;color:var(--ash-l);flex:1}
+.s-rqty{font-size:11px;color:var(--ash);background:var(--ink-m);padding:2px 7px;border-radius:4px}
+.s-rprice{font-size:14px;font-weight:600;color:var(--gold);min-width:50px;text-align:right}
+.s-tots{background:var(--ink-m);border-radius:var(--rsm);padding:15px 16px;margin-bottom:14px}
+.s-trow{display:flex;justify-content:space-between;font-size:13px;color:var(--ash);padding:3px 0}
+.s-trow.grand{font-size:16px;color:var(--ivory);font-weight:600;border-top:1px solid var(--border);margin-top:9px;padding-top:11px}
+.s-trow.grand span:last-child{color:var(--gold)}
+.s-cust{background:var(--ink-m);border-radius:var(--rsm);padding:14px 16px;margin-bottom:14px;font-size:13px;color:var(--ash);line-height:1.9}
+.s-cust strong{color:var(--ash-l)}
+.pay-note{display:flex;gap:9px;padding:13px 15px;background:rgba(232,160,74,.06);border:1px solid var(--border-g);border-radius:var(--rsm);font-size:13px;color:var(--gold-l);line-height:1.6;margin-bottom:22px}
+.s-nav{display:flex;gap:9px;justify-content:flex-end;margin-top:22px}
+.btn-back{padding:11px 22px;border-radius:var(--rsm);background:transparent;border:1px solid var(--border);color:var(--ash);font-size:13px;cursor:pointer;transition:all .25s}
+.btn-back:hover{border-color:var(--ash-l);color:var(--ivory)}
+.btn-next{padding:11px 26px;border-radius:var(--rsm);background:var(--gold);color:var(--ink);font-size:13px;font-weight:600;border:none;cursor:pointer;transition:all .3s}
+.btn-next:hover{background:var(--gold-l);transform:translateY(-1px)}
+.btn-next:disabled{opacity:.38;cursor:not-allowed;transform:none}
+.btn-wa{width:100%;display:flex;align-items:center;justify-content:center;gap:9px;padding:15px;border-radius:var(--rsm);background:#25D366;color:#fff;font-size:14px;font-weight:700;letter-spacing:.4px;border:none;cursor:pointer;transition:all .3s}
+.btn-wa:hover{background:#1DBF5A;transform:translateY(-2px);box-shadow:0 11px 28px rgba(37,211,102,.32)}
+
+/* TOAST */
+.t-wrap{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);z-index:9000;display:flex;flex-direction:column;gap:7px;align-items:center;pointer-events:none}
+.toast{background:var(--ink-s);border:1px solid var(--border-g);color:var(--gold-l);border-radius:50px;padding:10px 20px;font-size:13px;font-weight:500;white-space:nowrap;box-shadow:0 8px 22px rgba(0,0,0,.4);animation:tin .35s var(--spring)}
+.toast.out{animation:tout .3s var(--ease) forwards}
+@keyframes tin{from{opacity:0;transform:translateY(10px)scale(.95)}to{opacity:1;transform:none}}
+@keyframes tout{to{opacity:0;transform:translateY(7px)}}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .ab-grid{gap:44px}
+  .p-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  #nav{padding:0 18px}
+  .nav-links{display:none}
+  .hbg{display:flex}
+  .nav-cart span:not(.cart-bub){display:none}
+  .ab-grid{grid-template-columns:1fr}
+  .ab-badge{right:0;bottom:-14px}
+  .c-grid{grid-template-columns:1fr}
+  .soc-grid{grid-template-columns:1fr}
+  .p-grid{grid-template-columns:1fr 1fr}
+  .m-head{flex-direction:column;align-items:flex-start}
+  .cart-d{max-width:100%}
+  .fl-cart{display:flex}
+  body{cursor:auto}
+  #cur,#cur-ring{display:none}
+  .ot-grid{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .section{padding:64px 0}
+  .container{padding:0 18px}
+  .p-grid{grid-template-columns:1fr}
+  .m-grid{grid-template-columns:1fr}
+  #nav{padding:0 14px}
+  .h-meta{gap:14px}
+}
+</style>
+</head>
+<body>
+
+<div id="cur"></div>
+<div id="cur-ring"></div>
+<div class="t-wrap" id="tWrap"></div>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="ld-ring">
+    <div class="ld-logo">
+      <!-- 🖼️ LOGO: Replace inner with <img src="logo.png" alt="BK"> -->
+      <span class="ld-logo-fb">BK</span>
+    </div>
+  </div>
+  <div class="ld-name">Bunty Kaka Bhavnagari</div>
+  <div class="ld-bar"><div class="ld-bar-fill"></div></div>
+  <div class="ld-tag">Authentic Bhavnagari Taste</div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-brand" onclick="scrollTo(0,0)">
+    <div class="nav-logo">
+      <!-- 🖼️ LOGO: Replace with <img src="logo.png" alt="BK"> -->
+      <span class="nav-logo-fb">BK</span>
+    </div>
+    <div>
+      <div class="nav-title">Bunty Kaka</div>
+      <div class="nav-sub">Bhavnagari</div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="#hero">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#about">Story</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px">
+    <button class="nav-cart" onclick="openCart()">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      <span>Cart</span>
+      <span class="cart-bub" id="ncc">0</span>
+    </button>
+    <button class="hbg" id="hbg" onclick="toggleMob()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- MOB NAV -->
+<div class="mob-nav" id="mobNav">
+  <button class="mob-close" onclick="toggleMob()">✕</button>
+  <a href="#hero" onclick="toggleMob()">Home</a>
+  <a href="#menu" onclick="toggleMob()">Menu</a>
+  <a href="#about" onclick="toggleMob()">Story</a>
+  <a href="#contact" onclick="toggleMob()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hglow hg1"></div><div class="hglow hg2"></div><div class="hglow hg3"></div>
+  <div class="h-line h-line-t"></div><div class="h-line h-line-b"></div>
+  <div class="h-dots" id="hDots"></div>
+  <div class="h-eye">Authentic Bhavnagari Taste</div>
+  <h1 class="h-title">Bunty Kaka<em>Bhavnagari</em></h1>
+  <p class="h-sub">Bhavnagari Bateta Bhungla — Where Every Bite Tells a Story</p>
+  <div class="h-meta">
+    <div class="h-meta-i"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>5:30 PM – 11:00 PM</div>
+    <div class="h-meta-dot"></div>
+    <div class="h-meta-i">Open Daily</div>
+    <div class="h-meta-dot"></div>
+    <div class="h-meta-i"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="20,6 9,17 4,12"/></svg>FSSAI Certified</div>
+  </div>
+  <div class="h-acts">
+    <button class="btn-g" onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">Explore Menu <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></button>
+    <a href="#about" class="btn-o">Our Story</a>
+  </div>
+  <div class="scroll-h"><span>Scroll</span><div class="scroll-l"></div></div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="t-track" id="tTrack">
+    <span class="t-item"><span class="td">◆</span><strong>Bateta Bhungla</strong><span class="td">◆</span>5 Spice Levels</span>
+    <span class="t-item"><span class="td">◆</span>Open <strong>5:30 PM – 11:00 PM</strong></span>
+    <span class="t-item"><span class="td">◆</span><strong>Jain &amp; Swaminarayan</strong> Options</span>
+    <span class="t-item"><span class="td">◆</span>FSSAI <strong>20724037001123</strong></span>
+    <span class="t-item"><span class="td">◆</span><strong>Chanamath · Dahi Vada · Mix Plate</strong></span>
+    <span class="t-item"><span class="td">◆</span><strong>Ghorvu</strong> — Village Thick Buttermilk</span>
+    <span class="t-item"><span class="td">◆</span>Parcel Charge <strong>₹10</strong></span>
+    <span class="t-item"><span class="td">◆</span>Order via <strong>WhatsApp</strong></span>
+  </div>
+</div>
+
+<!-- PILLARS -->
+<section class="pillars">
+  <div class="container">
+    <div class="p-grid">
+      <div class="pillar reveal"><div class="p-num">01</div><span class="p-icon">🍟</span><h3>Made Fresh Daily</h3><p>Prepared every evening with recipes passed down through generations of Bhavnagari kitchens.</p></div>
+      <div class="pillar reveal rd1"><div class="p-num">02</div><span class="p-icon">🌶️</span><h3>Five Spice Levels</h3><p>From a gentle kids-friendly warmth to rocket-level heat — a level for every soul.</p></div>
+      <div class="pillar reveal rd2"><div class="p-num">03</div><span class="p-icon">🙏</span><h3>Jain &amp; Swaminarayan</h3><p>Dedicated no-onion, no-garlic options so every guest enjoys authentic taste without compromise.</p></div>
+      <div class="pillar reveal rd3"><div class="p-num">04</div><span class="p-icon">✅</span><h3>FSSAI Certified</h3><p>Certified and trusted. Lic. No. 20724037001123 — quality you can count on.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="menu-s" id="menu">
+  <div class="container">
+    <div class="m-head">
+      <div>
+        <div class="sec-eye reveal">Our Menu</div>
+        <h2 class="sec-title reveal rd1">Bateta Bhungla<br/><em>&amp; More</em></h2>
+      </div>
+      <div class="cat-tabs reveal">
+        <button class="cat-t on" onclick="filt('all',this)">All</button>
+        <button class="cat-t" onclick="filt('b',this)">Bhungla</button>
+        <button class="cat-t" onclick="filt('s',this)">Snacks</button>
+        <button class="cat-t" onclick="filt('d',this)">Drinks</button>
+      </div>
+    </div>
+    <div class="m-grid" id="mGrid">
+      <!-- BHUNGLA -->
+      <div class="m-item reveal" data-c="b"><div class="m-img"><div class="m-img-ph"><!-- 🖼️ FOOD: src="images/bateta-kids.jpg" -->🥔</div></div><div class="m-top"><span class="badge bs">🌶️ Kids Level</span></div><div class="m-name">Bateta Bhungla</div><div class="m-sub">+ 12 No. Bhungla</div><div class="m-tag">Soft on spice, strong on sweet</div><div class="m-foot"><div class="m-price"><sup>₹</sup>60</div><button class="atc" onclick="add(1,'Bateta Bhungla (1 Chilli)',60,'🌶️',this)">+</button></div></div>
+      <div class="m-item reveal rd1" data-c="b"><div class="m-img"><div class="m-img-ph"><!-- 🖼️ FOOD: src="images/bateta-mild.jpg" -->🥔</div></div><div class="m-top"><span class="badge bs">🌶️🌶️ Mild</span></div><div class="m-name">Bateta Bhungla</div><div class="m-sub">+ 12 No. Bhungla</div><div class="m-tag">Where sugar kisses spice</div><div class="m-foot"><div class="m-price"><sup>₹</sup>60</div><button class="atc" onclick="add(2,'Bateta Bhungla (2 Chilli)',60,'🌶️🌶️',this)">+</button></div></div>
+      <div class="m-item reveal rd2" data-c="b"><div class="m-img"><div class="m-img-ph"><!-- 🖼️ FOOD: src="images/bateta-spicy.jpg" -->🥔</div></div><div class="m-top"><span class="badge bs">🌶️🌶️🌶️ Spicy</span></div><div class="m-name">Spicy Bateta Bhungla</div><div class="m-sub">+ 12 No. Bhungla</div><div class="m-tag">Spicy lover paradise</div><div class="m-foot"><div class="m-price"><sup>₹</sup>60</div><button class="atc" onclick="add(3,'Spicy Bateta Bhungla (3 Chilli)',60,'🌶️🌶️🌶️',this)">+</button></div></div>
+      <div class="m-item reveal" data-c="b"><div class="m-img"><div class="m-img-ph"><!-- 🖼️ FOOD: src="images/bateta-hot.jpg" -->🥔</div></div><div class="m-top"><span class="badge bs">🌶️🌶️🌶️🌶️ Hot</span></div><div class="m-name">Super Spicy Bhungla</div><div class="m-sub">+ 12 No. Bhungla</div><div class="m-tag">Feel the burn, love the bite</div><div class="m-foot"><div class="m-price"><sup>₹</sup>60</div><button class="atc" onclick="add(4,'Super Spicy Bateta Bhungla (4 Chilli)',60,'🌶️🌶️🌶️🌶️',this)">+</button></div></div>
+      <div class="m-item reveal rd1" data-c="b"><div class="m-img"><div class="m-img-ph"><!-- 🖼️ FOOD: src="images/bateta-rocket.jpg" -->🚀</div></div><div class="m-top"><span class="badge bs">🌶️×5 Rocket</span><span class="badge bf">Legend</span></div><div class="m-name">Rocket Spicy Bhungla</div><div class="m-sub">+ 12 No. Bhungla</div><div class="m-tag">Not just spicy — a survival test</div><div class="m-foot"><div class="m-price"><sup>₹</sup>70</div><button class="atc" onclick="add(5,'Rocket Spicy Bateta Bhungla (5 Chilli)',70,'🌶️🌶️🌶️🌶️🌶️',this)">+</button></div></div>
+      <div class="m-item reveal rd2" data-c="b"><div class="m-img"><div class="m-img-ph"><!-- 🖼️ FOOD: src="images/swaminarayan.jpg" -->🙏</div></div><div class="m-top"><span class="badge bj">🙏 No Onion No Garlic</span></div><div class="m-name">Swaminarayan Bhungla</div><div class="m-sub">+ 12 No. Bhungla · 2 Chilli</div><div class="m-tag">Pure taste, pure devotion</div><div class="m-foot"><div class="m-price"><sup>₹</sup>60</div><button class="atc" onclick="add(6,'Swaminarayan Bateta Bhungla',60,'🌶️🌶️',this)">+</button></div></div>
+      <div class="m-item reveal" data-c="b"><div class="m-img"><div class="m-img-ph"><!-- 🖼️ FOOD: src="images/extra-bhungla.jpg" -->➕</div></div><div class="m-top"><span class="badge bf">Add-on</span></div><div class="m-name">Extra Bhungla</div><div class="m-sub">12 pieces</div><div class="m-tag">Because 12 is never enough</div><div class="m-foot"><div class="m-price"><sup>₹</sup>10</div><button class="atc" onclick="add(7,'Extra Bhungla (12 No.)',10,'',this)">+</button></div></div>
+      <!-- SNACKS -->
+      <div class="m-item reveal rd1" data-c="s"><div class="m-img"><div class="m-img-ph"><!-- 🖼️ FOOD: src="images/chanamath.jpg" -->🫘</div></div><div class="m-top"><span class="badge bs">🌶️🌶️</span></div><div class="m-name">Chanamath</div><div class="m-sub">Chana + Math + Bateta</div><div class="m-tag">A hearty Bhavnagari comfort bowl</div><div class="m-foot"><div class="m-price"><sup>₹</sup>60</div><button class="atc" onclick="add(8,'Chanamath (Chana + Math + Bateta)',60,'🌶️🌶️',this)">+</button></div></div>
+      <div class="m-item reveal rd2" data-c="s"><div class="m-img"><div class="m-img-ph"><!-- 🖼️ FOOD: src="images/dahi-vada.jpg" -->🥛</div></div><div class="m-top"><span class="badge bj">🙏 Jain + Swaminarayan</span></div><div class="m-name">Dahi Vada</div><div class="m-sub">No Onion · No Garlic</div><div class="m-tag">Cool, creamy, full of tradition</div><div class="m-foot"><div class="m-price"><sup>₹</sup>70</div><button class="atc" onclick="add(9,'Dahi Vada (Jain + Swaminarayan)',70,'',this)">+</button></div></div>
+      <div class="m-item reveal" data-c="s"><div class="m-img"><div class="m-img-ph"><!-- 🖼️ FOOD: src="images/mix-plate.jpg" -->🍱</div></div><div class="m-top"><span class="badge bf">⭐ Best Value</span></div><div class="m-name">Mix Plate</div><div class="m-sub">Chana Math + Bateta Bhungla + Ghanthiya</div><div class="m-tag">The ultimate Bhavnagari experience</div><div class="m-foot"><div class="m-price"><sup>₹</sup>100</div><button class="atc" onclick="add(10,'Mix Plate (Chana Math + Bateta Bhungla + Ghanthiya)',100,'🌶️🌶️',this)">+</button></div></div>
+      <div class="m-item reveal rd1" data-c="s"><div class="m-img"><div class="m-img-ph"><!-- 🖼️ FOOD: src="images/sing.jpg" -->🥜</div></div><div class="m-top"><span class="badge bf">Side</span></div><div class="m-name">Extra Sing</div><div class="m-sub">Flavorful snack add-on</div><div class="m-tag">Crunchy, roasted, Bhavnagari style</div><div class="m-foot"><div class="m-price"><sup>₹</sup>10</div><button class="atc" onclick="add(11,'Extra Sing',10,'',this)">+</button></div></div>
+      <!-- DRINKS -->
+      <div class="m-item reveal rd2" data-c="d"><div class="m-img"><div class="m-img-ph"><!-- 🖼️ FOOD: src="images/buttermilk.jpg" -->🥛</div></div><div class="m-top"><span class="badge bf">250 ml</span></div><div class="m-name">Buttermilk</div><div class="m-sub">Fast Special · Light &amp; Refreshing</div><div class="m-tag">Chilled and perfectly refreshing</div><div class="m-foot"><div class="m-price"><sup>₹</sup>20</div><button class="atc" onclick="add(12,'Buttermilk – Fast Special (250ml)',20,'',this)">+</button></div></div>
+      <div class="m-item reveal" data-c="d"><div class="m-img"><div class="m-img-ph"><!-- 🖼️ FOOD: src="images/ghorvu.jpg" -->🫙</div></div><div class="m-top"><span class="badge bv">🏡 Village Style</span><span class="badge bf">250 ml</span></div><div class="m-name">Ghorvu</div><div class="m-sub">Traditional Thick Buttermilk</div><div class="m-tag">Thick, churned the old-village way</div><div class="m-foot"><div class="m-price"><sup>₹</sup>40</div><button class="atc" onclick="add(13,'Ghorvu – Village Thick Buttermilk (250ml)',40,'',this)">+</button></div></div>
+    </div>
+    <div class="parcel-note reveal"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg><strong>Parcel Charge</strong> — Extra ₹10 on parcel orders</div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-s section" id="about">
+  <div class="container">
+    <div class="ab-grid">
+      <div class="reveal">
+        <div class="ab-frame">
+          <div class="ab-photo">
+            <!-- 🖼️ FOUNDER PHOTO: Replace with <img src="founder.jpg" alt="Bunty Kaka"> -->
+            <div class="ab-ph">
+              <div class="ab-logo-big">
+                <!-- 🖼️ LOGO: Replace with <img src="logo.png" alt="BK"> -->
+                <span class="ab-logo-fb">BK</span>
+              </div>
+              <div class="ab-ph-label">Bunty Kaka<br/>Founder</div>
+            </div>
+          </div>
+          <div class="ab-badge"><div class="ab-badge-num">❤️</div><div class="ab-badge-label">Made with Love</div></div>
+        </div>
+      </div>
+      <div class="ab-content">
+        <div class="sec-eye reveal">Our Story</div>
+        <h2 class="sec-title reveal rd1">From a Dream<br/><em>to Bhavnagar's Heart</em></h2>
+        <p class="reveal rd2">It all began with a humble cart, a bag of potatoes, and an unshakeable love for the streets of Bhavnagar. Bunty Kaka grew up watching his mother fry the crispiest <em>Bateta Bhungla</em> in their tiny kitchen — the aroma floating out into warm Gujarat evenings.</p>
+        <p class="reveal rd2">After years in the city, he returned to his roots with one simple mission: <strong>to share that same honest, authentic, street-side taste</strong> with every person who crossed his path. He started small — a few plates, a handful of neighbours, and a recipe perfected over two generations.</p>
+        <p class="reveal rd3">Word spread faster than the spice levels. Today, Bunty Kaka Bhavnagari is more than a food stall — it's a <strong>gathering place, a memory, a feeling.</strong></p>
+        <div class="ab-quote reveal rd3">
+          <blockquote>"Khana sirf pet bhar ne ke liye nahi hota — dil bhi bharna chahiye."</blockquote>
+          <cite>— Bunty Kaka, Founder</cite>
+        </div>
+        <div class="ab-cert reveal"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"/></svg>FSSAI Certified · Lic. No. 20724037001123</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-s" id="contact">
+  <div class="container">
+    <div class="sec-eye reveal">Find Us</div>
+    <h2 class="sec-title reveal rd1" style="margin-bottom:44px">Visit Bunty Kaka<br/><em>Every Evening</em></h2>
+    <div class="c-grid reveal">
+      <div class="c-card"><span class="c-icon">🕐</span><div class="c-label">Shop Timing</div><div class="c-val"><strong>5:30 PM – 11:00 PM</strong><br/>Open Every Day</div></div>
+      <div class="c-card"><span class="c-icon">📧</span><div class="c-label">Email Us</div><div class="c-val"><a href="mailto:buntykaka.bhavnagari@gmail.com">buntykaka.bhavnagari<br/>@gmail.com</a></div></div>
+      <div class="c-card"><span class="c-icon">📍</span><div class="c-label">Location</div><div class="c-val"><a href="https://maps.app.goo.gl/TRxf49KJaL5XdeRQ7" target="_blank">Open in Google Maps →</a></div></div>
+    </div>
+    <div class="soc-grid reveal rd1">
+      <a class="soc-card" href="https://youtube.com/@buntykaka.bhavnagari?si=q9rkomVv_Kd8zTKH" target="_blank"><div class="soc-icon s-yt"><svg width="18" height="18" viewBox="0 0 24 24" fill="#FF0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></div><div><div class="soc-name">YouTube</div><div class="soc-handle">@buntykaka.bhavnagari</div></div></a>
+      <a class="soc-card" href="https://www.facebook.com/share/18EfCRBMMg/" target="_blank"><div class="soc-icon s-fb"><svg width="18" height="18" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></div><div><div class="soc-name">Facebook</div><div class="soc-handle">Bunty Kaka Bhavnagari</div></div></a>
+      <a class="soc-card" href="https://www.instagram.com/bunty_kaka_bhavnagari?igsh=MW04emV1djZ3bnc5dQ==" target="_blank"><div class="soc-icon s-ig"><svg width="18" height="18" viewBox="0 0 24 24" fill="url(#ig)"><defs><linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="50%" stop-color="#dc2743"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div><div><div class="soc-name">Instagram</div><div class="soc-handle">@bunty_kaka_bhavnagari</div></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container f-inner">
+    <div class="f-logo-row">
+      <div class="f-logo"><!-- 🖼️ LOGO: <img src="logo.png"> --><span class="f-logo-fb">BK</span></div>
+      <div><div class="f-name">Bunty Kaka Bhavnagari</div><div class="f-sub">Authentic Bhavnagari Taste</div></div>
+    </div>
+    <div class="f-links">
+      <a href="#hero">Home</a><a href="#menu">Menu</a><a href="#about">Story</a><a href="#contact">Contact</a>
+      <a href="mailto:buntykaka.bhavnagari@gmail.com">Email</a>
+      <a href="https://maps.app.goo.gl/TRxf49KJaL5XdeRQ7" target="_blank">Location</a>
+    </div>
+    <div class="f-copy">© 2025 Bunty Kaka Bhavnagari · FSSAI 20724037001123 · Made with ❤️ for Bhavnagar</div>
+  </div>
+</footer>
+
+<!-- CART DRAWER -->
+<div class="d-overlay" id="dOverlay" onclick="closeCart()"></div>
+<div class="cart-d" id="cartD">
+  <div class="d-head"><h3>Your Order</h3><button class="d-close" onclick="closeCart()">✕</button></div>
+  <div class="d-body" id="dBody"><div class="d-empty" id="dEmpty"><span>🛒</span>Your cart is empty.<br/>Add something delicious!</div></div>
+  <div class="d-foot" id="dFoot" style="display:none">
+    <div class="d-sub"><span>Items</span><span id="dCount">0</span></div>
+    <div class="d-total"><span>Subtotal</span><span id="dSub">₹0</span></div>
+    <button class="d-co" onclick="openCheckout()">Proceed to Checkout <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></button>
+  </div>
+</div>
+
+<!-- FLOAT CART -->
+<button class="fl-cart" id="flCart" onclick="openCart()">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+  <span class="fl-cnt" id="flCnt">0</span>
+</button>
+
+<!-- CHECKOUT MODAL -->
+<div class="m-mask" id="mMask">
+  <div class="co-panel" id="coPanel">
+    <div class="cp-head">
+      <h3>Place Your Order</h3>
+      <div class="cp-steps"><div class="cp-dot on" id="sd1"></div><div class="cp-dot" id="sd2"></div><div class="cp-dot" id="sd3"></div></div>
+      <button class="d-close" onclick="closeCheckout()">✕</button>
+    </div>
+    <div class="cp-body">
+      <!-- Step 1 -->
+      <div class="s-pane on" id="sp1">
+        <h3 class="s-title">Your <em>Details</em></h3>
+        <div class="field"><label>Full Name *</label><input type="text" id="fN" placeholder="Your full name"/></div>
+        <div class="field"><label>Phone Number *</label><input type="tel" id="fP" placeholder="+91 XXXXX XXXXX"/></div>
+        <div class="field"><label>Home Address *</label><textarea id="fA" rows="2" placeholder="Your full delivery address"></textarea></div>
+        <div class="field"><label>Special Instructions (optional)</label><textarea id="fNote" rows="2" placeholder="Less spicy, add less chutney, extra bhungla…"></textarea></div>
+        <div class="s-nav"><button class="btn-next" onclick="gS(2)">Next →</button></div>
+      </div>
+      <!-- Step 2 -->
+      <div class="s-pane" id="sp2">
+        <h3 class="s-title">Pickup or <em>Delivery?</em></h3>
+        <div class="ot-grid">
+          <div class="ot" id="ot-p" onclick="selOt('pickup')"><span class="ot-ic">🏪</span><div class="ot-name">Pickup</div><div class="ot-desc">Collect from our stall</div></div>
+          <div class="ot" id="ot-d" onclick="selOt('delivery')"><span class="ot-ic">🛵</span><div class="ot-name">Delivery</div><div class="ot-desc">Get it at your door</div></div>
+        </div>
+        <div class="info-b ib-blue hide" id="pBox"><strong>📍 Pickup Location</strong><br/><a href="https://maps.app.goo.gl/TRxf49KJaL5XdeRQ7" target="_blank" style="color:inherit;text-decoration:underline">View on Google Maps →</a></div>
+        <div class="info-b ib-amb hide" id="dBox"><strong>⚠️ Delivery Charges</strong> — Extra charges apply based on your location. Our team will confirm when they contact you.<label class="cb-wrap"><input type="checkbox" id="dAck"/><span>I understand and agree to pay extra delivery charges</span></label></div>
+        <div class="s-nav"><button class="btn-back" onclick="gS(1)">← Back</button><button class="btn-next" id="s2n" onclick="gS(3)" disabled>Next →</button></div>
+      </div>
+      <!-- Step 3 -->
+      <div class="s-pane" id="sp3">
+        <h3 class="s-title">Order <em>Summary</em></h3>
+        <div class="s-rows" id="sRows"></div>
+        <div class="s-tots" id="sTots"></div>
+        <div class="s-cust" id="sCust"></div>
+        <div class="pay-note"><span>💳</span><span>After confirming via WhatsApp, we'll send our <strong>QR code</strong> for payment.</span></div>
+        <div class="s-nav"><button class="btn-back" onclick="gS(2)">← Back</button><button class="btn-wa" onclick="sendWA()"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.855L.073 23.927l6.24-1.635A11.942 11.942 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.006-1.372l-.359-.213-3.713.974.99-3.621-.233-.371A9.818 9.818 0 1 1 12 21.818z"/></svg>Confirm &amp; Send to WhatsApp</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// CURSOR
+const cur=document.getElementById('cur'),ring=document.getElementById('cur-ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+(function ra(){rx+=(mx-rx)*.13;ry+=(my-ry)*.13;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(ra)})();
+document.querySelectorAll('a,button,[onclick]').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.style.width='18px';cur.style.height='18px';cur.style.background='rgba(232,160,74,.55)';ring.style.width='50px';ring.style.height='50px'});
+  el.addEventListener('mouseleave',()=>{cur.style.width='10px';cur.style.height='10px';cur.style.background='var(--gold)';ring.style.width='34px';ring.style.height='34px'});
+});
+
+// LOADER
+window.addEventListener('load',()=>{setTimeout(()=>document.getElementById('loader').classList.add('gone'),1900)});
+
+// NAV SCROLL
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('sc',scrollY>40));
+
+// MOBILE NAV
+function toggleMob(){const m=document.getElementById('mobNav'),h=document.getElementById('hbg');m.classList.toggle('open');h.classList.toggle('open');document.body.style.overflow=m.classList.contains('open')?'hidden':''}
+
+// HERO DOTS
+(()=>{const w=document.getElementById('hDots');for(let i=0;i<18;i++){const d=document.createElement('div');d.className='h-dot';d.style.cssText=`left:${Math.random()*100}%;bottom:${Math.random()*40}%;animation-duration:${5+Math.random()*8}s;animation-delay:${Math.random()*8}s`;w.appendChild(d)}})();
+
+// TICKER DUPE
+(()=>{const t=document.getElementById('tTrack');t.innerHTML+=t.innerHTML})();
+
+// SCROLL REVEAL
+const ro=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+// MENU FILTER
+function filt(c,btn){
+  document.querySelectorAll('.cat-t').forEach(t=>t.classList.remove('on'));btn.classList.add('on');
+  document.querySelectorAll('.m-item').forEach(i=>i.style.display=(c==='all'||i.dataset.c===c)?'flex':'none');
+}
+
+// ── CART ──────────────────────────────────────────
+let cart=[],oType=null,cust={},cStep=1;
+
+function add(id,name,price,spice,btn){
+  const ex=cart.find(i=>i.id===id);
+  ex?ex.qty++:cart.push({id,name,price,spice,qty:1});
+  renderC();bump();
+  toast('✓ Added: '+name.split('(')[0].trim());
+  if(btn){const o=btn.innerHTML;btn.innerHTML='✓';btn.classList.add('done');setTimeout(()=>{btn.innerHTML=o;btn.classList.remove('done')},900)}
+}
+
+function chgQ(id,d){const i=cart.find(x=>x.id===id);if(!i)return;i.qty+=d;if(i.qty<=0)cart=cart.filter(x=>x.id!==id);renderC();bump()}
+
+function renderC(){
+  const tot=cart.reduce((s,i)=>s+i.qty,0);
+  const sub=cart.reduce((s,i)=>s+i.price*i.qty,0);
+  document.getElementById('ncc').textContent=tot;
+  document.getElementById('flCnt').textContent=tot;
+  document.getElementById('dCount').textContent=tot;
+  document.getElementById('dSub').textContent='₹'+sub;
+  document.getElementById('flCart').style.display=tot>0?'flex':'none';
+  const body=document.getElementById('dBody'),foot=document.getElementById('dFoot'),emp=document.getElementById('dEmpty');
+  body.querySelectorAll('.c-line').forEach(el=>el.remove());
+  if(!tot){emp.style.display='block';foot.style.display='none';return}
+  emp.style.display='none';foot.style.display='block';
+  cart.forEach(item=>{
+    const d=document.createElement('div');d.className='c-line';
+    d.innerHTML=`<div class="c-line-info"><div class="c-line-name">${item.name}</div><div class="c-line-unit">${item.spice?item.spice+' · ':''}₹${item.price} each</div></div><div class="c-qty"><button class="q-btn" onclick="chgQ(${item.id},-1)">−</button><span class="q-val">${item.qty}</span><button class="q-btn" onclick="chgQ(${item.id},1)">+</button></div><div class="c-price">₹${item.price*item.qty}</div>`;
+    body.appendChild(d);
+  });
+}
+
+function bump(){const b=document.getElementById('ncc');b.classList.add('bump');setTimeout(()=>b.classList.remove('bump'),350)}
+
+function openCart(){document.getElementById('cartD').classList.add('open');document.getElementById('dOverlay').classList.add('open');document.body.style.overflow='hidden'}
+function closeCart(){document.getElementById('cartD').classList.remove('open');document.getElementById('dOverlay').classList.remove('open');document.body.style.overflow=''}
+
+// CHECKOUT
+function openCheckout(){if(!cart.length)return;closeCart();cStep=1;resetSteps();document.getElementById('mMask').classList.add('open');document.body.style.overflow='hidden'}
+function closeCheckout(){document.getElementById('mMask').classList.remove('open');document.body.style.overflow=''}
+
+function resetSteps(){
+  ['sp1','sp2','sp3'].forEach(s=>{document.getElementById(s).classList.remove('on')});
+  document.getElementById('sp1').classList.add('on');updDots(1);oType=null;
+  document.getElementById('ot-p').classList.remove('sel');document.getElementById('ot-d').classList.remove('sel');
+  document.getElementById('pBox').classList.add('hide');document.getElementById('dBox').classList.add('hide');
+  document.getElementById('s2n').disabled=true;document.getElementById('dAck').checked=false;
+}
+
+function updDots(n){for(let i=1;i<=3;i++){const d=document.getElementById('sd'+i);d.classList.remove('on','done');if(i===n)d.classList.add('on');else if(i<n)d.classList.add('done')}}
+
+function gS(n){
+  if(n===2){
+    const nm=document.getElementById('fN').value.trim();
+    const ph=document.getElementById('fP').value.trim();
+    const ad=document.getElementById('fA').value.trim();
+    if(!nm){shake('fN');toast('⚠️ Please enter your name');return}
+    if(!ph||!/^[0-9+\s\-]{7,15}$/.test(ph)){shake('fP');toast('⚠️ Valid phone number needed');return}
+    if(!ad){shake('fA');toast('⚠️ Please enter your address');return}
+    cust={name:nm,phone:ph,address:ad,note:document.getElementById('fNote').value.trim()};
+  }
+  if(n===3){
+    if(!oType){toast('⚠️ Please select Pickup or Delivery');return}
+    if(oType==='delivery'&&!document.getElementById('dAck').checked){toast('⚠️ Please confirm delivery charge agreement');return}
+    buildSum();
+  }
+  document.getElementById('sp'+cStep).classList.remove('on');
+  cStep=n;document.getElementById('sp'+n).classList.add('on');updDots(n);
+  document.getElementById('coPanel').scrollTop=0;
+}
+
+function shake(id){const el=document.getElementById(id);el.classList.add('err');el.style.animation='shakeX .4s ease';setTimeout(()=>{el.classList.remove('err');el.style.animation=''},1500)}
+
+function selOt(t){
+  oType=t;
+  document.getElementById('ot-p').classList.toggle('sel',t==='pickup');
+  document.getElementById('ot-d').classList.toggle('sel',t==='delivery');
+  document.getElementById('pBox').classList.toggle('hide',t!=='pickup');
+  document.getElementById('dBox').classList.toggle('hide',t!=='delivery');
+  if(t==='pickup'){document.getElementById('s2n').disabled=false}
+  else{document.getElementById('s2n').disabled=!document.getElementById('dAck').checked;document.getElementById('dAck').onchange=function(){document.getElementById('s2n').disabled=!this.checked}}
+}
+
+function buildSum(){
+  const sub=cart.reduce((s,i)=>s+i.price*i.qty,0);
+  const parcel=oType==='pickup'?10:0;
+  const grand=sub+parcel;
+  document.getElementById('sRows').innerHTML=cart.map(i=>`<div class="s-row"><span class="s-rname">${i.name}</span><span class="s-rqty">×${i.qty}</span><span class="s-rprice">₹${i.price*i.qty}</span></div>`).join('');
+  document.getElementById('sTots').innerHTML=`<div class="s-trow"><span>Subtotal</span><span>₹${sub}</span></div>${oType==='pickup'?'<div class="s-trow"><span>Parcel Charge</span><span>₹10</span></div>':'<div class="s-trow"><span>Delivery Charges</span><span>To be confirmed</span></div>'}<div class="s-trow grand"><span>Total${oType==='delivery'?' + Delivery':''}</span><span>₹${grand}</span></div>`;
+  document.getElementById('sCust').innerHTML=`<strong>👤</strong> ${cust.name} &nbsp;·&nbsp; <strong>📞</strong> ${cust.phone}<br/><strong>📍</strong> ${cust.address}<br/><strong>🚀</strong> ${oType==='pickup'?'🏪 Pickup':'🛵 Delivery'}${cust.note?`<br/><strong>📝</strong> ${cust.note}`:''}`;
+}
+
+function sendWA(){
+  const sub=cart.reduce((s,i)=>s+i.price*i.qty,0);
+  const parcel=oType==='pickup'?10:0;
+  const grand=sub+parcel;
+  const items=cart.map(i=>`  • ${i.name}${i.spice?' '+i.spice:''} × ${i.qty} = ₹${i.price*i.qty}`).join('\n');
+  const msg=`🙏 *New Order — Bunty Kaka Bhavnagari*\n━━━━━━━━━━━━━━━━━━━\n👤 Name: ${cust.name}\n📞 Phone: ${cust.phone}\n📍 Address: ${cust.address}${cust.note?'\n📝 Note: '+cust.note:''}\n━━━━━━━━━━━━━━━━━━━\n🛒 *Order Items:*\n${items}\n━━━━━━━━━━━━━━━━━━━\n💰 Subtotal: ₹${sub}\n${oType==='pickup'?'📦 Parcel Charge: ₹10':'🛵 Delivery Charges: To be confirmed'}\n💳 *Grand Total: ₹${grand}${oType==='delivery'?' + Delivery':''}*\n━━━━━━━━━━━━━━━━━━━\nKindly confirm order & share QR for payment 🙏`;
+  window.open(`https://wa.me/919824847345?text=${encodeURIComponent(msg)}`,'_blank');
+  closeCheckout();cart=[];renderC();toast('🎉 Order sent! We\'ll confirm shortly on WhatsApp');
+}
+
+// TOAST
+function toast(msg,dur=3000){
+  const w=document.getElementById('tWrap'),t=document.createElement('div');
+  t.className='toast';t.textContent=msg;w.appendChild(t);
+  setTimeout(()=>{t.classList.add('out');setTimeout(()=>t.remove(),350)},dur);
+}
+
+// close modal on overlay
+document.getElementById('mMask').addEventListener('click',function(e){if(e.target===this)closeCheckout()});
+
+// CSS shake
+const ss=document.createElement('style');
+ss.textContent='@keyframes shakeX{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-7px)}40%,80%{transform:translateX(7px)}}';
+document.head.appendChild(ss);
+
+renderC();
+</script>
+</body>
+</html>
