@@ -2,29 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bunty Kaka Bhavnagari | Authentic Bateta Bhungla</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Bunty Kaka Bhavnagari </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#F0F0F0', // Light Grey/White background
-                        accent: '#E07B39',  // Clay Orange
-                        secondary: '#89B0D3', // Soft Blue
-                        dark: '#2C2C2C',
-                        muted: '#7A7A7A',
-                        card: '#FFFFFF',
-                        border: '#E8E8E8'
+                        canvas: '#FFFFFF',
+                        surface: '#F4F4F4',
+                        ink: '#000000',
+                        stone: '#71717A',
+                        border: '#000000'
                     },
                     fontFamily: {
-                        serif: ['Playfair Display', 'serif'],
-                        sans: ['Poppins', 'sans-serif']
+                        display: ['Space Grotesk', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif']
                     }
                 }
             }
@@ -32,381 +30,411 @@
     </script>
 
     <style>
-        body { font-family: 'Poppins', sans-serif; background-color: #F8F9FA; color: #2C2C2C; }
-        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
-        
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 6px; height: 6px; }
-        ::-webkit-scrollbar-track { background: #f1f1f1; }
-        ::-webkit-scrollbar-thumb { background: #E07B39; border-radius: 3px; }
+        /* --- Core Styles --- */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF;
+            color: #000000;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, .display-font { font-family: 'Space Grotesk', sans-serif; }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #FFFFFF; }
+        ::-webkit-scrollbar-thumb { background: #000000; border-radius: 0px; }
 
         /* Animations */
-        @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
         
-        .animate-slide-up { animation: slideUp 0.5s ease-out forwards; }
-        .animate-fade-in { animation: fadeIn 0.3s ease-out forwards; }
+        .animate-slide-up {
+            opacity: 0;
+            animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
 
-        /* Spice Level Visual */
-        .spice-bar { display: flex; gap: 4px; }
-        .spice-dot { width: 8px; height: 8px; border-radius: 50%; background-color: #E8E8E8; transition: all 0.3s; }
-        .spice-dot.active { background-color: #E07B39; }
+        /* Brutalist Shadow */
+        .brutal-shadow {
+            box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+            transition: all 0.2s ease;
+        }
+        .brutal-shadow:hover {
+            box-shadow: 6px 6px 0px 0px rgba(0,0,0,1);
+            transform: translate(-2px, -2px);
+        }
 
-        /* Mobile Sticky Cart */
-        .sticky-cart { box-shadow: 0 -4px 20px rgba(0,0,0,0.1); }
+        /* Monochrome Image Reveal */
+        .img-mono {
+            filter: grayscale(100%);
+            transition: filter 0.5s ease;
+        }
+        .group:hover .img-mono {
+            filter: grayscale(0%);
+        }
+
+        /* Cart Drawer */
+        .cart-drawer {
+            transform: translateX(100%);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .cart-drawer.open { transform: translateX(0); }
+
+        /* Input Focus */
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #000000;
+            box-shadow: 3px 3px 0px 0px rgba(0,0,0,1);
+        }
         
-        /* Smooth Page Scroll */
-        html { scroll-behavior: smooth; }
+        /* Hide scrollbar */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
 
-<body class="bg-primary font-sans">
+<body class="bg-canvas font-sans text-ink">
 
-    <!-- NAVBAR -->
-    <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-border h-20 flex items-center px-4 md:px-8">
-        <div class="container mx-auto flex justify-between items-center">
+    <!-- NAVIGATION -->
+    <nav class="fixed top-0 w-full z-50 bg-white border-b-2 border-black h-20 flex items-center px-4 sm:px-8">
+        <div class="max-w-7xl mx-auto w-full flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <!-- LOGO PLACEHOLDER -->
-                <img src="logo-placeholder.png" alt="Logo" class="h-12 w-auto object-contain" id="main-logo">
-            </div>
-            
-            <div class="hidden md:flex items-center gap-8 font-medium text-sm text-dark">
-                <a href="#home" class="hover:text-accent transition-colors">Home</a>
-                <a href="#menu" class="hover:text-accent transition-colors">Menu</a>
-                <a href="#story" class="hover:text-accent transition-colors">Our Story</a>
-                <a href="#contact" class="hover:text-accent transition-colors">Contact</a>
+                <img src="logo-placeholder.png" alt="Logo" class="h-10 w-auto invert">
+                <div class="hidden sm:block border-l-2 border-black pl-4 ml-2">
+                    <h1 class="font-display text-xl font-bold tracking-tight leading-none">BUNTY KAKA</h1>
+                    <p class="text-[10px] uppercase tracking-widest text-stone -mt-1">Bhavnagari</p>
+                </div>
             </div>
 
-            <button onclick="openCart()" class="relative p-3 bg-dark text-white rounded-full hover:bg-accent transition-colors">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-                <span class="absolute -top-1 -right-1 bg-accent text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold" id="nav-count">0</span>
+            <div class="hidden md:flex items-center gap-8 text-sm font-bold uppercase tracking-wider">
+                <a href="#menu" class="hover:bg-black hover:text-white px-3 py-1 transition-colors">Menu</a>
+                <a href="#story" class="hover:bg-black hover:text-white px-3 py-1 transition-colors">Story</a>
+                <a href="#contact" class="hover:bg-black hover:text-white px-3 py-1 transition-colors">Contact</a>
+            </div>
+
+            <button onclick="toggleCart(true)" class="relative bg-black text-white px-4 py-2 border-2 border-black text-xs font-bold uppercase tracking-wider hover:bg-white hover:text-black transition-colors">
+                Cart (<span id="nav-cart-count">0</span>)
             </button>
         </div>
     </nav>
 
     <!-- HERO SECTION -->
-    <section id="home" class="pt-28 pb-16 md:pt-40 md:pb-24 px-4">
-        <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div class="text-center md:text-left order-2 md:order-1">
-                <span class="inline-block bg-secondary/20 text-dark text-xs font-semibold px-4 py-1.5 rounded-full mb-4">Authentic Bhavnagari Taste</span>
-                <h1 class="text-4xl md:text-6xl font-bold text-dark leading-tight mb-6">
-                    The Legend of <br><span class="text-accent italic">Bateta Bhungla</span>
+    <section class="pt-32 pb-20 px-4 sm:px-8 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-black hidden lg:block"></div>
+        
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-8 items-center relative z-10">
+            <div class="lg:col-span-7 text-center lg:text-left">
+                <span class="inline-block border-2 border-black text-xs font-bold uppercase tracking-widest px-4 py-2 mb-6 animate-slide-up">Est. 2009</span>
+                <h1 class="text-5xl sm:text-7xl lg:text-8xl font-display font-bold leading-none mb-6 tracking-tighter animate-slide-up" style="animation-delay: 100ms">
+                    Authentic<br>
+                    <span class="bg-black text-white px-4 py-1 inline-block">Bhavnagari</span><br>
+                    Taste.
                 </h1>
-                <p class="text-muted mb-8 max-w-lg mx-auto md:mx-0 leading-relaxed">
-                    Experience the legendary street food crafted by Bunty Kaka. From the sweetest Kids Level to the fiery Rocket Spicy, every bite tells a story of tradition.
+                <p class="text-lg text-stone max-w-md mx-auto lg:mx-0 mb-8 border-l-4 border-black pl-4 animate-slide-up" style="animation-delay: 200ms">
+                    Experience the legendary Bateta Bhungla, crafted with tradition and served with love.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                    <a href="#menu" class="px-8 py-3.5 bg-accent text-white rounded-full font-semibold hover:shadow-lg hover:shadow-accent/30 transition-all transform hover:-translate-y-1">
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-slide-up" style="animation-delay: 300ms">
+                    <a href="#menu" class="bg-black text-white px-8 py-4 text-sm font-bold uppercase tracking-wider border-2 border-black hover:bg-white hover:text-black transition-colors brutal-shadow">
                         Order Now
                     </a>
-                    <a href="#story" class="px-8 py-3.5 border border-dark text-dark rounded-full font-semibold hover:bg-dark hover:text-white transition-all">
+                    <a href="#story" class="bg-white text-black px-8 py-4 text-sm font-bold uppercase tracking-wider border-2 border-black hover:bg-black hover:text-white transition-colors">
                         Our Story
                     </a>
                 </div>
             </div>
-            
-            <div class="order-1 md:order-2 relative">
-                <div class="absolute top-5 -left-5 w-72 h-72 bg-secondary/20 rounded-full blur-3xl z-0"></div>
-                <div class="absolute bottom-5 -right-5 w-72 h-72 bg-accent/20 rounded-full blur-3xl z-0"></div>
-                <!-- HERO IMAGE PLACEHOLDER -->
-                <img src="hero-food-placeholder.png" alt="Hero Food" class="relative z-10 w-full max-w-md mx-auto rounded-3xl shadow-2xl transform hover:rotate-2 transition-transform duration-500" id="hero-img">
+
+            <div class="lg:col-span-5 relative h-[400px] lg:h-[600px] animate-slide-up" style="animation-delay: 400ms">
+                <div class="absolute inset-4 border-4 border-black bg-white p-4 transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                    <img src="hero-food-placeholder.png" alt="Hero" class="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-700" id="hero-img">
+                </div>
             </div>
         </div>
     </section>
 
     <!-- MENU SECTION -->
-    <section id="menu" class="py-16 px-4 bg-white">
-        <div class="container mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold mb-3">Our Menu</h2>
-                <p class="text-muted">Select your favorite spice level and enjoy</p>
+    <section id="menu" class="py-20 px-4 sm:px-8 bg-surface border-t-4 border-black">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
+                <div>
+                    <h2 class="text-4xl sm:text-5xl font-display font-bold tracking-tight">The Menu</h2>
+                    <p class="text-stone text-sm mt-2">Select your items below</p>
+                </div>
+
+                <div class="flex gap-2 overflow-x-auto no-scrollbar w-full md:w-auto pb-2">
+                    <button onclick="filterMenu('all')" class="filter-btn active bg-black text-white px-5 py-2 text-xs font-bold uppercase tracking-wider border-2 border-black transition-all whitespace-nowrap" data-cat="all">All</button>
+                    <button onclick="filterMenu('bhungla')" class="filter-btn bg-white text-black px-5 py-2 text-xs font-bold uppercase tracking-wider border-2 border-black hover:bg-black hover:text-white transition-all whitespace-nowrap" data-cat="bhungla">Bhungla</button>
+                    <button onclick="filterMenu('snacks')" class="filter-btn bg-white text-black px-5 py-2 text-xs font-bold uppercase tracking-wider border-2 border-black hover:bg-black hover:text-white transition-all whitespace-nowrap" data-cat="snacks">Snacks</button>
+                    <button onclick="filterMenu('drinks')" class="filter-btn bg-white text-black px-5 py-2 text-xs font-bold uppercase tracking-wider border-2 border-black hover:bg-black hover:text-white transition-all whitespace-nowrap" data-cat="drinks">Drinks</button>
+                </div>
             </div>
 
-            <!-- Category Filter -->
-            <div class="flex flex-wrap justify-center gap-3 mb-10">
-                <button onclick="filterMenu('all')" class="filter-btn active px-6 py-2 rounded-full text-sm font-medium border border-border bg-dark text-white transition-all" data-cat="all">All</button>
-                <button onclick="filterMenu('bhungla')" class="filter-btn px-6 py-2 rounded-full text-sm font-medium border border-border hover:border-dark transition-all" data-cat="bhungla">Bateta Bhungla</button>
-                <button onclick="filterMenu('snacks')" class="filter-btn px-6 py-2 rounded-full text-sm font-medium border border-border hover:border-dark transition-all" data-cat="snacks">Snacks</button>
-                <button onclick="filterMenu('drinks')" class="filter-btn px-6 py-2 rounded-full text-sm font-medium border border-border hover:border-dark transition-all" data-cat="drinks">Drinks</button>
-            </div>
-
-            <!-- Menu Grid with Images -->
-            <div id="menu-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div id="menu-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                 <!-- Rendered by JS -->
             </div>
         </div>
     </section>
 
     <!-- STORY SECTION -->
-    <section id="story" class="py-16 px-4 bg-primary">
-        <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div class="relative">
-                <div class="absolute -inset-4 bg-secondary/10 rounded-3xl transform rotate-3"></div>
-                <!-- FOUNDER IMAGE PLACEHOLDER -->
-                <img src="founder-placeholder.png" alt="Bunty Kaka" class="relative w-full h-[500px] object-cover rounded-2xl shadow-xl" id="founder-img">
+    <section id="story" class="py-20 px-4 sm:px-8 bg-white border-t-4 border-black">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+            <div class="relative border-4 border-black p-4 bg-white transform -rotate-2 hover:rotate-0 transition-transform duration-500">
+                <img src="founder-placeholder.png" alt="Founder" class="w-full h-[500px] object-cover grayscale" id="founder-img">
             </div>
-            <div>
-                <span class="text-accent font-semibold text-sm uppercase tracking-wider">Since 2009</span>
-                <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-6">The Story of Taste</h2>
-                <div class="space-y-4 text-muted leading-relaxed">
-                    <p>
-                        In the vibrant streets of Bhavnagar, Bunty Kaka started with a simple dream: to create the perfect Bateta Bhungla. With a secret blend of spices and a passion for quality, he turned a small cart into a culinary landmark.
-                    </p>
-                    <p>
-                        Today, "Bunty Kaka Bhavnagari" is not just a shop; it's an emotion. From the "Kids Level" for the little ones to the legendary "Rocket Spicy" for the brave, every plate serves a memory.
-                    </p>
+            
+            <div class="space-y-6">
+                <span class="text-xs font-bold uppercase tracking-widest text-stone border-b-2 border-black pb-1">The Legacy</span>
+                <h2 class="text-4xl md:text-5xl font-display font-bold leading-tight">A Story of <br><span class="bg-black text-white px-2">Passion</span></h2>
+                
+                <div class="space-y-4 text-stone leading-relaxed text-sm">
+                    <p>In the heart of Bhavnagar, Bunty Kaka transformed a simple street cart into a culinary landmark. It wasn't just about food; it was about creating an experience.</p>
+                    <p>Today, every plate serves a memory—carefully curated with secret spices and decades of expertise.</p>
                 </div>
-                <div class="flex gap-8 mt-8">
+
+                <div class="flex gap-8 pt-6 border-t-4 border-black mt-6">
                     <div>
-                        <h3 class="text-2xl font-bold text-accent">15+</h3>
-                        <p class="text-xs text-muted uppercase">Years Legacy</p>
+                        <p class="text-4xl font-display font-bold">15+</p>
+                        <p class="text-xs text-stone uppercase font-bold">Years</p>
                     </div>
                     <div>
-                        <h3 class="text-2xl font-bold text-dark">50K+</h3>
-                        <p class="text-xs text-muted uppercase">Happy Customers</p>
+                        <p class="text-4xl font-display font-bold">50K+</p>
+                        <p class="text-xs text-stone uppercase font-bold">Customers</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT & FOOTER -->
-    <footer id="contact" class="bg-dark text-white py-16 px-4">
-        <div class="container mx-auto grid md:grid-cols-4 gap-8 border-b border-white/10 pb-12">
-            <div class="md:col-span-2">
-                <h3 class="font-serif text-2xl mb-4">Bunty Kaka Bhavnagari</h3>
-                <p class="text-gray-400 text-sm max-w-sm">
-                    Serving authentic taste with love. Visit us or order online for an unforgettable experience.
-                </p>
-                <div class="flex gap-4 mt-6">
-                    <a href="https://youtube.com/@buntykaka.bhavnagari?si=q9rkomVv_Kd8zTKH" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-accent transition-colors">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                    </a>
-                    <a href="https://www.facebook.com/share/18EfCRBMMg/" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-accent transition-colors">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                    </a>
-                    <a href="https://www.instagram.com/bunty_kaka_bhavnagari?igsh=MW04emV1djZ3bnc5dQ==" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-accent transition-colors">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                    </a>
-                </div>
+    <!-- FOOTER -->
+    <footer id="contact" class="bg-black text-white py-16 px-4 sm:px-8 border-t-4 border-black">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 border-b border-white/20 pb-12">
+            <div>
+                <h3 class="text-4xl font-display font-bold mb-4">BUNTY KAKA</h3>
+                <p class="text-white/60 text-sm max-w-sm">Authentic street food experience crafted with purity and tradition.</p>
             </div>
             
-            <div>
-                <h4 class="font-semibold mb-4">Opening Hours</h4>
-                <p class="text-gray-400 text-sm">Daily: 05:30 PM - 11:00 PM</p>
-                <div class="mt-4 flex items-center gap-2 text-green-400 text-sm">
-                    <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span> Open Now
+            <div class="grid grid-cols-2 gap-8">
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider mb-4 text-white/40">Hours</h4>
+                    <p class="text-white text-sm font-medium">Daily: 05:30 PM - 11:00 PM</p>
+                </div>
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider mb-4 text-white/40">Contact</h4>
+                    <a href="tel:+919824847345" class="block text-white hover:text-white text-sm mb-2">+91 98248 47345</a>
+                    <div class="flex gap-3 mt-4">
+                        <a href="https://maps.app.goo.gl/TRxf49KJaL5XdeRQ7" target="_blank" class="border border-white p-2 hover:bg-white hover:text-black transition-colors">
+                            Map
+                        </a>
+                        <a href="https://www.instagram.com/bunty_kaka_bhavnagari" target="_blank" class="border border-white p-2 hover:bg-white hover:text-black transition-colors">
+                            IG
+                        </a>
+                    </div>
                 </div>
             </div>
-
-            <div>
-                <h4 class="font-semibold mb-4">Contact</h4>
-                <p class="text-gray-400 text-sm mb-2">
-                    <a href="tel:+919824847345" class="hover:text-accent">+91 98248 47345</a>
-                </p>
-                <p class="text-gray-400 text-sm mb-4">
-                    <a href="mailto:buntykaka.bhavnagari@gmail.com" class="hover:text-accent">Email Us</a>
-                </p>
-                <a href="https://maps.app.goo.gl/TRxf49KJaL5XdeRQ7" target="_blank" class="inline-block bg-accent text-white text-xs px-4 py-2 rounded-full hover:bg-white hover:text-accent transition-colors">Get Directions</a>
-            </div>
         </div>
-
-        <div class="container mx-auto pt-8 text-center text-gray-500 text-xs">
-            <p>FSSAI Lic: 20724037001123</p>
-            <p class="mt-2">© 2024 Bunty Kaka Bhavnagari. All Rights Reserved.</p>
-        </div>
+        <div class="pt-8 text-center text-xs text-white/30">FSSAI Lic: 20724037001123 • © 2024 Bunty Kaka Bhavnagari</div>
     </footer>
 
-    <!-- MOILE STICKY CART -->
-    <div id="mobile-cart-bar" class="fixed bottom-0 left-0 right-0 p-4 bg-white shadow-lg border-t border-border z-40 hidden md:hidden sticky-cart">
-        <button onclick="openCart()" class="w-full bg-accent text-white py-4 rounded-xl font-semibold flex justify-between items-center px-6">
-            <span>View Cart</span>
-            <div class="flex items-center gap-3 bg-white/20 px-3 py-1 rounded-lg">
-                <span id="mobile-count-bar">0 items</span>
-                <span id="mobile-total-bar">₹0</span>
+    <!-- MOBILE BOTTOM BAR -->
+    <div id="mobile-bar" class="fixed bottom-4 left-4 right-4 z-40 hidden md:hidden">
+        <button onclick="toggleCart(true)" class="w-full bg-black text-white py-4 border-2 border-black flex justify-between items-center px-6 brutal-shadow">
+            <div class="flex items-center gap-3">
+                <div class="bg-white text-black text-xs w-6 h-6 rounded-full flex items-center justify-center font-bold" id="m-count">0</div>
+                <span class="text-sm font-bold uppercase">View Cart</span>
             </div>
+            <span class="font-bold" id="m-total">₹0</span>
         </button>
     </div>
 
-    <!-- CART MODAL -->
-    <div id="cart-overlay" class="fixed inset-0 bg-black/50 z-50 hidden opacity-0 transition-opacity duration-300" onclick="closeCart()"></div>
-    <div id="cart-sidebar" class="fixed top-0 right-0 w-full max-w-md h-full bg-white z-50 transform translate-x-full transition-transform duration-400 shadow-2xl flex flex-col">
+    <!-- CART DRAWER -->
+    <div id="cart-overlay" class="fixed inset-0 bg-black/80 z-40 opacity-0 pointer-events-none transition-opacity duration-300" onclick="toggleCart(false)"></div>
+    
+    <div id="cart-drawer" class="cart-drawer fixed top-0 right-0 w-full max-w-md h-full bg-white z-50 flex flex-col border-l-4 border-black shadow-2xl">
         
-        <!-- Header -->
-        <div class="p-6 border-b border-border flex justify-between items-center">
+        <div class="p-6 border-b-4 border-black flex justify-between items-center bg-white">
             <div>
-                <h3 class="font-serif text-2xl font-bold">Your Order</h3>
-                <p class="text-xs text-muted mt-1">Review your items</p>
+                <h3 class="text-xl font-display font-bold">Your Order</h3>
+                <p class="text-xs text-stone mt-0.5" id="cart-subtitle">Add items to start</p>
             </div>
-            <button onclick="closeCart()" class="p-2 hover:bg-primary rounded-full">
+            <button onclick="toggleCart(false)" class="p-2 hover:bg-black hover:text-white border-2 border-black transition-colors">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
         </div>
 
-        <!-- Steps -->
-        <div class="flex border-b border-border">
-            <div class="flex-1 py-3 text-center text-xs font-medium border-b-2 border-accent text-accent" id="tab-1">Items</div>
-            <div class="flex-1 py-3 text-center text-xs font-medium border-b-2 border-transparent text-muted" id="tab-2">Details</div>
-            <div class="flex-1 py-3 text-center text-xs font-medium border-b-2 border-transparent text-muted" id="tab-3">Confirm</div>
+        <div class="flex border-b border-black bg-surface text-xs font-bold uppercase tracking-wider">
+            <div class="flex-1 py-3 text-center bg-black text-white" id="tab-1">Items</div>
+            <div class="flex-1 py-3 text-center text-black border-r border-l border-black" id="tab-2">Details</div>
+            <div class="flex-1 py-3 text-center text-black" id="tab-3">Confirm</div>
         </div>
 
-        <!-- Content -->
-        <div class="flex-1 overflow-y-auto">
+        <div class="flex-1 overflow-y-auto relative">
             
-            <!-- Step 1: Cart Items -->
-            <div id="step-1" class="p-4 space-y-4">
-                <div id="empty-cart" class="text-center py-20 hidden">
-                    <div class="w-20 h-20 mx-auto bg-primary rounded-full flex items-center justify-center mb-4 text-muted">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+            <!-- Step 1: Items -->
+            <div id="step-1" class="p-6 space-y-4 absolute top-0 left-0 w-full h-full overflow-y-auto bg-white">
+                <div id="empty-state" class="flex flex-col items-center justify-center h-full text-center">
+                    <div class="w-20 h-20 bg-surface border-2 border-black flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
                     </div>
-                    <p class="text-muted font-medium">Your cart is empty</p>
-                    <p class="text-xs text-muted mt-1">Add some delicious items!</p>
+                    <h4 class="font-bold">Your cart is empty</h4>
+                    <p class="text-xs text-stone mt-1">Add some items from the menu</p>
                 </div>
-                <div id="cart-items-list" class="space-y-3"></div>
+                <div id="cart-items" class="space-y-4 hidden"></div>
             </div>
 
             <!-- Step 2: Details -->
-            <div id="step-2" class="p-4 hidden">
+            <div id="step-2" class="p-6 hidden absolute top-0 left-0 w-full h-full overflow-y-auto bg-white">
                 <div class="space-y-4">
                     <div>
-                        <label class="text-xs font-semibold text-muted uppercase">Order Type</label>
-                        <div class="grid grid-cols-3 gap-2 mt-2">
-                            <button class="type-btn active py-2 rounded-lg text-xs font-medium border border-border bg-dark text-white" onclick="setType(this, 'pickup')">Pickup</button>
-                            <button class="type-btn py-2 rounded-lg text-xs font-medium border border-border" onclick="setType(this, 'delivery')">Delivery</button>
-                            <button class="type-btn py-2 rounded-lg text-xs font-medium border border-border" onclick="setType(this, 'table')">Table</button>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-stone mb-2">Order Type</label>
+                        <div class="grid grid-cols-3 gap-2">
+                            <button onclick="setOrderType('pickup')" class="order-type-btn active bg-black text-white py-2.5 text-xs font-semibold border-2 border-black transition-all" data-type="pickup">Pickup</button>
+                            <button onclick="setOrderType('delivery')" class="order-type-btn bg-white text-black py-2.5 text-xs font-semibold border-2 border-black transition-all" data-type="delivery">Delivery</button>
+                            <button onclick="setOrderType('table')" class="order-type-btn bg-white text-black py-2.5 text-xs font-semibold border-2 border-black transition-all" data-type="table">Table</button>
                         </div>
                     </div>
 
-                    <div id="pickup-info" class="bg-secondary/10 p-3 rounded-lg text-xs text-dark">
-                        <p>Pickup from our shop. <a href="https://maps.app.goo.gl/TRxf49KJaL5XdeRQ7" target="_blank" class="underline font-semibold text-accent">View Map</a></p>
+                    <div id="info-box" class="bg-surface border-2 border-black p-3 text-xs text-black">
+                        <p>Pickup from our shop. <a href="https://maps.app.goo.gl/TRxf49KJaL5XdeRQ7" target="_blank" class="underline font-bold">View Location</a></p>
                     </div>
+
+                    <input type="text" id="input-name" placeholder="Your Name *" class="w-full bg-white border-2 border-black p-3 text-sm outline-none transition-all">
+                    <input type="tel" id="input-phone" placeholder="Phone Number *" class="w-full bg-white border-2 border-black p-3 text-sm outline-none transition-all">
                     
-                    <div id="delivery-info" class="hidden">
-                        <textarea placeholder="Delivery Address" class="w-full border border-border p-3 rounded-lg text-sm resize-none bg-primary" rows="2" id="input-address"></textarea>
-                        <p class="text-xs text-muted mt-1 italic">* Delivery charges will be confirmed later.</p>
+                    <div id="input-addr-box" class="hidden">
+                        <textarea id="input-address" placeholder="Delivery Address *" class="w-full bg-white border-2 border-black p-3 text-sm resize-none outline-none transition-all"></textarea>
+                        <p class="text-[10px] text-stone mt-1 italic">* Delivery charges will be confirmed on WhatsApp.</p>
                     </div>
 
-                    <div id="table-info" class="hidden">
-                        <input type="text" placeholder="Table Number" class="w-full border border-border p-3 rounded-lg text-sm bg-primary" id="input-table">
+                    <div id="input-table-box" class="hidden">
+                        <input type="text" id="input-table" placeholder="Table Number *" class="w-full bg-white border-2 border-black p-3 text-sm outline-none transition-all">
                     </div>
 
-                    <input type="text" placeholder="Your Name *" class="w-full border border-border p-3 rounded-lg text-sm bg-primary" id="input-name">
-                    <input type="tel" placeholder="Phone Number *" class="w-full border border-border p-3 rounded-lg text-sm bg-primary" id="input-phone">
-                    <textarea placeholder="Special Instructions (Optional)" class="w-full border border-border p-3 rounded-lg text-sm resize-none bg-primary" rows="2" id="input-notes"></textarea>
+                    <textarea id="input-notes" placeholder="Special Instructions" class="w-full bg-white border-2 border-black p-3 text-sm resize-none h-20 outline-none transition-all"></textarea>
                 </div>
             </div>
 
             <!-- Step 3: Summary -->
-            <div id="step-3" class="p-4 hidden">
-                <div class="bg-primary border border-border rounded-xl p-4 mb-4">
-                    <h4 class="text-xs font-bold text-muted uppercase mb-3">Order Summary</h4>
-                    <div id="summary-list" class="space-y-2 text-sm border-b border-dashed pb-3 mb-3"></div>
-                    <div class="space-y-1 text-sm">
-                        <div class="flex justify-between"><span class="text-muted">Subtotal</span> <span id="sum-sub">₹0</span></div>
-                        <div class="flex justify-between" id="sum-parcel-row"><span class="text-muted">Parcel Charge</span> <span>₹10</span></div>
-                        <div class="flex justify-between font-bold text-base pt-2 border-t border-border mt-2"><span>Total</span> <span id="sum-total">₹0</span></div>
+            <div id="step-3" class="p-6 hidden absolute top-0 left-0 w-full h-full overflow-y-auto bg-white">
+                <div class="border-4 border-black p-4 mb-4 bg-surface">
+                    <div id="sum-items" class="space-y-2 text-sm border-b-2 border-black pb-3 mb-3"></div>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between font-medium"><span>Subtotal</span> <span id="sum-sub">₹0</span></div>
+                        <div class="flex justify-between font-medium" id="sum-parcel-row"><span>Parcel Charge</span> <span>₹10</span></div>
+                        <div class="flex justify-between font-bold text-lg pt-2 border-t-2 border-black mt-2"><span>Total</span> <span id="sum-total">₹0</span></div>
                     </div>
                 </div>
-                <div class="bg-white border border-border rounded-xl p-4 text-sm space-y-1">
-                    <p><strong>Name:</strong> <span id="sum-name">-</span></p>
-                    <p><strong>Phone:</strong> <span id="sum-phone">-</span></p>
-                    <p><strong>Type:</strong> <span id="sum-type">-</span></p>
-                    <p class="hidden" id="sum-address-row"><strong>Address:</strong> <span id="sum-address">-</span></p>
-                    <p class="hidden" id="sum-table-row"><strong>Table:</strong> <span id="sum-table">-</span></p>
+                <div class="border-2 border-black p-4 text-sm space-y-2">
+                    <div class="flex justify-between"><span class="text-stone">Name</span> <span class="font-bold" id="sum-name">-</span></div>
+                    <div class="flex justify-between"><span class="text-stone">Phone</span> <span class="font-bold" id="sum-phone">-</span></div>
+                    <div class="flex justify-between"><span class="text-stone">Type</span> <span class="font-bold uppercase" id="sum-type">-</span></div>
+                    <div class="flex justify-between hidden" id="sum-addr-row"><span class="text-stone">Address</span> <span class="font-bold text-right w-1/2" id="sum-address">-</span></div>
                 </div>
             </div>
         </div>
 
-        <!-- Footer Action -->
-        <div class="p-4 border-t border-border bg-white mt-auto">
-            <button id="main-btn" onclick="nextStep()" class="w-full bg-accent text-white py-4 rounded-xl font-semibold hover:bg-dark transition-colors flex items-center justify-center gap-2">
-                Continue <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        <div class="p-6 border-t-4 border-black bg-white mt-auto">
+            <button id="action-btn" onclick="handleAction()" class="w-full bg-black text-white py-4 font-bold uppercase tracking-wider hover:bg-white hover:text-black border-2 border-black transition-colors flex items-center justify-center gap-2 disabled:opacity-30 disabled:cursor-not-allowed">
+                Continue <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
             </button>
         </div>
     </div>
 
     <script>
         // --- DATA ---
-        const menuItems = [
-            { id: 1, name: "Bateta Bhungla + 12 No.", desc: "Kids Level - Soft on spice", price: 60, cat: "bhungla", spice: 1, img: "logo-placeholder.png" },
-            { id: 2, name: "Bateta Bhungla + 12 No.", desc: "Where sugar kisses spice", price: 60, cat: "bhungla", spice: 2, img: "logo-placeholder.png" },
-            { id: 3, name: "Spicy Bateta Bhungla", desc: "Spicy lover paradise", price: 60, cat: "bhungla", spice: 3, img: "logo-placeholder.png" },
-            { id: 4, name: "Super Spicy Bhungla", desc: "Feel the burn", price: 60, cat: "bhungla", spice: 4, img: "logo-placeholder.png" },
-            { id: 5, name: "Rocket Spicy Bhungla", desc: "Survival test", price: 70, cat: "bhungla", spice: 5, img: "logo-placeholder.png" },
-            { id: 6, name: "Swaminarayan Bhungla", desc: "No onion, No garlic", price: 60, cat: "bhungla", spice: 2, img: "logo-placeholder.png" },
-            { id: 7, name: "Extra Bhungla (12 No.)", desc: "Extra portion", price: 10, cat: "bhungla", spice: 0, img: "logo-placeholder.png" },
+        const menuData = [
+            { id: 1, name: "Bateta Bhungla", desc: "Kids Level - Sweet & Mild", price: 60, cat: "bhungla", spice: 1, img: "logo-placeholder.png" },
+            { id: 2, name: "Bateta Bhungla", desc: "Sugar Kisses Spice", price: 60, cat: "bhungla", spice: 2, img: "logo-placeholder.png" },
+            { id: 3, name: "Spicy Bhungla", desc: "Spicy Lover Paradise", price: 60, cat: "bhungla", spice: 3, img: "logo-placeholder.png" },
+            { id: 4, name: "Super Spicy Bhungla", desc: "Feel The Burn", price: 60, cat: "bhungla", spice: 4, img: "logo-placeholder.png" },
+            { id: 5, name: "Rocket Spicy Bhungla", desc: "Survival Test", price: 70, cat: "bhungla", spice: 5, img: "logo-placeholder.png" },
+            { id: 6, name: "Swaminarayan Special", desc: "No Onion, No Garlic", price: 60, cat: "bhungla", spice: 2, img: "logo-placeholder.png" },
+            { id: 7, name: "Extra Bhungla", desc: "12 No. Extra", price: 10, cat: "bhungla", spice: 0, img: "logo-placeholder.png" },
             { id: 8, name: "Chanamath", desc: "Chana + Math + Bateta", price: 60, cat: "snacks", spice: 2, img: "logo-placeholder.png" },
-            { id: 9, name: "Dahi Vada", desc: "Jain + Swaminarayan", price: 70, cat: "snacks", spice: 0, img: "logo-placeholder.png" },
-            { id: 10, name: "Mix Plate", desc: "Chana Math + Bhungla", price: 100, cat: "snacks", spice: 0, img: "logo-placeholder.png" },
-            { id: 11, name: "Extra Sing", desc: "Extra Sev", price: 10, cat: "snacks", spice: 0, img: "logo-placeholder.png" },
+            { id: 9, name: "Dahi Vada", desc: "Jain & Swaminarayan", price: 70, cat: "snacks", spice: 0, img: "logo-placeholder.png" },
+            { id: 10, name: "Mix Plate", desc: "The Complete Combo", price: 100, cat: "snacks", spice: 0, img: "logo-placeholder.png" },
+            { id: 11, name: "Extra Sing", desc: "Crunchy Sev", price: 10, cat: "snacks", spice: 0, img: "logo-placeholder.png" },
             { id: 12, name: "Buttermilk", desc: "Refreshing 250ml", price: 20, cat: "drinks", spice: 0, img: "logo-placeholder.png" },
-            { id: 13, name: "Ghorvu", desc: "Thick Buttermilk 250ml", price: 40, cat: "drinks", spice: 0, img: "logo-placeholder.png" }
+            { id: 13, name: "Ghorvu", desc: "Village Style 250ml", price: 40, cat: "drinks", spice: 0, img: "logo-placeholder.png" }
         ];
 
         let cart = [];
         let currentStep = 1;
         let orderType = 'pickup';
-        const PARCEL = 10;
-        const WA_NUM = '919824847345';
+        const PARCEL_CHARGE = 10;
+        const WA_NUMBER = '919824847345';
+
+        // --- UTILS ---
+        const getQty = id => (cart.find(c => c.id === id) || {qty: 0}).qty;
+        const getTotal = () => cart.reduce((s, i) => s + (i.price * i.qty), 0);
+        const getCount = () => cart.reduce((s, i) => s + i.qty, 0);
 
         // --- RENDER MENU ---
         function renderMenu(cat) {
-            const grid = document.getElementById('menu-grid');
-            const data = cat === 'all' ? menuItems : menuItems.filter(i => i.cat === cat);
+            const data = cat === 'all' ? menuData : menuData.filter(i => i.cat === cat);
+            const container = document.getElementById('menu-container');
             
-            grid.innerHTML = data.map((item, index) => {
+            container.innerHTML = data.map((item, idx) => {
                 const qty = getQty(item.id);
+                const spiceWidth = (item.spice / 5) * 100;
+                
                 return `
-                <div class="bg-card rounded-2xl shadow-sm border border-border overflow-hidden group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 animate-slide-up" style="animation-delay: ${index * 50}ms">
-                    
-                    <!-- Image Container -->
-                    <div class="relative w-full h-48 bg-primary overflow-hidden">
-                        <!-- IMAGE: Replace src with item specific image. e.g., src="${item.img}" -->
-                        <img src="${item.img}" alt="${item.name}" class="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-500" id="menu-img-${item.id}">
-                        
-                        <!-- Spice Badge -->
+                <div class="menu-card bg-white border-2 border-black overflow-hidden flex flex-col group animate-slide-up" style="animation-delay: ${idx * 50}ms">
+                    <!-- Image -->
+                    <div class="relative w-full h-48 bg-surface border-b-2 border-black overflow-hidden">
+                        <img src="${item.img}" alt="${item.name}" class="w-full h-full object-contain p-4 img-mono">
                         ${item.spice > 0 ? `
-                        <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-full flex items-center gap-1 shadow-sm">
-                            ${Array(item.spice).fill('<span class="text-accent text-xs">🌶️</span>').join('')}
+                        <div class="absolute top-3 right-3 bg-white border-2 border-black px-2 py-1 text-[10px] font-bold uppercase tracking-wider">
+                            Level ${item.spice}
                         </div>` : ''}
                     </div>
-
+                    
                     <!-- Content -->
-                    <div class="p-5">
+                    <div class="p-4 flex flex-col flex-grow">
                         <div class="flex justify-between items-start mb-2">
-                            <h3 class="font-semibold text-dark text-lg leading-tight">${item.name}</h3>
-                            <span class="font-bold text-accent text-lg ml-2">₹${item.price}</span>
+                            <h3 class="font-bold text-base leading-tight pr-2 font-display">${item.name}</h3>
+                            <span class="font-bold text-base font-display">₹${item.price}</span>
                         </div>
-                        <p class="text-sm text-muted mb-4">${item.desc}</p>
-                        
-                        <!-- Spice Level Visual Bar -->
-                        <div class="flex items-center gap-2 mb-4">
-                            <span class="text-xs text-muted font-medium">Spice Level:</span>
-                            <div class="spice-bar">
-                                ${Array(5).fill().map((_, i) => `<div class="spice-dot ${i < item.spice ? 'active' : ''}"></div>`).join('')}
-                            </div>
-                        </div>
+                        <p class="text-xs text-stone mb-4">${item.desc}</p>
 
-                        <!-- Add/Qty Controls -->
-                        <div class="flex items-center justify-between pt-3 border-t border-border">
-                            <div class="flex items-center gap-2">
-                                <button onclick="updateCart(${item.id}, -1)" class="w-8 h-8 rounded-full border border-border flex items-center justify-center text-dark hover:bg-primary ${qty === 0 ? 'opacity-0 pointer-events-none' : ''} transition-all">−</button>
-                                <span class="font-bold text-lg w-6 text-center">${qty}</span>
-                                <button onclick="updateCart(${item.id}, 1)" class="w-8 h-8 rounded-full bg-dark text-white flex items-center justify-center hover:bg-accent transition-colors">+</button>
+                        <!-- Mono Spice Meter -->
+                        ${item.spice > 0 ? `
+                        <div class="mb-4 mt-auto">
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-[10px] font-bold uppercase tracking-wider text-stone">Spice Level</span>
+                                <span class="text-[10px] font-bold">${item.spice}/5</span>
                             </div>
-                            <button onclick="updateCart(${item.id}, 1)" class="px-4 py-2 bg-accent text-white text-sm rounded-full font-medium hover:shadow-lg transition-all">Add</button>
+                            <div class="w-full h-2 bg-surface border border-black">
+                                <div class="h-full bg-black transition-all duration-500" style="width: ${spiceWidth}%"></div>
+                            </div>
+                        </div>
+                        ` : '<div class="mb-4 mt-auto"></div>'}
+
+                        <!-- Actions -->
+                        <div class="flex items-center justify-between pt-3 border-t-2 border-black mt-2">
+                            <div class="flex items-center border-2 border-black overflow-hidden bg-white">
+                                <button class="w-8 h-8 flex items-center justify-center text-sm font-bold hover:bg-black hover:text-white transition-colors" onclick="updateCart(${item.id}, -1)">−</button>
+                                <div class="w-8 text-center text-xs font-bold border-l border-r border-black bg-surface">${qty}</div>
+                                <button class="w-8 h-8 flex items-center justify-center text-sm font-bold hover:bg-black hover:text-white transition-colors" onclick="updateCart(${item.id}, 1)">+</button>
+                            </div>
+                            
+                            <button onclick="updateCart(${item.id}, 1)" class="bg-black text-white px-4 py-2 text-xs font-bold uppercase border-2 border-black hover:bg-white hover:text-black transition-colors">
+                                Add
+                            </button>
                         </div>
                     </div>
                 </div>
             `}).join('');
         }
 
-        function getQty(id) { return (cart.find(c => c.id === id) || {qty: 0}).qty; }
-
         function filterMenu(cat) {
             document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('bg-dark', 'text-white');
-                if(btn.dataset.cat === cat) btn.classList.add('bg-dark', 'text-white');
+                const isActive = btn.dataset.cat === cat;
+                btn.classList.toggle('bg-black', isActive);
+                btn.classList.toggle('text-white', isActive);
+                btn.classList.toggle('bg-white', !isActive);
+                btn.classList.toggle('text-black', !isActive);
             });
             renderMenu(cat);
         }
@@ -418,163 +446,167 @@
                 existing.qty += delta;
                 if (existing.qty <= 0) cart = cart.filter(c => c.id !== id);
             } else if (delta > 0) {
-                const item = menuItems.find(m => m.id === id);
-                cart.push({ id: item.id, name: item.name, price: item.price, qty: 1 });
+                const item = menuData.find(m => m.id === id);
+                cart.push({ ...item, qty: 1 });
             }
             updateUI();
-            // Re-render current category to update counters
-            renderMenu(document.querySelector('.filter-btn.bg-dark').dataset.cat);
+            renderMenu(document.querySelector('.filter-btn.bg-black')?.dataset.cat || 'all');
             renderCartItems();
         }
 
         function updateUI() {
-            const total = cart.reduce((s, i) => s + (i.price * i.qty), 0);
-            const count = cart.reduce((s, i) => s + i.qty, 0);
+            const count = getCount();
+            const total = getTotal();
+
+            // Nav Counter
+            document.getElementById('nav-cart-count').textContent = count;
             
-            document.getElementById('nav-count').textContent = count;
+            // Mobile Bar
+            const mBar = document.getElementById('mobile-bar');
+            if(count > 0) mBar.classList.remove('hidden');
+            else mBar.classList.add('hidden');
             
-            // Mobile Sticky Bar
-            const bar = document.getElementById('mobile-cart-bar');
-            if(count > 0) {
-                bar.classList.remove('hidden');
-                document.getElementById('mobile-count-bar').textContent = `${count} items`;
-                document.getElementById('mobile-total-bar').textContent = `₹${total}`;
-            } else {
-                bar.classList.add('hidden');
-            }
+            document.getElementById('m-count').textContent = count;
+            document.getElementById('m-total').textContent = `₹${total}`;
         }
 
         function renderCartItems() {
-            const list = document.getElementById('cart-items-list');
-            const empty = document.getElementById('empty-cart');
-            
-            if(cart.length === 0) {
-                list.innerHTML = '';
+            const container = document.getElementById('cart-items');
+            const empty = document.getElementById('empty-state');
+            const subtitle = document.getElementById('cart-subtitle');
+            const actionBtn = document.getElementById('action-btn');
+
+            if (cart.length === 0) {
                 empty.classList.remove('hidden');
-                document.getElementById('main-btn').disabled = true;
-                document.getElementById('main-btn').classList.add('opacity-50');
-                return;
+                container.classList.add('hidden');
+                subtitle.textContent = "Add items to start";
+                actionBtn.disabled = true;
+            } else {
+                empty.classList.add('hidden');
+                container.classList.remove('hidden');
+                subtitle.textContent = `${getCount()} items in cart`;
+                actionBtn.disabled = false;
+
+                container.innerHTML = cart.map(i => `
+                    <div class="flex items-center gap-3 p-3 bg-surface border-2 border-black">
+                        <img src="${i.img}" class="w-16 h-16 object-contain p-1 bg-white border border-black">
+                        <div class="flex-1">
+                            <h4 class="text-sm font-bold leading-tight">${i.name}</h4>
+                            <p class="text-xs text-stone">₹${i.price} each</p>
+                        </div>
+                        <div class="flex items-center border-2 border-black overflow-hidden">
+                            <button class="w-7 h-7 flex items-center justify-center text-xs font-bold hover:bg-black hover:text-white" onclick="updateCart(${i.id}, -1)">−</button>
+                            <div class="w-6 text-center text-xs font-bold bg-white">${i.qty}</div>
+                            <button class="w-7 h-7 flex items-center justify-center text-xs font-bold hover:bg-black hover:text-white" onclick="updateCart(${i.id}, 1)">+</button>
+                        </div>
+                    </div>
+                `).join('');
             }
+        }
+
+        // --- INTERACTIONS ---
+        function toggleCart(open) {
+            const drawer = document.getElementById('cart-drawer');
+            const overlay = document.getElementById('cart-overlay');
             
-            empty.classList.add('hidden');
-            document.getElementById('main-btn').disabled = false;
-            document.getElementById('main-btn').classList.remove('opacity-50');
-
-            list.innerHTML = cart.map(i => `
-                <div class="flex justify-between items-center p-3 bg-primary rounded-xl">
-                    <div class="flex-1 pr-4">
-                        <h4 class="font-medium text-sm text-dark">${i.name}</h4>
-                        <p class="text-xs text-muted">₹${i.price} each</p>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <button onclick="updateCart(${i.id}, -1)" class="w-7 h-7 rounded-full border border-border flex items-center justify-center text-sm hover:bg-white">−</button>
-                        <span class="text-sm font-bold">${i.qty}</span>
-                        <button onclick="updateCart(${i.id}, 1)" class="w-7 h-7 rounded-full bg-dark text-white flex items-center justify-center text-sm">+</button>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // --- MODAL & STEPS ---
-        function openCart() {
-            document.getElementById('cart-overlay').classList.remove('hidden');
-            document.getElementById('cart-sidebar').classList.remove('translate-x-full');
-            setTimeout(() => document.getElementById('cart-overlay').classList.remove('opacity-0'), 10);
-            document.body.style.overflow = 'hidden';
-            renderCartItems();
-            setStep(1);
-        }
-
-        function closeCart() {
-            document.getElementById('cart-sidebar').classList.add('translate-x-full');
-            document.getElementById('cart-overlay').classList.add('opacity-0');
-            setTimeout(() => document.getElementById('cart-overlay').classList.add('hidden'), 300);
-            document.body.style.overflow = 'auto';
-        }
-
-        function setStep(num) {
-            currentStep = num;
-            ['1', '2', '3'].forEach(i => {
-                const tab = document.getElementById(`tab-${i}`);
-                const content = document.getElementById(`step-${i}`);
-                const isActive = i == num;
-                
-                tab.classList.toggle('border-accent', isActive);
-                tab.classList.toggle('text-accent', isActive);
-                tab.classList.toggle('border-transparent', !isActive);
-                tab.classList.toggle('text-muted', !isActive);
-                
-                content.classList.toggle('hidden', !isActive);
-            });
-
-            const btn = document.getElementById('main-btn');
-            if(num === 1) btn.innerHTML = `Continue <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>`;
-            else if(num === 2) btn.innerHTML = `Review Order <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>`;
-            else if(num === 3) btn.innerHTML = `<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Send Order`;
-        }
-
-        function nextStep() {
-            if(currentStep === 1 && cart.length > 0) setStep(2);
-            else if(currentStep === 2) {
-                if(validate()) { prepareSummary(); setStep(3); }
+            if (open) {
+                drawer.classList.add('open');
+                overlay.classList.remove('opacity-0', 'pointer-events-none');
+                document.body.style.overflow = 'hidden';
+                renderCartItems();
+                goToStep(1);
+            } else {
+                drawer.classList.remove('open');
+                overlay.classList.add('opacity-0', 'pointer-events-none');
+                document.body.style.overflow = '';
             }
-            else if(currentStep === 3) sendWhatsApp();
         }
 
-        function setType(btn, type) {
-            document.querySelectorAll('.type-btn').forEach(b => {
-                b.classList.remove('active', 'bg-dark', 'text-white');
+        function goToStep(step) {
+            currentStep = step;
+            [1, 2, 3].forEach(s => {
+                const tab = document.getElementById(`tab-${s}`);
+                const content = document.getElementById(`step-${s}`);
+                
+                if (s <= step) {
+                    tab.classList.add('bg-black', 'text-white');
+                    tab.classList.remove('bg-surface', 'text-black');
+                } else {
+                    tab.classList.remove('bg-black', 'text-white');
+                    tab.classList.add('bg-surface', 'text-black');
+                }
+                
+                content.classList.toggle('hidden', s !== step);
             });
-            btn.classList.add('active', 'bg-dark', 'text-white');
-            orderType = type;
 
-            document.getElementById('pickup-info').classList.toggle('hidden', type !== 'pickup');
-            document.getElementById('delivery-info').classList.toggle('hidden', type !== 'delivery');
-            document.getElementById('table-info').classList.toggle('hidden', type !== 'table');
+            const btn = document.getElementById('action-btn');
+            if (step === 1) btn.innerHTML = `Continue <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>`;
+            else if (step === 2) btn.innerHTML = `Review <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>`;
+            else if (step === 3) btn.innerHTML = `Send Order <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>`;
         }
 
-        function validate() {
+        function handleAction() {
+            if (currentStep === 1) goToStep(2);
+            else if (currentStep === 2) { if (validateForm()) { generateSummary(); goToStep(3); } }
+            else if (currentStep === 3) sendWhatsApp();
+        }
+
+        function setOrderType(type) {
+            orderType = type;
+            document.querySelectorAll('.order-type-btn').forEach(btn => {
+                const isActive = btn.dataset.type === type;
+                btn.classList.toggle('bg-black', isActive);
+                btn.classList.toggle('text-white', isActive);
+                btn.classList.toggle('bg-white', !isActive);
+            });
+
+            const infoBox = document.getElementById('info-box');
+            const addrBox = document.getElementById('input-addr-box');
+            const tableBox = document.getElementById('input-table-box');
+
+            if (type === 'pickup') {
+                infoBox.innerHTML = `<p>Pickup from our shop. <a href="https://maps.app.goo.gl/TRxf49KJaL5XdeRQ7" target="_blank" class="underline font-bold">View Map</a></p>`;
+                infoBox.classList.remove('hidden'); addrBox.classList.add('hidden'); tableBox.classList.add('hidden');
+            } else if (type === 'delivery') {
+                infoBox.classList.add('hidden'); addrBox.classList.remove('hidden'); tableBox.classList.add('hidden');
+            } else {
+                infoBox.innerHTML = `<p>Ordering to table.</p>`;
+                infoBox.classList.remove('hidden'); addrBox.classList.add('hidden'); tableBox.classList.remove('hidden');
+            }
+        }
+
+        function validateForm() {
             const name = document.getElementById('input-name').value;
             const phone = document.getElementById('input-phone').value;
-            if(!name) { alert("Please enter your name"); return false; }
-            if(!phone || phone.length < 10) { alert("Please enter a valid phone number"); return false; }
-            if(orderType === 'delivery' && !document.getElementById('input-address').value) {
-                alert("Please enter address"); return false;
-            }
-            if(orderType === 'table' && !document.getElementById('input-table').value) {
-                alert("Please enter table number"); return false;
-            }
+            if (!name) return alert("Please enter your name"), false;
+            if (!phone || phone.length < 10) return alert("Please enter a valid 10-digit phone number"), false;
+            if (orderType === 'delivery' && !document.getElementById('input-address').value) return alert("Please enter delivery address"), false;
+            if (orderType === 'table' && !document.getElementById('input-table').value) return alert("Please enter table number"), false;
             return true;
         }
 
-        function prepareSummary() {
-            const sub = cart.reduce((s, i) => s + (i.price * i.qty), 0);
-            const isParcel = orderType !== 'table';
-            const total = isParcel ? sub + PARCEL : sub;
+        function generateSummary() {
+            const sub = getTotal();
+            const parcel = orderType !== 'table' ? PARCEL_CHARGE : 0;
+            const total = sub + parcel;
 
-            document.getElementById('summary-list').innerHTML = cart.map(i => 
-                `<div class="flex justify-between"><span class="text-muted">${i.qty}x ${i.name}</span><span>₹${i.price * i.qty}</span></div>`
-            ).join('');
-
+            document.getElementById('sum-items').innerHTML = cart.map(i => `
+                <div class="flex justify-between"><span>${i.qty}x ${i.name}</span> <span>₹${i.price * i.qty}</span></div>
+            `).join('');
             document.getElementById('sum-sub').textContent = `₹${sub}`;
             document.getElementById('sum-total').textContent = `₹${total}`;
-            document.getElementById('sum-parcel-row').classList.toggle('hidden', !isParcel);
-
+            document.getElementById('sum-parcel-row').classList.toggle('hidden', orderType === 'table');
+            
             document.getElementById('sum-name').textContent = document.getElementById('input-name').value;
             document.getElementById('sum-phone').textContent = document.getElementById('input-phone').value;
-            document.getElementById('sum-type').textContent = orderType.toUpperCase();
+            document.getElementById('sum-type').textContent = orderType;
             
-            const addrRow = document.getElementById('sum-address-row');
-            const tblRow = document.getElementById('sum-table-row');
-
-            if(orderType === 'delivery') {
-                addrRow.classList.remove('hidden'); tblRow.classList.add('hidden');
+            const addrRow = document.getElementById('sum-addr-row');
+            if (orderType === 'delivery') {
+                addrRow.classList.remove('hidden');
                 document.getElementById('sum-address').textContent = document.getElementById('input-address').value;
-            } else if(orderType === 'table') {
-                addrRow.classList.add('hidden'); tblRow.classList.remove('hidden');
-                document.getElementById('sum-table').textContent = document.getElementById('input-table').value;
             } else {
-                addrRow.classList.add('hidden'); tblRow.classList.add('hidden');
+                addrRow.classList.add('hidden');
             }
         }
 
@@ -582,29 +614,26 @@
             const name = document.getElementById('input-name').value;
             const phone = document.getElementById('input-phone').value;
             const notes = document.getElementById('input-notes').value;
-            const sub = cart.reduce((s, i) => s + (i.price * i.qty), 0);
-            const isParcel = orderType !== 'table';
-            const total = isParcel ? sub + PARCEL : sub;
+            const sub = getTotal();
+            const parcel = orderType !== 'table' ? PARCEL_CHARGE : 0;
+            const total = sub + parcel;
 
-            let msg = `*Order from Bunty Kaka Website*%0A%0A`;
-            msg += `*Name:* ${name}%0A`;
-            msg += `*Phone:* ${phone}%0A`;
-            msg += `*Type:* ${orderType.toUpperCase()}%0A`;
-            
-            if(orderType === 'delivery') msg += `*Address:* ${document.getElementById('input-address').value}%0A`;
-            if(orderType === 'table') msg += `*Table:* ${document.getElementById('input-table').value}%0A`;
-            
+            let msg = `*Order - Bunty Kaka*%0A%0A`;
+            msg += `*Name:* ${name}%0A*Phone:* ${phone}%0A*Type:* ${orderType.toUpperCase()}%0A`;
+            if (orderType === 'delivery') msg += `*Address:* ${document.getElementById('input-address').value}%0A`;
+            if (orderType === 'table') msg += `*Table:* ${document.getElementById('input-table').value}%0A`;
             msg += `%0A*Items:*%0A`;
             cart.forEach(i => msg += `${i.qty}x ${i.name} - ₹${i.price * i.qty}%0A`);
-            
             msg += `%0A*Subtotal:* ₹${sub}%0A`;
-            if(isParcel) msg += `*Parcel:* ₹${PARCEL}%0A`;
+            if (parcel > 0) msg += `*Parcel:* ₹${parcel}%0A`;
             msg += `*TOTAL:* ₹${total}%0A`;
-            
-            if(notes) msg += `%0A*Notes:* ${notes}%0A`;
+            if (notes) msg += `%0A*Notes:* ${notes}%0A`;
 
-            window.open(`https://wa.me/${WA_NUM}?text=${msg}`, '_blank');
+            window.open(`https://wa.me/${WA_NUMBER}?text=${msg}`, '_blank');
         }
+
+        // --- INIT ---
+        renderMenu('all');
     </script>
 </body>
 </html>
