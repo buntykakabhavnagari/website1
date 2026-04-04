@@ -3,927 +3,1514 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BP404TP Pharmacology-I – Complete PYQ Answer Bank</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<title>BP403TP - Physical Pharmaceutics II | GTU Summer 2019</title>
 <style>
-:root{--bg:#060d09;--bg2:#0c1610;--card:#111e16;--card2:#162219;--border:#1e3a28;--accent:#10b981;--accent2:#059669;--gold:#f59e0b;--gold2:#d97706;--text:#dce8e0;--text2:#8fa898;--danger:#ef4444;--info:#06b6d4;--purple:#a78bfa;--pink:#f472b6}
+:root{--bg:#fff;--card:#fff;--text:#1a1a2e;--text2:#555;--border:#e8e8ef;--accent:#0d7c66;--accent2:#0a5e4c;--highlight:#fff8e1;--highlight-border:#f9a825;--shadow:0 2px 16px rgba(0,0,0,0.06);--shadow2:0 4px 24px rgba(0,0,0,0.09);--tag-bg:#e8f5e9;--tag-text:#2e7d32;--tip-bg:#e3f2fd;--tip-border:#1565c0;--revise-bg:#fce4ec;--revise-border:#c62828;--radius:12px;--nav-h:60px}
+.dark{--bg:#0f1117;--card:#181b24;--text:#e0e0e0;--text2:#aaa;--border:#2a2d3a;--highlight:#1a1a2e;--highlight-border:#f9a825;--shadow:0 2px 16px rgba(0,0,0,0.3);--shadow2:0 4px 24px rgba(0,0,0,0.4);--tag-bg:#1b2e1d;--tag-text:#81c784;--tip-bg:#0d1b2a;--tip-border:#42a5f5;--revise-bg:#1a0a0e;--revise-border:#ef5350}
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Source Sans 3',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
-::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:var(--bg2)}::-webkit-scrollbar-thumb{background:var(--accent2);border-radius:4px}
-.sidebar{position:fixed;left:0;top:0;width:300px;height:100vh;background:var(--bg2);border-right:1px solid var(--border);overflow-y:auto;z-index:100;transition:transform .3s}
-.sidebar-header{padding:20px;border-bottom:1px solid var(--border);background:linear-gradient(135deg,var(--card),var(--bg2))}
-.sidebar-header h2{font-family:'Playfair Display',serif;font-size:18px;color:var(--accent);line-height:1.3}
-.sidebar-header p{font-size:11px;color:var(--text2);margin-top:4px}
-.nav-section{padding:12px 16px 4px;font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--accent2);font-weight:700}
-.nav-item{display:flex;align-items:center;gap:10px;padding:8px 16px;cursor:pointer;transition:all .2s;font-size:13px;color:var(--text2);border-left:3px solid transparent}
-.nav-item:hover{background:var(--card);color:var(--text);border-left-color:var(--accent)}
-.nav-item.active{background:var(--card);color:var(--accent);border-left-color:var(--accent);font-weight:600}
-.nav-item i{width:18px;text-align:center;font-size:12px}
-.main{margin-left:300px;min-height:100vh}
-.topbar{position:sticky;top:0;z-index:50;background:rgba(6,13,9,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:14px 32px;display:flex;align-items:center;gap:16px}
-.topbar .menu-btn{display:none;background:none;border:none;color:var(--accent);font-size:20px;cursor:pointer}
-.topbar .search-box{flex:1;max-width:400px;position:relative}
-.topbar .search-box input{width:100%;padding:8px 16px 8px 36px;background:var(--card);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:13px;outline:none;transition:border .2s}
-.topbar .search-box input:focus{border-color:var(--accent)}
-.topbar .search-box i{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--text2);font-size:13px}
-.content{padding:32px;max-width:1100px}
-.hero{text-align:center;padding:60px 20px 40px;position:relative}
-.hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(16,185,129,.08),transparent 70%);pointer-events:none}
-.hero h1{font-family:'Playfair Display',serif;font-size:42px;font-weight:900;background:linear-gradient(135deg,var(--accent),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
-.hero p{color:var(--text2);font-size:15px;max-width:600px;margin:0 auto}
-.stats{display:flex;justify-content:center;gap:32px;margin-top:28px;flex-wrap:wrap}
-.stat{text-align:center}.stat .num{font-family:'Playfair Display',serif;font-size:28px;color:var(--accent);font-weight:700}.stat .lbl{font-size:11px;color:var(--text2);text-transform:uppercase;letter-spacing:1px}
-.year-tabs{display:flex;gap:8px;margin:32px 0;flex-wrap:wrap}
-.year-tab{padding:6px 16px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid var(--border);background:var(--card);color:var(--text2);transition:all .2s}
-.year-tab:hover,.year-tab.active{background:var(--accent);color:#000;border-color:var(--accent)}
-.topic-section{display:none;animation:fadeUp .4s ease}
-.topic-section.active{display:block}
-@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-.q-map{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:28px}
-.q-map h4{font-size:13px;color:var(--accent);margin-bottom:10px;display:flex;align-items:center;gap:6px}
-.q-map .q-tags{display:flex;flex-wrap:wrap;gap:6px}
-.q-tag{font-size:10px;padding:3px 8px;border-radius:4px;background:var(--bg);border:1px solid var(--border);color:var(--text2)}
-.answer-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:28px;margin-bottom:24px;position:relative;overflow:hidden}
-.answer-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(to bottom,var(--accent),var(--gold))}
-.answer-card h3{font-family:'Playfair Display',serif;font-size:22px;color:var(--text);margin-bottom:16px;padding-left:16px}
-.marks-badge{position:absolute;top:16px;right:16px;font-size:11px;padding:3px 10px;border-radius:12px;background:rgba(16,185,129,.15);color:var(--accent);font-weight:600}
-.def-box{background:var(--bg);border-left:3px solid var(--accent);padding:14px 18px;border-radius:0 8px 8px 0;margin:12px 0;font-size:14px}
-.def-box strong{color:var(--accent)}
-.formula-box{background:linear-gradient(135deg,#0a1a12,#111e16);border:1px solid var(--accent2);border-radius:10px;padding:18px 22px;margin:14px 0;text-align:center;font-size:17px;color:var(--gold);font-family:'Source Sans 3',serif;letter-spacing:.5px}
-.formula-box .formula-label{font-size:11px;color:var(--text2);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px}
-.class-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px}
-.class-table thead{background:var(--bg)}
-.class-table th{padding:10px 12px;text-align:left;color:var(--accent);font-weight:600;border-bottom:2px solid var(--border);font-size:12px;text-transform:uppercase;letter-spacing:.5px}
-.class-table td{padding:9px 12px;border-bottom:1px solid var(--border);color:var(--text2)}
-.class-table tr:hover td{background:var(--card2);color:var(--text)}
-.class-table .drug{color:var(--gold);font-weight:600}
-.point{display:flex;gap:10px;margin:6px 0;padding:6px 0}
-.point .bullet{color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px}
-.point .text{color:var(--text2);font-size:14px}
-.point .text strong{color:var(--text)}
-.subhead{font-size:15px;color:var(--gold);font-weight:700;margin:18px 0 8px;display:flex;align-items:center;gap:8px}
-.subhead i{font-size:13px}
-.note-box{background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);border-radius:8px;padding:14px 16px;margin:12px 0;font-size:13px;color:var(--gold)}
-.note-box i{margin-right:6px}
-.warn-box{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);border-radius:8px;padding:14px 16px;margin:12px 0;font-size:13px;color:var(--danger)}
-.diagram-container{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:20px;margin:16px 0;text-align:center}
-.diagram-container svg{max-width:100%}
-.diagram-label{font-size:11px;color:var(--text2);margin-top:8px;text-transform:uppercase;letter-spacing:1px}
-.diff-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px}
-.diff-table th{padding:10px;background:var(--bg);color:var(--accent);font-weight:600;border:1px solid var(--border);text-align:center;font-size:12px}
-.diff-table td{padding:9px 12px;border:1px solid var(--border);color:var(--text2);vertical-align:top}
-.diff-table .col-head{background:var(--card2);color:var(--gold);font-weight:700;text-align:center;width:25%}
-.compact-list{columns:2;column-gap:20px;margin:10px 0}
-.compact-list li{color:var(--text2);font-size:13px;margin:4px 0;break-inside:avoid}
-.compact-list li strong{color:var(--text)}
-.phase-card{background:var(--card2);border:1px solid var(--border);border-radius:8px;padding:16px;margin:10px 0}
-.phase-card h5{color:var(--accent);font-size:14px;margin-bottom:6px}
-.phase-card p{font-size:13px;color:var(--text2)}
-.footer{text-align:center;padding:40px 20px;color:var(--text2);font-size:12px;border-top:1px solid var(--border);margin-top:60px}
-.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:90}
-@media(max-width:900px){
-.sidebar{transform:translateX(-100%)}.sidebar.open{transform:translateX(0)}
-.main{margin-left:0}.topbar .menu-btn{display:block}
-.content{padding:20px 16px}.hero h1{font-size:28px}
-.compact-list{columns:1}.stats{gap:16px}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.75;transition:background .3s,color .3s}
+a{color:var(--accent);text-decoration:none}
+.container{max-width:900px;margin:0 auto;padding:0 20px}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--border);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:background .3s,border .3s}
+.nav-inner{max-width:900px;margin:0 auto;padding:0 20px;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.nav-brand{font-weight:700;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nav-brand span{display:block;font-size:11px;font-weight:400;color:var(--text2)}
+.nav-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.nav-links{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;padding:4px 0}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{padding:6px 10px;font-size:12px;border-radius:6px;white-space:nowrap;color:var(--text2);transition:all .2s;font-weight:500}
+.nav-links a:hover,.nav-links a.active{background:var(--accent);color:#fff}
+.icon-btn{width:36px;height:36px;border:1px solid var(--border);border-radius:8px;background:var(--card);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--text);transition:all .2s;flex-shrink:0}
+.icon-btn:hover{border-color:var(--accent);color:var(--accent)}
+
+/* HERO */
+.hero{padding:48px 20px 32px;text-align:center;border-bottom:1px solid var(--border)}
+.hero h1{font-size:clamp(20px,4vw,28px);font-weight:800;margin-bottom:8px;letter-spacing:-.5px}
+.hero .meta{font-size:13px;color:var(--text2);display:flex;flex-wrap:wrap;justify-content:center;gap:8px 20px}
+.hero .meta span{display:flex;align-items:center;gap:4px}
+.badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;background:var(--tag-bg);color:var(--tag-text)}
+
+/* SEARCH */
+.search-wrap{padding:20px;position:sticky;top:var(--nav-h);z-index:50;background:var(--bg);transition:background .3s}
+.search-box{position:relative}
+.search-box input{width:100%;padding:12px 16px 12px 42px;border:1px solid var(--border);border-radius:10px;background:var(--card);color:var(--text);font-size:14px;outline:none;transition:all .2s}
+.search-box input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(13,124,102,.12)}
+.search-box svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--text2)}
+.no-results{display:none;text-align:center;padding:40px 20px;color:var(--text2);font-size:15px}
+
+/* CARDS */
+.q-section{padding:16px 20px 40px}
+.q-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:20px;overflow:hidden;transition:box-shadow .3s,border .3s}
+.q-card:hover{box-shadow:var(--shadow2)}
+.q-card.hidden{display:none}
+.q-header{padding:18px 22px;display:flex;align-items:flex-start;gap:12px;cursor:pointer;user-select:none}
+.q-num{background:var(--accent);color:#fff;font-size:12px;font-weight:700;padding:6px 10px;border-radius:8px;white-space:nowrap;flex-shrink:0;min-width:52px;text-align:center;line-height:1.3}
+.q-title{font-size:14px;font-weight:600;line-height:1.5;flex:1}
+.q-title .marks{font-weight:400;color:var(--text2);font-size:12px}
+.q-toggle{width:28px;height:28px;border:none;background:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--text2);transition:transform .3s}
+.q-card.open .q-toggle{transform:rotate(180deg)}
+.q-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.q-card.open .q-body{max-height:none}
+.q-answer{padding:0 22px 22px;font-size:14px;line-height:1.85}
+.q-answer h3{font-size:15px;font-weight:700;margin:20px 0 10px;color:var(--accent)}
+.q-answer h3:first-child{margin-top:0}
+.q-answer p{margin-bottom:10px}
+.q-answer ul,.q-answer ol{margin:8px 0 12px 22px}
+.q-answer li{margin-bottom:5px}
+.q-answer strong{color:var(--accent2)}
+
+/* HIGHLIGHT BOXES */
+.imp-box{background:var(--highlight);border-left:4px solid var(--highlight-border);padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0;font-size:13px}
+.imp-box .lbl{font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;color:var(--highlight-border)}
+.tip-box{background:var(--tip-bg);border-left:4px solid var(--tip-border);padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0;font-size:13px}
+.tip-box .lbl{font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;color:var(--tip-border)}
+.rev-box{background:var(--revise-bg);border-left:4px solid var(--revise-border);padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0;font-size:13px}
+.rev-box .lbl{font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;color:var(--revise-border)}
+.def-box{background:var(--card);border:1px solid var(--border);padding:12px 16px;border-radius:8px;margin:10px 0;font-size:13.5px}
+.def-box em{font-style:normal;font-weight:700;color:var(--accent)}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px}
+th,td{border:1px solid var(--border);padding:8px 12px;text-align:left}
+th{background:var(--tag-bg);font-weight:600;font-size:12px}
+.ascii-diagram{background:var(--highlight);padding:16px;border-radius:8px;font-family:'Courier New',monospace;font-size:12px;line-height:1.4;overflow-x:auto;white-space:pre;margin:12px 0;border:1px solid var(--highlight-border)}
+.copy-bar{display:flex;justify-content:flex-end;padding:0 22px 12px}
+.copy-btn{padding:6px 14px;font-size:12px;font-weight:600;border:1px solid var(--border);border-radius:6px;background:var(--card);color:var(--text);cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:5px}
+.copy-btn:hover{border-color:var(--accent);color:var(--accent)}
+.copy-btn.copied{border-color:var(--accent);background:var(--accent);color:#fff}
+
+/* FOOTER */
+footer{text-align:center;padding:32px 20px;border-top:1px solid var(--border);font-size:12px;color:var(--text2)}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+.nav-links{display:none}
+.nav-brand span{display:none}
+.q-header{padding:14px 16px;gap:8px}
+.q-num{min-width:42px;padding:5px 8px;font-size:11px}
+.q-answer{padding:0 16px 16px}
+.copy-bar{padding:0 16px 10px}
+.hero{padding:32px 16px 24px}
 }
 </style>
 </head>
 <body>
-<div class="overlay" id="overlay" onclick="closeSidebar()"></div>
-<aside class="sidebar" id="sidebar">
-<div class="sidebar-header">
-<h2>BP404TP Pharmacology-I</h2>
-<p>Complete PYQ Answer Bank (2019–2022)</p>
+
+<nav>
+<div class="nav-inner">
+<div class="nav-brand">BP403TP<span>Physical Pharmaceutics II &middot; Summer 2019</span></div>
+<div class="nav-links" id="navLinks"></div>
+<div class="nav-actions">
+<button class="icon-btn" id="darkBtn" title="Toggle Dark Mode">&#9790;</button>
 </div>
-<div class="nav-section">Fundamentals</div>
-<div class="nav-item active" onclick="showTopic('drug-def')"><i class="fas fa-pills"></i>Drug: Definition & Sources</div>
-<div class="nav-item" onclick="showTopic('pharm-scope')"><i class="fas fa-flask"></i>Pharmacology: Scope & History</div>
-<div class="nav-item" onclick="showTopic('receptors')"><i class="fas fa-bullseye"></i>Receptors & Signal Transduction</div>
-<div class="nav-item" onclick="showTopic('dose-response')"><i class="fas fa-chart-line"></i>Dose-Response & Therapeutic Index</div>
-<div class="nav-section">Pharmacokinetics</div>
-<div class="nav-item" onclick="showTopic('routes')"><i class="fas fa-syringe"></i>Routes of Administration</div>
-<div class="nav-item" onclick="showTopic('absorption')"><i class="fas fa-arrow-right"></i>Drug Absorption</div>
-<div class="nav-item" onclick="showTopic('distribution')"><i class="fas fa-arrows-alt"></i>Drug Distribution</div>
-<div class="nav-item" onclick="showTopic('metabolism')"><i class="fas fa-cogs"></i>Drug Metabolism</div>
-<div class="nav-item" onclick="showTopic('elimination')"><i class="fas fa-trash"></i>Elimination Kinetics</div>
-<div class="nav-section">Pharmacodynamics</div>
-<div class="nav-item" onclick="showTopic('interactions')"><i class="fas fa-exchange-alt"></i>Drug Interactions</div>
-<div class="nav-item" onclick="showTopic('adr')"><i class="fas fa-exclamation-triangle"></i>Adverse Drug Reactions</div>
-<div class="nav-item" onclick="showTopic('tolerance')"><i class="fas fa-balance-scale"></i>Tolerance, Dependence & Addiction</div>
-<div class="nav-section">Autonomic NS</div>
-<div class="nav-item" onclick="showTopic('ans')"><i class="fas fa-project-diagram"></i>ANS: Symp vs Parasymp</div>
-<div class="nav-item" onclick="showTopic('neurotrans')"><i class="fas fa-bolt"></i>Neurohumoral Transmission</div>
-<div class="nav-item" onclick="showTopic('cholinergic')"><i class="fas fa-brain"></i>Cholinergic Drugs</div>
-<div class="nav-item" onclick="showTopic('anticholin')"><i class="fas fa-shield-alt"></i>Anticholinesterases</div>
-<div class="nav-item" onclick="showTopic('parasympatholytic')"><i class="fas fa-ban"></i>Parasympatholytics</div>
-<div class="nav-item" onclick="showTopic('sympathomimetic')"><i class="fas fa-heartbeat"></i>Sympathomimetics</div>
-<div class="nav-item" onclick="showTopic('sympatholytic')"><i class="fas fa-hand-paper"></i>Sympatholytics / β-Blockers</div>
-<div class="nav-section">CNS Drugs</div>
-<div class="nav-item" onclick="showTopic('neurotransmitters')"><i class="fas fa-atom"></i>GABA, Serotonin & Dopamine</div>
-<div class="nav-item" onclick="showTopic('ga')"><i class="fas fa-moon"></i>General Anesthetics</div>
-<div class="nav-item" onclick="showTopic('preanesthetic')"><i class="fas fa-procedures"></i>Preanesthetic Agents</div>
-<div class="nav-item" onclick="showTopic('la')"><i class="fas fa-syringe"></i>Local Anesthetics</div>
-<div class="nav-item" onclick="showTopic('sedhyp')"><i class="fas fa-bed"></i>Sedatives & Hypnotics</div>
-<div class="nav-item" onclick="showTopic('antiepileptic')"><i class="fas fa-bolt"></i>Antiepileptic Drugs</div>
-<div class="nav-item" onclick="showTopic('antiparkinson')"><i class="fas fa-walking"></i>Anti-Parkinson Drugs</div>
-<div class="nav-item" onclick="showTopic('opioid')"><i class="fas fa-capsules"></i>Opioid Analgesics</div>
-<div class="nav-item" onclick="showTopic('cns-stim')"><i class="fas fa-coffee"></i>CNS Stimulants</div>
-<div class="nav-item" onclick="showTopic('alcohol')"><i class="fas fa-wine-bottle"></i>Ethyl Alcohol</div>
-<div class="nav-item" onclick="showTopic('muscle-relax')"><i class="fas fa-dumbbell"></i>Skeletal Muscle Relaxants</div>
-<div class="nav-item" onclick="showTopic('antidepressant')"><i class="fas fa-smile"></i>Antidepressants</div>
-<div class="nav-item" onclick="showTopic('antipsychotic')"><i class="fas fa-head-side-virus"></i>Antipsychotics</div>
-<div class="nav-section">Special Topics</div>
-<div class="nav-item" onclick="showTopic('glaucoma')"><i class="fas fa-eye"></i>Glaucoma Drugs</div>
-<div class="nav-item" onclick="showTopic('myasthenia')"><i class="fas fa-hand-rock"></i>Myasthenia Gravis</div>
-<div class="nav-item" onclick="showTopic('clinical-trials')"><i class="fas fa-clipboard-check"></i>Clinical Trials</div>
-<div class="nav-item" onclick="showTopic('pharmacovigilance')"><i class="fas fa-shield-virus"></i>Pharmacovigilance</div>
-<div class="nav-item" onclick="showTopic('counseling')"><i class="fas fa-comments"></i>Patient Counseling & DIC</div>
-</aside>
-<div class="main">
-<header class="topbar">
-<button class="menu-btn" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
-<div class="search-box"><i class="fas fa-search"></i><input type="text" id="searchInput" placeholder="Search topics, drugs, questions..." oninput="searchTopics(this.value)"></div>
-</header>
-<div class="content">
+</div>
+</nav>
+
 <div class="hero">
-<h1>Pharmacology-I PYQ Bank</h1>
-<p>Comprehensive answer bank for BP404TP covering Winter 2019 to Summer 2022 — topic-wise organized with diagrams, formulas & classifications</p>
-<div class="stats">
-<div class="stat"><div class="num">7</div><div class="lbl">Exam Papers</div></div>
-<div class="stat"><div class="num">43</div><div class="lbl">Topics Covered</div></div>
-<div class="stat"><div class="num">140+</div><div class="lbl">Questions Mapped</div></div>
-<div class="stat"><div class="num">80</div><div class="lbl">Marks Per Paper</div></div>
-</div>
-</div>
-<div class="year-tabs">
-<div class="year-tab active" onclick="filterYear('all')">All Years</div>
-<div class="year-tab" onclick="filterYear('w2022')">Winter 2022</div>
-<div class="year-tab" onclick="filterYear('w2021')">Winter 2021</div>
-<div class="year-tab" onclick="filterYear('w2020')">Winter 2020</div>
-<div class="year-tab" onclick="filterYear('w2019')">Winter 2019</div>
-<div class="year-tab" onclick="filterYear('s2022')">Summer 2022</div>
-<div class="year-tab" onclick="filterYear('s2021')">Summer 2021</div>
-<div class="year-tab" onclick="filterYear('s2020')">Summer 2020</div>
-<div class="year-tab" onclick="filterYear('s2019')">Summer 2019</div>
-</div>
-
-<!-- ========== TOPIC: DRUG DEFINITION & SOURCES ========== -->
-<div class="topic-section active" id="topic-drug-def" data-years="w2022,w2019,s2019">
-<div class="q-map"><h4><i class="fas fa-link"></i> Questions Mapped</h4><div class="q-tags">
-<span class="q-tag">W2022 Q1(a)</span><span class="q-tag">W2019 Q1(a)</span><span class="q-tag">W2019 Q1(b)</span><span class="q-tag">S2019 Q5(b)</span><span class="q-tag">W2021 Q3(c)</span>
-</div></div>
-<div class="answer-card">
-<span class="marks-badge">06 Marks</span>
-<h3>Drug: Definition & Sources</h3>
-<div class="def-box"><strong>Drug (WHO Definition):</strong> "Any substance or product that is used or intended to be used to modify or explore physiological systems or pathological states for the benefit of the recipient."</div>
-<p style="color:var(--text2);margin:10px 0;font-size:14px">In pharmacology, a drug is defined as <strong style="color:var(--text)">any chemical agent that affects living processes</strong>. It includes substances used for diagnosis, prevention, treatment, or cure of diseases. The term derives from French "drogue" meaning a dry herb.</p>
-<div class="subhead"><i class="fas fa-leaf"></i> Sources of Drugs</div>
-<table class="class-table">
-<thead><tr><th>Source</th><th>Description</th><th>Examples</th></tr></thead>
-<tbody>
-<tr><td><strong style="color:var(--text)">Plant Sources</strong></td><td>Alkaloids, glycosides, tannins, resins, volatile oils from various plant parts</td><td><span class="drug">Morphine</span> (Papaver), <span class="drug">Quinine</span> (Cinchona), <span class="drug">Digoxin</span> (Digitalis), <span class="drug">Atropine</span> (Belladonna), <span class="drug">Vincristine</span> (Vinca)</td></tr>
-<tr><td><strong style="color:var(--text)">Animal Sources</strong></td><td>Hormones, enzymes, sera, and other biological products from animal tissues/glands</td><td><span class="drug">Insulin</span> (pancreas), <span class="drug">Thyroid extract</span>, <span class="drug">Heparin</span> (liver/lung), <span class="drug">Antisera</span>, <span class="drug">Cod liver oil</span></td></tr>
-<tr><td><strong style="color:var(--text)">Mineral Sources</strong></td><td>Metals and non-metals used therapeutically</td><td><span class="drug">Ferrous sulfate</span> (Fe), <span class="drug">Calcium carbonate</span> (Ca), <span class="drug">Kaolin</span> (Al silicate), <span class="drug">Magnesium hydroxide</span></td></tr>
-<tr><td><strong style="color:var(--text)">Microbial Sources</strong></td><td>Antibiotics and other metabolites from microorganisms</td><td><span class="drug">Penicillin</span> (Penicillium), <span class="drug">Streptomycin</span> (Streptomyces), <span class="drug">Erythromycin</span></td></tr>
-<tr><td><strong style="color:var(--text)">Synthetic Sources</strong></td><td>Chemically synthesized in laboratory; largest source today</td><td><span class="drug">Aspirin</span>, <span class="drug">Chloroquine</span>, <span class="drug">Sulfonamides</span>, <span class="drug">Phenytoin</span>, <span class="drug">Ibuprofen</span></td></tr>
-<tr><td><strong style="color:var(--text)">Semi-synthetic</strong></td><td>Natural molecule chemically modified for better properties</td><td><span class="drug">Ampicillin</span> (from Penicillin), <span class="drug">Doxorubicin</span>, <span class="drug">Methyldopa</span></td></tr>
-<tr><td><strong style="color:var(--text)">Biotechnology / rDNA</strong></td><td>Produced using recombinant DNA technology</td><td><span class="drug">Recombinant insulin</span>, <span class="drug">Erythropoietin</span>, <span class="drug">Monoclonal antibodies</span>, <span class="drug">GH</span></td></tr>
-</tbody>
-</table>
-<div class="note-box"><i class="fas fa-info-circle"></i> <strong>Essential Drugs (WHO):</strong> Drugs that satisfy the priority healthcare needs of the population, selected based on disease prevalence, evidence of efficacy, safety, and cost-effectiveness. India has its own National List of Essential Medicines (NLEM).</div>
-</div>
-<div class="answer-card">
-<span class="marks-badge">05 Marks</span>
-<h3>Key Definitions</h3>
-<div class="def-box"><strong>Pharmacology:</strong> The science of drugs including their origin, composition, pharmacokinetics, pharmacodynamics, therapeutic uses, and adverse effects. Derived from Greek: <em>pharmakon</em> (drug) + <em>logos</em> (study).</div>
-<div class="def-box"><strong>Agonist:</strong> A drug that binds to a receptor and produces a pharmacological response similar to the endogenous ligand. It has both affinity and intrinsic activity (e.g., Adrenaline at β-receptors).</div>
-<div class="def-box"><strong>Antagonist:</strong> A drug that binds to a receptor but does not produce a response; it blocks the action of the agonist. It has affinity but zero intrinsic activity (e.g., Propranolol at β-receptors).</div>
-<div class="def-box"><strong>Drug Tolerance:</strong> A decrease in response to a drug after repeated administration, requiring higher doses to achieve the same effect. Types: pharmacokinetic (metabolic enzyme induction) and pharmacodynamic (receptor down-regulation).</div>
-<div class="def-box"><strong>Idiosyncrasy:</strong> An abnormal, unpredictable genetic-based response to a drug, qualitatively different from the expected effect. E.g., barbiturates causing excitement instead of sedation in some individuals; primaquine causing hemolysis in G6PD deficiency.</div>
-<div class="def-box"><strong>Allergy (Drug Allergy):</strong> An immunologically mediated adverse reaction to a drug. It requires prior sensitization and is dose-independent. E.g., penicillin anaphylaxis, sulfa rash.</div>
-<div class="def-box"><strong>Loading Dose:</strong> An initial higher dose given to rapidly achieve therapeutic plasma concentration.</div>
-<div class="formula-box"><div class="formula-label">Loading Dose Formula</div>Loading Dose = V<sub>d</sub> × C<sub>target</sub></div>
-<div class="def-box"><strong>Inverse Agonist:</strong> A drug that binds to the same receptor as an agonist but produces a pharmacological response opposite to that of the agonist. It has negative intrinsic activity. E.g., some benzodiazepine receptor ligands reduce GABA-mediated activity.</div>
+<h1>Physical Pharmaceutics II</h1>
+<div class="meta">
+<span class="badge">B.Pharm Sem 4</span>
+<span>GTU &middot; Summer 2019</span>
+<span>13-05-2019</span>
+<span>Total Marks: 80</span>
 </div>
 </div>
 
-<!-- ========== TOPIC: PHARMACOLOGY SCOPE & HISTORY ========== -->
-<div class="topic-section" id="topic-pharm-scope" data-years="w2021">
-<div class="q-map"><h4><i class="fas fa-link"></i> Questions Mapped</h4><div class="q-tags"><span class="q-tag">W2021 Q3(c)</span></div></div>
-<div class="answer-card">
-<span class="marks-badge">05 Marks</span>
-<h3>Historical Landmarks & Scope of Pharmacology</h3>
-<div class="subhead"><i class="fas fa-landmark"></i> Historical Landmarks</div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Ancient Era (Before 1500 AD):</strong> Use of opium (Sumerians, 4000 BC), Ebers Papyrus (Egypt, 1550 BC) listing 700+ drugs, Ayurveda (Charaka & Sushruta Samhita, 1000 BC), Chinese herbal medicine (Shennong, 2700 BC), Hippocratic oath emphasizing "do no harm."</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Materia Medica Period (1500–1800):</strong> Dioscorides wrote "De Materia Medica" (60 AD). Paracelsus (1493–1541) introduced the concept that the dose makes the poison. William Withering described digitalis use (1785).</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Modern Pharmacology (1800–1950):</strong> François Magendie (1819) — experimental pharmacology. Claude Bernard — studied curare and site of drug action. Rudolf Buchheim (1847) — established first pharmacology laboratory at Giessen. Oswald Schmiedeberg (1872) — father of modern pharmacology. Paul Ehrlich — chemotherapy concept, Salvarsan (1909). Alexander Fleming — Penicillin (1928). Gerhard Domagk — Sulfonamides (1935).</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Post-1950 Era:</strong> Discovery of oral contraceptives (1960), propranolol (1964), H<sub>2</sub> blockers, ACE inhibitors, statins, monoclonal antibodies, and gene therapy approaches.</span></div>
-<div class="subhead"><i class="fas fa-compass"></i> Scope of Pharmacology</div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Pharmacokinetics:</strong> Absorption, distribution, metabolism, excretion (ADME) — what the body does to the drug</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Pharmacodynamics:</strong> Mechanism of action, dose-response, receptor interactions — what the drug does to the body</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Pharmacotherapeutics:</strong> Application of drugs in treatment of disease</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Toxicology:</strong> Study of adverse effects, poisoning, and antidotes</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Clinical Pharmacology:</strong> Drug evaluation in humans — clinical trials, therapeutic drug monitoring</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Pharmacogenomics:</strong> Effect of genetic variation on drug response</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Pharmacovigilance:</strong> Ongoing safety monitoring of marketed drugs</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Pharmacoepidemiology:</strong> Study of drug use and effects in populations</span></div>
+<div class="search-wrap">
+<div class="search-box">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+<input type="text" id="searchInput" placeholder="Search questions, keywords, topics...">
 </div>
 </div>
 
-<!-- ========== TOPIC: RECEPTORS ========== -->
-<div class="topic-section" id="topic-receptors" data-years="w2021,w2020,w2019,s2021,s2020,s2019">
-<div class="q-map"><h4><i class="fas fa-link"></i> Questions Mapped</h4><div class="q-tags">
-<span class="q-tag">W2022 Q6(a)</span><span class="q-tag">W2021 Q1(b)</span><span class="q-tag">W2021 Q3(a)</span><span class="q-tag">W2020 Q4(a)</span><span class="q-tag">W2019 Q3(c)</span><span class="q-tag">S2021 Q3(a)</span><span class="q-tag">S2020 Q1(a)</span><span class="q-tag">S2019 Q4(b)</span>
-</div></div>
-<div class="answer-card">
-<span class="marks-badge">06 Marks</span>
-<h3>Receptors: Types & G-Protein Coupled Receptors</h3>
-<div class="def-box"><strong>Receptor:</strong> A specific macromolecular component of a cell (usually a protein) with which a drug interacts to produce a pharmacological response. Receptors determine the selectivity of drug action. Receptor occupation theory: Response ∝ fraction of receptors occupied.</div>
-<div class="subhead"><i class="fas fa-sitemap"></i> Classification of Receptors</div>
-<table class="class-table">
-<thead><tr><th>Type</th><th>Mechanism</th><th>Examples</th></tr></thead>
-<tbody>
-<tr><td><strong style="color:var(--text)">1. Ligand-Gated Ion Channels (Ionotropic)</strong></td><td>Ligand binding opens ion channel directly; fast response (ms)</td><td>nAChR (Na⁺/K⁺), GABA<sub>A</sub> (Cl⁻), NMDA (Ca²⁺), 5-HT<sub>3</sub></td></tr>
-<tr><td><strong style="color:var(--text)">2. G-Protein Coupled Receptors (GPCR)</strong></td><td>Ligand binding → G-protein activation → second messenger; moderate speed (sec)</td><td>Muscarinic, β-adrenergic, α<sub>2</sub>-adrenergic, 5-HT<sub>1,2,4</sub>, opioid</td></tr>
-<tr><td><strong style="color:var(--text)">3. Enzyme-Linked Receptors</strong></td><td>Intracellular enzymatic domain (kinase) activated; slower (min)</td><td>Insulin receptor (tyrosine kinase), GF receptors</td></tr>
-<tr><td><strong style="color:var(--text)">4. Intracellular / Nuclear Receptors</strong></td><td>Ligand diffuses in; alters gene transcription; slowest (hours)</td><td>Steroid receptors (GR, MR, AR, ER), thyroid receptor, PPAR</td></tr>
-<tr><td><strong style="color:var(--text)">5. Transporters / Carrier Proteins</strong></td><td>Not classical receptors but can be drug targets</td><td>NET, DAT, SERT (target of antidepressants)</td></tr>
-</tbody>
+<div class="no-results" id="noResults">No matching questions found. Try different keywords.</div>
+
+<div class="q-section" id="qSection"></div>
+
+<footer>
+<p>GTU B.Pharm Semester 4 &mdash; Physical Pharmaceutics II (BP403TP) &mdash; Summer 2019 Answer Key</p>
+<p style="margin-top:4px">For academic reference only. Verify with standard textbooks.</p>
+</footer>
+
+<script>
+const DATA = [
+{
+id:"q1a",num:"Q.1(a)",marks:"[06 Marks]",
+title:"Discuss pharmaceutical application of colloids. Differentiate various types of colloidal dispersion system.",
+answer:`
+<h3>Pharmaceutical Applications of Colloids</h3>
+<p>Colloidal systems play a vital role in pharmaceutical dosage form design due to their unique physicochemical properties such as large surface area, optical properties, and kinetic stability.</p>
+
+<ol>
+<li><strong>Therapeutic Agents:</strong> Colloidal preparations like colloidal silver (argyrol), colloidal gold, and colloidal mercury are used for their germicidal and therapeutic effects. Colloidal silver is used as antiseptic in eye infections.</li>
+<li><strong>Drug Delivery Systems:</strong> Liposomes, niosomes, microspheres, and nanoparticles are colloidal carriers used for targeted and controlled drug delivery. They enhance bioavailability and reduce side effects.</li>
+<li><strong>Sustained Release Formulations:</strong> Colloidal gels and hydrogels are employed to achieve prolonged release of drugs, e.g., insulin in zinc-insulin suspension.</li>
+<li><strong>Protective Colloids:</strong> Substances like acacia, tragacanth, gelatin, and methylcellulose act as protective colloids that prevent coagulation of dispersed phase in suspensions and emulsions.</li>
+<li><strong>Diagnostic Agents:</strong> Radiopaque colloids (e.g., thorium dioxide) are used in X-ray imaging. Colloidal gold is used in immunodiagnostics and lateral flow assays.</li>
+<li><strong>Parenteral Preparations:</strong> Fat emulsions (Intralipid) for intravenous nutrition are oil-in-water emulsions with colloidal droplet size (0.1&ndash;0.5 &mu;m).</li>
+<li><strong>Ophthalmic Preparations:</strong> Colloidal solutions provide prolonged contact time on corneal surface, e.g., pilocarpine in colloidal form.</li>
+<li><strong>Topical Preparations:</strong> Creams, lotions, and liniments are colloidal systems that ensure uniform spread and drug penetration through skin.</li>
+<li><strong>Blood Substitutes:</strong> Dextran solutions and perfluorocarbon emulsions serve as plasma expanders and artificial blood substitutes.</li>
+<li><strong>Immunology:</strong> Antigens are often administered as colloidal suspensions to enhance immune response (adjuvant effect).</li>
+</ol>
+
+<div class="imp-box"><div class="lbl">Key Point</div>Colloidal size range: 1 nm to 0.5 &mu;m (or 1&ndash;500 nm). This intermediate size gives colloids unique properties different from both true solutions and coarse suspensions.</div>
+
+<h3>Classification of Colloidal Dispersion Systems</h3>
+
+<p><strong>A. Based on Physical State of Dispersed Phase and Dispersion Medium:</strong></p>
+<table>
+<tr><th>Dispersed Phase</th><th>Dispersion Medium</th><th>Type</th><th>Example</th></tr>
+<tr><td>Gas</td><td>Liquid</td><td>Foam</td><td>Froth, whipped cream</td></tr>
+<tr><td>Gas</td><td>Solid</td><td>Solid Foam</td><td>Pumice stone, cork</td></tr>
+<tr><td>Liquid</td><td>Gas</td><td>Aerosol</td><td>Cloud, fog, inhaler spray</td></tr>
+<tr><td>Liquid</td><td>Liquid</td><td>Emulsion</td><td>Milk, emulsions</td></tr>
+<tr><td>Liquid</td><td>Solid</td><td>Gel</td><td>Jelly, butter</td></tr>
+<tr><td>Solid</td><td>Gas</td><td>Aerosol (Smoke)</td><td>Dust, smoke</td></tr>
+<tr><td>Solid</td><td>Liquid</td><td>Sol</td><td>Colloidal gold, ink</td></tr>
+<tr><td>Solid</td><td>Solid</td><td>Solid Sol</td><td>Ruby glass, alloys</td></tr>
 </table>
 
-<div class="subhead"><i class="fas fa-microscope"></i> G-Protein Coupled Receptors (GPCRs) — Detailed</div>
-<p style="color:var(--text2);font-size:14px;margin:8px 0">GPCRs are the largest family of membrane receptors (~800 in humans). They share a common <strong style="color:var(--text)">7-transmembrane α-helical structure</strong>. They transduce extracellular signals via heterotrimeric G-proteins.</p>
-
-<div class="diagram-container">
-<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg">
-<!-- Cell membrane -->
-<rect x="40" y="10" width="620" height="400" rx="12" fill="none" stroke="#1e3a28" stroke-width="1.5" stroke-dasharray="6,3"/>
-<text x="60" y="30" fill="#8fa898" font-size="11">EXTRACELLULAR</text>
-<text x="560" y="400" fill="#8fa898" font-size="11">INTRACELLULAR</text>
-<!-- Lipid bilayer bands -->
-<rect x="50" y="150" width="600" height="20" rx="4" fill="#1e3a28" opacity="0.3"/>
-<rect x="50" y="250" width="600" height="20" rx="4" fill="#1e3a28" opacity="0.3"/>
-<!-- GPCR 7TM -->
-<path d="M300,80 L300,120 M295,120 L305,120 L305,140 L290,155 L290,175 L310,190 L310,210 L290,225 L290,245 L310,260 L310,280 L290,295 L290,315 L310,330 L310,340" fill="none" stroke="#10b981" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-<!-- Ligand -->
-<circle cx="300" cy="65" r="14" fill="#f59e0b" opacity="0.9"/>
-<text x="300" y="69" text-anchor="middle" fill="#000" font-size="10" font-weight="700">L</text>
-<text x="330" y="60" fill="#f59e0b" font-size="10">Ligand</text>
-<!-- G-protein complex -->
-<rect x="315" y="310" width="50" height="25" rx="6" fill="#ef4444" opacity="0.8"/>
-<text x="340" y="327" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">Gα</text>
-<rect x="270" y="335" width="40" height="22" rx="6" fill="#06b6d4" opacity="0.8"/>
-<text x="290" y="350" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">Gβ</text>
-<rect x="365" y="335" width="40" height="22" rx="6" fill="#a78bfa" opacity="0.8"/>
-<text x="385" y="350" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">Gγ</text>
-<text x="340" y="375" text-anchor="middle" fill="#8fa898" font-size="10">G-protein (heterotrimeric)</text>
-<!-- GDP/GTP -->
-<circle cx="340" y="295" r="10" fill="#059669"/>
-<text x="340" y="299" text-anchor="middle" fill="#fff" font-size="8" font-weight="700">GTP</text>
-<!-- Effector arrows -->
-<path d="M400,320 L480,300" stroke="#ef4444" stroke-width="2" marker-end="url(#arrowR)"/>
-<text x="490" y="295" fill="#ef4444" font-size="10">Effector (e.g., Adenylyl cyclase)</text>
-<!-- Effector box -->
-<rect x="480" y="270" width="150" height="40" rx="8" fill="#1e3a28" stroke="#ef4444" stroke-width="1"/>
-<text x="555" y="295" text-anchor="middle" fill="#ef4444" font-size="11">Adenylyl Cyclase</text>
-<!-- Second messenger -->
-<path d="M555,310 L555,350" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrowG)"/>
-<rect x="505" y="355" width="100" height="30" rx="8" fill="#1e3a28" stroke="#f59e0b" stroke-width="1"/>
-<text x="555" y="375" text-anchor="middle" fill="#f59e0b" font-size="11">cAMP ↑</text>
-<!-- Gi pathway label -->
-<rect x="80" y="310" width="140" height="60" rx="8" fill="#111e16" stroke="#1e3a28" stroke-width="1"/>
-<text x="150" y="332" text-anchor="middle" fill="#10b981" font-size="10" font-weight="700">G<sub>s</sub> → AC ↑ → cAMP ↑</text>
-<text x="150" y="348" text-anchor="middle" fill="#06b6d4" font-size="10" font-weight="700">G<sub>i</sub> → AC ↓ → cAMP ↓</text>
-<text x="150" y="362" text-anchor="middle" fill="#a78bfa" font-size="10" font-weight="700">G<sub>q</sub> → PLC → IP₃/DAG</text>
-<!-- Labels -->
-<text x="300" y="395" text-anchor="middle" fill="#10b981" font-size="10" font-weight="600">7-Transmembrane Receptor</text>
-<defs>
-<marker id="arrowR" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#ef4444"/></marker>
-<marker id="arrowG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#f59e0b"/></marker>
-</defs>
-</svg>
-<div class="diagram-label">Figure: GPCR Signal Transduction Mechanism</div>
-</div>
-
-<div class="subhead"><i class="fas fa-cogs"></i> G-Protein Signaling Steps</div>
-<div class="point"><span class="bullet">1.</span><span class="text"><strong>Resting State:</strong> GPCR is unbound; Gα has GDP bound; Gαβγ trimer is associated with receptor.</span></div>
-<div class="point"><span class="bullet">2.</span><span class="text"><strong>Ligand Binding:</strong> Agonist binds to extracellular domain → conformational change in receptor.</span></div>
-<div class="point"><span class="bullet">3.</span><span class="text"><strong>G-Protein Activation:</strong> Receptor acts as GEF (guanine nucleotide exchange factor) → GDP replaced by GTP on Gα → Gα-GTP dissociates from Gβγ.</span></div>
-<div class="point"><span class="bullet">4.</span><span class="text"><strong>Effector Activation:</strong> Gα-GTP and/or Gβγ subunits regulate effector enzymes/ion channels.</span></div>
-<div class="point"><span class="bullet">5.</span><span class="text"><strong>Second Messenger Generation:</strong> Effectors produce second messengers (cAMP, IP₃, DAG, cGMP, Ca²⁺).</span></div>
-<div class="point"><span class="bullet">6.</span><span class="text"><strong>Cellular Response:</strong> Second messengers activate kinases (PKA, PKC) → phosphorylation of target proteins → physiological response.</span></div>
-<div class="point"><span class="bullet">7.</span><span class="text"><strong>Termination:</strong> Gα has intrinsic GTPase activity → hydrolyzes GTP to GDP → Gα-GDP reassociates with Gβγ → returns to resting state.</span></div>
-
-<div class="subhead"><i class="fas fa-table"></i> Types of G-Proteins & Their Effects</div>
-<table class="class-table">
-<thead><tr><th>G-Protein</th><th>Effector</th><th>Second Messenger</th><th>Net Effect</th><th>Receptor Examples</th></tr></thead>
-<tbody>
-<tr><td><span class="drug">G<sub>s</sub></span></td><td>Adenylyl cyclase ↑</td><td>cAMP ↑</td><td>PKA activation</td><td>β₁, β₂, D₁, H₂, 5-HT₄</td></tr>
-<tr><td><span class="drug">G<sub>i/o</sub></span></td><td>Adenylyl cyclase ↓; K⁺ channel ↑</td><td>cAMP ↓</td><td>PKA inhibition; hyperpolarization</td><td>α₂, M₂, D₂, opioid, 5-HT₁</td></tr>
-<tr><td><span class="drug">G<sub>q/11</sub></span></td><td>Phospholipase C β ↑</td><td>IP₃ + DAG ↑</td><td>Ca²⁺ release; PKC activation</td><td>α₁, M₁, M₃, 5-HT₂, H₁</td></tr>
-<tr><td><span class="drug">G<sub>12/13</sub></span></td><td>RhoGEF activation</td><td>Rho GTPase</td><td>Cytoskeletal reorganization</td><td>Some GPCRs</td></tr>
-</tbody>
+<p><strong>B. Based on Affinity Between Dispersed Phase and Dispersion Medium:</strong></p>
+<table>
+<tr><th>Property</th><th>Lyophilic Colloids</th><th>Lyophobic Colloids</th></tr>
+<tr><td>Meaning</td><td>Solvent-loving</td><td>Solvent-hating</td></tr>
+<tr><td>Affinity</td><td>High affinity for medium</td><td>Low affinity for medium</td></tr>
+<tr><td>Preparation</td><td>Simply mixed with solvent</td><td>Special methods needed</td></tr>
+<tr><td>Stability</td><td>Highly stable (intrinsic)</td><td>Less stable (requires stabilizer)</td></tr>
+<tr><td>Reversibility</td><td>Reversible</td><td>Irreversible</td></tr>
+<tr><td>Viscosity</td><td>Higher than medium</td><td>Same as medium</td></tr>
+<tr><td>Coagulation</td><td>Difficult</td><td>Easy (by electrolytes)</td></tr>
+<tr><td>Charge</td><td>Depends on pH</td><td>Always charged</td></tr>
+<tr><td>Examples</td><td>Gelatin, acacia, starch, rubber</td><td>Gold sol, As₂S₃ sol, metal hydroxides</td></tr>
 </table>
 
-<div class="subhead"><i class="fas fa-exchange-alt"></i> Drug-Receptor Interactions & Signal Transduction</div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Agonist:</strong> Binds → activates receptor → full response (e.g., Isoprenaline at β₂)</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Partial Agonist:</strong> Binds → submaximal response even at full receptor occupancy (e.g., Pindolol)</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Competitive Antagonist:</strong> Binds to same site as agonist; surmountable with high agonist dose; shifts DRC rightward (e.g., Propranolol)</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Non-competitive Antagonist:</strong> Binds to allosteric site or irreversibly; reduces maximal response; insurmountable (e.g., Phenoxybenzamine)</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Inverse Agonist:</strong> Binds → produces opposite effect of agonist; stabilizes inactive conformation (e.g., some β-blockers)</span></div>
-</div>
-</div>
+<p><strong>C. Based on Nature of Dispersed Phase:</strong></p>
+<ul>
+<li><strong>Multimolecular Colloids:</strong> Formed by aggregation of small molecules (atoms/molecules), e.g., sulfur sol, gold sol.</li>
+<li><strong>Macromolecular Colloids:</strong> Large molecules themselves form colloidal size, e.g., proteins, starch, cellulose, synthetic polymers.</li>
+<li><strong>Associated Colloids (Micelles):</strong> Formed by aggregation of surfactant molecules above CMC, e.g., soap solution, detergents.</li>
+</ul>
 
-<!-- ========== TOPIC: DOSE-RESPONSE ========== -->
-<div class="topic-section" id="topic-dose-response" data-years="w2021,s2019">
-<div class="q-map"><h4><i class="fas fa-link"></i> Questions Mapped</h4><div class="q-tags"><span class="q-tag">W2021 Q4(a)</span><span class="q-tag">S2019 Q6(c)</span></div></div>
-<div class="answer-card">
-<span class="marks-badge">06 Marks</span>
-<h3>Therapeutic Index, Combined Drug Effects & ADR Overview</h3>
-<div class="subhead"><i class="fas fa-balance-scale-right"></i> Therapeutic Index (TI)</div>
-<div class="def-box"><strong>Therapeutic Index:</strong> A quantitative measure of the relative safety of a drug. It is the ratio of the dose producing toxic effect to the dose producing desired therapeutic effect.</div>
-<div class="formula-box"><div class="formula-label">Therapeutic Index</div>TI = TD<sub>50</sub> / ED<sub>50</sub> = LD<sub>50</sub> / ED<sub>50</sub></div>
-<p style="color:var(--text2);font-size:13px;margin:8px 0"><strong style="color:var(--text)">TD₅₀</strong> = dose producing toxicity in 50% of subjects; <strong style="color:var(--text)">ED₅₀</strong> = dose producing desired effect in 50%; <strong style="color:var(--text)">LD₅₀</strong> = lethal dose in 50%</p>
-<p style="color:var(--text2);font-size:13px">Higher TI = safer drug. Example: Penicillin has very high TI; Digoxin has low TI (narrow therapeutic window).</p>
-<div class="note-box"><i class="fas fa-info-circle"></i> <strong>Therapeutic Window:</strong> The range between minimum effective concentration (MEC) and minimum toxic concentration (MTC). More clinically useful than TI. For digoxin: 0.8–2.0 ng/mL.</div>
-<div class="formula-box"><div class="formula-label">Certain Safety Factor (CSF)</div>CSF = TD<sub>1</sub> / ED<sub>99</sub></div>
+<div class="tip-box"><div class="lbl">Exam Tip</div>Always draw the classification table with examples. Examiners frequently ask to differentiate lyophilic vs lyophobic &mdash; prepare at least 6 points of comparison.</div>
+`
+},
+{
+id:"q1b",num:"Q.1(b)",marks:"[05 Marks]",
+title:"Explain: Kraft point and gold number.",
+answer:`
+<h3>Kraft Point</h3>
+<div class="def-box"><em>Kraft Point (Tk)</em> is defined as the temperature at which the solubility of a surfactant increases sharply and above which micelle formation becomes appreciable.</div>
 
-<div class="subhead"><i class="fas fa-layer-group"></i> Combined Drug Effects</div>
-<table class="class-table">
-<thead><tr><th>Type</th><th>Definition</th><th>Example</th></tr></thead>
-<tbody>
-<tr><td><strong style="color:var(--text)">Additive</strong></td><td>Combined effect = sum of individual effects (1+1=2)</td><td>Aspirin + Paracetamol (analgesia)</td></tr>
-<tr><td><strong style="color:var(--text)">Synergism</strong></td><td>Combined effect > sum of individual effects (1+1>2)</td><td>Sulfamethoxazole + Trimethoprim (cotrimoxazole)</td></tr>
-<tr><td><strong style="color:var(--text)">Potentiation</strong></td><td>One drug has no effect alone but enhances the other (0+1>1)</td><td>Levodopa + Carbidopa</td></tr>
-<tr><td><strong style="color:var(--text)">Antagonism</strong></td><td>Combined effect < sum of individual effects (1+1<2)</td><td>Acetylcholine + Atropine</td></tr>
-</tbody>
-</table>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Competitive Antagonism:</strong> Antagonist competes with agonist for same receptor site; parallel rightward shift of DRC; same Emax achievable with higher dose. E.g., Propranolol vs Isoprenaline.</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Non-competitive Antagonism:</strong> Antagonist binds to different site or irreversibly; flattening of DRC; Emax reduced; not surmountable. E.g., Phenoxybenzamine vs Noradrenaline.</span></div>
-</div>
-</div>
+<p>Below the Kraft point, the surfactant exists as hydrated monomers or crystalline form and has limited solubility. As temperature increases to the Kraft point, the solubility rises dramatically because micelles form, which are thermodynamically more stable than individual monomer molecules.</p>
 
-<!-- ========== TOPIC: ROUTES OF ADMINISTRATION ========== -->
-<div class="topic-section" id="topic-routes" data-years="w2022,w2020,w2019,s2021,s2020,s2019">
-<div class="q-map"><h4><i class="fas fa-link"></i> Questions Mapped</h4><div class="q-tags">
-<span class="q-tag">W2022 Q2(a)</span><span class="q-tag">W2020 Q1(c)</span><span class="q-tag">W2019 Q2(a)</span><span class="q-tag">S2021 Q1(a)</span><span class="q-tag">S2020 Q3(b)</span><span class="q-tag">S2019 Q3(a)</span><span class="q-tag">W2021 Q6(a)</span>
-</div></div>
-<div class="answer-card">
-<span class="marks-badge">06 Marks</span>
-<h3>Routes of Drug Administration</h3>
-<div class="subhead"><i class="fas fa-list"></i> Classification</div>
-<table class="class-table">
-<thead><tr><th>Route</th><th>Type</th><th>Example</th></tr></thead>
-<tbody>
-<tr><td>Oral (PO)</td><td>Enteral</td><td>Tablets, capsules, syrups</td></tr>
-<tr><td>Sublingual (SL)</td><td>Enteral</td><td>Nitroglycerin, Buprenorphine</td></tr>
-<tr><td>Rectal (PR)</td><td>Enteral</td><td>Diazepam suppository, mesalamine</td></tr>
-<tr><td>Intravenous (IV)</td><td>Parenteral</td><td>Antibiotics, anesthesia</td></tr>
-<tr><td>Intramuscular (IM)</td><td>Parenteral</td><td>Penicillin, vaccines</td></tr>
-<tr><td>Subcutaneous (SC)</td><td>Parenteral</td><td>Insulin, heparin</td></tr>
-<tr><td>Intradermal (ID)</td><td>Parenteral</td><td>Skin testing, BCG vaccine</td></tr>
-<tr><td>Inhalation</td><td>Topical (pulmonary)</td><td>Salbutamol, fluticasone</td></tr>
-<tr><td>Topical (skin)</td><td>Topical</td><td>Creams, ointments</td></tr>
-<tr><td>Transdermal</td><td>Topical</td><td>Nitroglycerin patch, fentanyl patch</td></tr>
-<tr><td>Intranasal</td><td>Topical</td><td>Desmopressin, sumatriptan</td></tr>
-<tr><td>Intrathecal</td><td>Parenteral</td><td>Morphine, methotrexate</td></tr>
-</tbody>
+<ul>
+<li>The Kraft point is characteristic of ionic surfactants.</li>
+<li>Above Tk: micelles form &rarr; solubility increases &rarr; surfactant becomes effective.</li>
+<li>Below Tk: surfactant precipitates as hydrated crystals &rarr; poor surface activity.</li>
+<li>For effective formulation, the system temperature must be above the Kraft point.</li>
+<li>Example: Sodium lauryl sulfate has a Kraft point of about 8&ndash;10&deg;C; sodium palmitate about 45&deg;C.</li>
+</ul>
+
+<div class="imp-box"><div class="lbl">Important</div>Kraft point increases with increasing chain length of the hydrophobic tail. Branched chains and unsaturated bonds lower the Kraft point. It is analogous to melting point of hydrated surfactant.</div>
+
+<h3>Gold Number</h3>
+<div class="def-box"><em>Gold Number</em> (introduced by Zsigmondy) is defined as the minimum amount in milligrams of a protective colloid required to just prevent the coagulation of 10 mL of a standard gold sol when 1 mL of 10% NaCl solution is added to it.</div>
+
+<p>The gold sol is a lyophobic colloid that readily coagulates in the presence of electrolytes. Protective colloids (lyophilic) when added form a protective layer around gold particles and prevent coagulation.</p>
+
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Take 10 mL of standard red gold sol in each test tube.</li>
+<li>Add varying amounts (in mg) of the protective colloid to different tubes.</li>
+<li>Add 1 mL of 10% NaCl to each tube.</li>
+<li>The tube where coagulation is just prevented gives the gold number.</li>
+</ol>
+
+<table>
+<tr><th>Protective Colloid</th><th>Gold Number</th></tr>
+<tr><td>Gelatin</td><td>0.005&ndash;0.025</td></tr>
+<tr><td>Casein</td><td>0.01</td></tr>
+<tr><td>Albumin</td><td>0.1&ndash;0.2</td></tr>
+<tr><td>Gum Arabic (Acacia)</td><td>0.15&ndash;0.25</td></tr>
+<tr><td>Sodium Oleate</td><td>0.4&ndash;1.0</td></tr>
+<tr><td>Dextrin</td><td>6&ndash;20</td></tr>
+<tr><td>Potato Starch</td><td>25</td></tr>
 </table>
 
-<div class="subhead"><i class="fas fa-check-circle" style="color:var(--accent)"></i> Merits of Oral Route</div>
-<div class="point"><span class="bullet">•</span><span class="text">Safest, most convenient, and economical route</span></div>
-<div class="point"><span class="bullet">•</span><span class="text">Self-administration possible — no need for trained personnel</span></div>
-<div class="point"><span class="bullet">•</span><span class="text">Painless — no sterile precautions needed</span></div>
-<div class="point"><span class="bullet">•</span><span class="text">Various dosage forms available (tablet, capsule, syrup, suspension)</span></div>
-<div class="point"><span class="bullet">•</span><span class="text">Suitable for prolonged therapy</span></div>
-<div class="point"><span class="bullet">•</span><span class="text">Blank tablet form allows placebo use in clinical trials</span></div>
+<div class="imp-box"><div class="lbl">Key Concept</div><strong>Lower the gold number &rarr; Greater the protective power.</strong> Gelatin is the best protective colloid (lowest gold number). Starch is a poor protective colloid.</div>
 
-<div class="subhead"><i class="fas fa-times-circle" style="color:var(--danger)"></i> Demerits of Oral Route</div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>First-pass metabolism:</strong> Drug passes through liver before systemic circulation → significant loss (e.g., propranolol ~70%, morphine ~60%, nitroglycerin ~90%)</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Slow onset:</strong> Absorption takes 30–60 min; not suitable for emergencies</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Irritant drugs</strong> can cause gastric ulcers, nausea, vomiting (e.g., NSAIDs)</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Variable absorption</strong> affected by food, pH, gastric emptying, GI motility</span></div>
-<div class="point"><span class="bullet">•</span><span class="text">Not possible in unconscious, vomiting, or uncooperative patients</span></div>
-<div class="point"><span class="bullet">•</span><span class="text">Some drugs destroyed by gastric acid or enzymes (e.g., insulin, penicillin G)</span></div>
+<div class="tip-box"><div class="lbl">Exam Tip</div>Remember the definition word-by-word: "minimum amount in milligrams of protective colloid to prevent coagulation of 10 mL gold sol by 1 mL of 10% NaCl." Also remember gelatin has the lowest gold number.</div>
+`
+},
+{
+id:"q1c",num:"Q.1(c)",marks:"[05 Marks]",
+title:"Explain kinetic properties of colloids.",
+answer:`
+<h3>Kinetic Properties of Colloids</h3>
+<p>Kinetic properties arise due to the continuous random motion of colloidal particles resulting from bombardment by molecules of the dispersion medium. These include:</p>
 
-<div class="subhead"><i class="fas fa-check-circle" style="color:var(--accent)"></i> Advantages of Intravenous Route</div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>100% bioavailability</strong> — bypasses all barriers; no first-pass effect</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Immediate onset</strong> — within seconds; ideal for emergencies (e.g., adrenaline in anaphylaxis)</span></div>
-<div class="point"><span class="bullet">•</span><span class="text">Precise control over plasma drug levels</span></div>
-<div class="point"><span class="bullet">•</span><span class="text">Large volumes can be infused (fluid resuscitation)</span></div>
-<div class="point"><span class="bullet">•</span><span class="text">Irritant drugs can be given (diluted in large blood volume)</span></div>
-<div class="point"><span class="bullet">•</span><span class="text">Usable in unconscious patients</span></div>
+<h3>1. Brownian Motion</h3>
+<p>The continuous, random, zigzag movement of colloidal particles is called Brownian motion (discovered by Robert Brown, 1827). It is due to unequal bombardment of particles by solvent molecules.</p>
+<ul>
+<li>Smaller particles show more intense Brownian motion.</li>
+<li>It decreases with increasing viscosity of medium and increasing particle size.</li>
+<li>It prevents sedimentation and is responsible for the stability of colloids.</li>
+<li>Einstein&rsquo;s equation for mean displacement: <strong>x = &radic;(RTt / 3&pi;&eta;Nr)</strong></li>
+</ul>
+<p>Where x = mean displacement, R = gas constant, T = temperature, t = time, &eta; = viscosity, N = Avogadro&rsquo;s number, r = radius of particle.</p>
 
-<div class="subhead"><i class="fas fa-times-circle" style="color:var(--danger)"></i> Disadvantages of Intravenous Route</div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Irreversible</strong> — once injected, cannot be withdrawn</span></div>
-<div class="point"><span class="bullet">•</span><span class="text">Requires trained personnel and sterile equipment</span></div>
-<div class="point"><span class="bullet">•</span><span class="text">Risk of infection, thrombophlebitis, embolism</span></div>
-<div class="point"><span class="bullet">•</span><span class="text">Rapid bolus can cause severe toxicity (e.g., IV digoxin → cardiac arrest)</span></div>
-<div class="point"><span class="bullet">•</span><span class="text">Painful; not suitable for self-administration</span></div>
+<h3>2. Diffusion</h3>
+<p>Colloidal particles diffuse from a region of higher concentration to lower concentration, obeying <strong>Fick&rsquo;s First Law</strong>:</p>
+<p><strong>dm/dt = -DA &times; dc/dx</strong></p>
+<p>Where dm/dt = mass diffusing per unit time, D = diffusion coefficient, A = cross-sectional area, dc/dx = concentration gradient.</p>
+<div class="imp-box"><div class="lbl">Remember</div>Diffusion coefficient D is related to particle size by the <strong>Stokes-Einstein equation</strong>: D = RT / 6&pi;&eta;Nr. Larger particles have lower D.</div>
 
-<div class="subhead"><i class="fas fa-check-circle" style="color:var(--accent)"></i> Merits of Parenteral Route (General)</div>
-<div class="point"><span class="bullet">•</span><span class="text">Bypasses GI tract — no first-pass metabolism, no gastric degradation</span></div>
-<div class="point"><span class="bullet">•</span><span class="text">Rapid onset (IV > IM > SC)</span></div>
-<div class="point"><span class="bullet">•</span><span class="text">Accurate dose — no variability from absorption</span></div>
-<div class="point"><span class="bullet">•</span><span class="text">Useful in unconscious, vomiting, or malabsorption patients</span></div>
+<h3>3. Osmotic Pressure</h3>
+<p>Colloidal solutions exhibit osmotic pressure, but it is very low due to large particle size (fewer particles per unit volume compared to true solutions).</p>
+<p><strong>&pi; = cRT</strong> (Van&rsquo;t Hoff equation, modified)</p>
+<p>Where c = molar concentration of colloid. Since colloidal particles have high molecular weight, c is very small, hence &pi; is very low.</p>
+<ul>
+<li>Osmotic pressure measurement is used to determine molecular weight of macromolecules (proteins, polymers).</li>
+</ul>
 
-<div class="subhead"><i class="fas fa-times-circle" style="color:var(--danger)"></i> Demerits of Parenteral Route</div>
-<div class="point"><span class="bullet">•</span><span class="text">Requires trained personnel; painful; risk of infection, abscess, nerve injury</span></div>
-<div class="point"><span class="bullet">•</span><span class="text">Cannot be easily withdrawn once administered</span></div>
-<div class="point"><span class="bullet">•</span><span class="text">More expensive; requires sterile equipment</span></div>
-<div class="point"><span class="bullet">•</span><span class="text">Psychological fear of injections (trypanophobia)</span></div>
+<h3>4. Sedimentation</h3>
+<p>Under the influence of gravity, colloidal particles tend to settle down. The sedimentation velocity is given by <strong>Stokes&rsquo; Law</strong>:</p>
+<p><strong>v = 2r&sup2;(&rho; &minus; &rho;&#8320;)g / 9&eta;</strong></p>
+<p>Where v = sedimentation velocity, r = radius, &rho; = density of particle, &rho;&#8320; = density of medium, g = gravitational acceleration, &eta; = viscosity.</p>
+<ul>
+<li>For very small colloidal particles, Brownian motion opposes sedimentation.</li>
+<li>In analytical ultracentrifuge (Svedberg), sedimentation is enhanced by centrifugal force.</li>
+</ul>
+
+<h3>5. Electrophoresis</h3>
+<p>Movement of charged colloidal particles under an applied electric field towards the oppositely charged electrode. It confirms the charge on colloidal particles and helps in determining zeta potential.</p>
+
+<h3>6. Donnan Membrane Equilibrium</h3>
+<p>When a colloidal electrolyte is placed on one side of a semipermeable membrane, the distribution of diffusible ions is unequal across the membrane. This affects the osmotic pressure and is important in biological systems and protein solutions.</p>
+
+<div class="rev-box"><div class="lbl">Short Revision Note</div>Brownian motion (random zigzag, Einstein eq.) &rarr; Diffusion (Fick&rsquo;s law, Stokes-Einstein) &rarr; Osmotic pressure (low, Van&rsquo;t Hoff) &rarr; Sedimentation (Stokes&rsquo; law) &rarr; Electrophoresis (charge confirmation) &rarr; Donnan equilibrium (ion distribution). Focus on equations and their significance.</div>
+`
+},
+{
+id:"q2a",num:"Q.2(a)",marks:"[06 Marks]",
+title:"Discuss the concept of DLVO theory along with the energy curve and explain how this theory is applied in stabilizing the colloidal dispersion.",
+answer:`
+<h3>DLVO Theory</h3>
+<div class="def-box"><em>DLVO Theory</em> (proposed independently by Derjaguin &amp; Landau (1941) and Verwey &amp; Overbeek (1948)) explains the stability of lyophobic colloids in terms of the balance between attractive van der Waals forces and repulsive electrostatic forces between particles.</div>
+
+<p>The total interaction energy (V<sub>T</sub>) between two colloidal particles at a given distance of separation (H) is the sum of:</p>
+<p><strong>V<sub>T</sub> = V<sub>R</sub> + V<sub>A</sub></strong></p>
+<ul>
+<li><strong>V<sub>R</sub></strong> = Repulsive energy (due to overlap of electrical double layers)</li>
+<li><strong>V<sub>A</sub></strong> = Attractive energy (due to van der Waals forces)</li>
+</ul>
+
+<h3>Energy Curve (DLVO Plot)</h3>
+<div class="ascii-diagram">
+V (Energy)
+^
+|      Secondary         Primary
+|      Minimum            Minimum
+|         *                  *
+|        / \\                / \\
+|       /   \\              /   \\
+|      /     * Max *      /     \\
+|     /     (Barrier)    /       \\
+|    /                   /         \\
+|---/-------------------/-----------\\---> H (Distance)
+|  V_R dominates     V_A dominates
+|
+|  * Secondary minimum (reversible flocculation)
+|  * Primary minimum (irreversible coagulation)
+|  * Energy barrier (determines stability)
 </div>
 
-<div class="answer-card">
-<span class="marks-badge">06 Marks</span>
-<h3>Oral vs Parenteral Route — Comparison</h3>
-<table class="diff-table">
-<tr><th class="col-head">Parameter</th><th class="col-head">Oral Route</th><th class="col-head">Parenteral Route</th></tr>
-<tr><td>Onset</td><td>Slow (30–60 min)</td><td>Rapid (seconds–minutes)</td></tr>
-<tr><td>Bioavailability</td><td>Variable; affected by first-pass</td><td>Complete (IV) or high (IM/SC)</td></tr>
-<tr><td>First-pass</td><td>Significant</td><td>Absent</td></tr>
-<tr><td>Safety</td><td>Safest</td><td>Less safe</td></tr>
-<tr><td>Skill needed</td><td>None</td><td>Trained personnel</td></tr>
-<tr><td>Sterility</td><td>Not required</td><td>Essential</td></tr>
-<tr><td>Pain</td><td>Painless</td><td>Painful</td></tr>
-<tr><td>Cost</td><td>Economical</td><td>Expensive</td></tr>
-<tr><td>Emergency</td><td>Not suitable</td><td>Preferred</td></tr>
-<tr><td>Self-admin</td><td>Yes</td><td>Usually no</td></tr>
+<p><strong>Key Features of the Energy Curve:</strong></p>
+
+<ol>
+<li><strong>Primary Minimum (at very small H):</strong> Strong attractive forces dominate. Particles come very close and coagulate irreversibly. This represents <strong>coagulation</strong>.</li>
+
+<li><strong>Energy Barrier (Maximum):</strong> At intermediate distances, repulsive forces exceed attractive forces creating a barrier. If this barrier is sufficiently high (typically &gt; 15 kT, where k = Boltzmann constant, T = temperature), particles cannot overcome it and the dispersion remains <strong>stable</strong>.</li>
+
+<li><strong>Secondary Minimum (at larger H):</strong> At relatively larger separations, a shallow minimum exists where weak attraction occurs. Particles may form loose aggregates (floccules) that can be redispersed by agitation. This represents <strong>reversible flocculation</strong>.</li>
+</ol>
+
+<h3>Application in Stabilizing Colloidal Dispersions</h3>
+<p>According to DLVO theory, to stabilize a colloidal dispersion, the energy barrier must be maximized. This is achieved by:</p>
+
+<ul>
+<li><strong>Increasing surface charge:</strong> Higher zeta potential increases V<sub>R</sub>, raising the energy barrier. Achieved by adsorption of charged species or adjusting pH.</li>
+<li><strong>Increasing electrolyte concentration carefully:</strong> Low electrolyte concentration compresses the double layer but too much reduces the barrier. Optimal concentration is needed.</li>
+<li><strong>Using smaller particles:</strong> For smaller particles, the ratio V<sub>R</sub>/V<sub>A</sub> is more favorable, making them inherently more stable.</li>
+<li><strong>Adjusting dielectric constant of medium:</strong> Higher dielectric constant enhances double layer repulsion.</li>
+<li><strong>Adding suitable surfactants:</strong> That adsorb and increase surface charge.</li>
+</ul>
+
+<p><strong>Destabilization (coagulation) occurs when:</strong></p>
+<ul>
+<li>Electrolyte is added in excess &rarr; compresses double layer &rarr; reduces V<sub>R</sub> &rarr; energy barrier disappears &rarr; primary minimum reached.</li>
+<li>This explains the <strong>Schulze-Hardy rule</strong>: the coagulating power increases rapidly with increasing valency of the counter-ion.</li>
+</ul>
+
+<div class="imp-box"><div class="lbl">Critical Concept</div>Stability criterion: Energy barrier &gt; 15 kT ensures kinetic stability. When barrier &lt; 5 kT, rapid coagulation occurs. The DLVO theory successfully explains the effect of electrolyte concentration, ion valency, and particle size on colloid stability.</div>
+
+<div class="tip-box"><div class="lbl">Exam Tip</div>Always draw the DLVO energy curve with labelled primary minimum, secondary minimum, and energy barrier. Mention the equation V<sub>T</sub> = V<sub>R</sub> + V<sub>A</sub> and explain how manipulating V<sub>R</sub> achieves stabilization. Also mention Schulze-Hardy rule as a corollary.</div>
+`
+},
+{
+id:"q2b",num:"Q.2(b)",marks:"[05 Marks]",
+title:"What is the effect of plug flow in measurement of viscosity of a plastic system, in cup and bob viscometer? How plug flow can be minimised?",
+answer:`
+<h3>Plug Flow in Cup and Bob Viscometer</h3>
+
+<div class="def-box"><em>Plug flow</em> is a phenomenon observed in plastic (Bingham body) systems where, at shear stresses below the yield value, the material behaves as a solid plug and moves as a whole without any internal shearing or deformation.</em></div>
+
+<h3>Effect on Viscosity Measurement</h3>
+<p>In a cup and bob (Couette) viscometer, the outer cup rotates and the inner bob remains stationary. The shear stress is transmitted from the cup through the sample to the bob.</p>
+
+<p>For a plastic system exhibiting plug flow:</p>
+<ul>
+<li><strong>At low rotational speeds:</strong> The applied shear stress is below the yield value (f). The entire sample between the cup and bob moves as an undistorted plug. No actual shearing occurs in the material.</li>
+<li><strong>Overestimation of viscosity:</strong> Since the bob rotates with the plug without any real viscous drag, the instrument records a very high apparent viscosity that does not represent the true flow behavior of the material.</li>
+<li><strong>Inaccurate yield value:</strong> The measured yield value may not be accurate because the transition from plug flow to laminar flow is not sharp in the viscometer.</li>
+<li><strong>Non-uniform shear:</strong> In the gap between cup and bob, shear stress varies from maximum at the cup wall to minimum at the bob surface. Hence, plug flow may exist near the bob while shearing occurs near the cup, giving a mixed flow profile.</li>
+</ul>
+
+<div class="ascii-diagram">
+CUP (Rotating) -->                            
+  |  Laminar   |  Plug    |  Laminar  |
+  |  Flow      |  Flow    |  Flow     |
+  |  (sheared) | (solid)  | (sheared) |
+  |___________|__________|___________|
+                  BOB (Stationary)
+
+  Shear stress is max at cup wall, min at bob.
+  Plug exists where shear stress < yield value.
+</div>
+
+<h3>Minimization of Plug Flow</h3>
+<ol>
+<li><strong>Increase rotational speed (shear rate):</strong> Operating at higher RPM ensures that the applied shear stress exceeds the yield value throughout the gap, eliminating the plug region.</li>
+<li><strong>Reduce the gap between cup and bob:</strong> A narrower gap results in a more uniform shear stress distribution, reducing the region where shear stress falls below yield value.</li>
+<li><strong>Pre-shear the sample:</strong> Apply a brief high-shear treatment before measurement to break down the structure and eliminate the yield behavior temporarily.</li>
+<li><strong>Use a concentric cylinder with narrow gap:</strong> Moore&ndash;Davies type viscometer with very narrow gap (e.g., 0.5 mm) ensures near-uniform shear.</li>
+<li><strong>Allow time for structural breakdown:</strong> For thixotropic plastic systems, allow the material to undergo structural breakdown at a fixed shear rate until equilibrium is reached before recording readings.</li>
+<li><strong>Use cone-and-plate viscometer instead:</strong> The cone-and-plate geometry provides uniform shear throughout the sample, eliminating plug flow issues.</li>
+</ol>
+
+<div class="tip-box"><div class="lbl">Exam Tip</div>Explain plug flow with a diagram showing the plug region in the cup-bob gap. The key point is that plug flow leads to falsely high viscosity readings because no real shearing occurs. Mention cone-and-plate as an alternative geometry.</div>
+`
+},
+{
+id:"q2c",num:"Q.2(c)",marks:"[05 Marks]",
+title:"Write a note on thixotropy.",
+answer:`
+<h3>Thixotropy</h3>
+<div class="def-box"><em>Thixotropy</em> is defined as an isothermal, reversible, time-dependent shear-thinning property of certain systems wherein the viscosity decreases with time under constant shear stress/strain and recovers gradually when the shear is removed.</div>
+
+<p>The term was coined by <strong>Peterfi (1927)</strong> and is derived from Greek: <em>thixis</em> (touch/stirring) + <em>tropos</em> (change). The system becomes fluid on agitation and sets to a gel on standing.</p>
+
+<h3>Characteristics of Thixotropic Systems</h3>
+<ul>
+<li><strong>Time-dependent:</strong> Viscosity changes with time at constant shear, not just with shear rate.</li>
+<li><strong>Reversible:</strong> The process is completely reversible &mdash; the system regains its original structure when allowed to rest.</li>
+<li><strong>Isothermal:</strong> No temperature change is involved (distinguishes it from thermoplastic behavior).</li>
+<li><strong>Shear-thinning:</strong> At constant shear rate, viscosity decreases over time as structure breaks down.</li>
+<li><strong>Hysteresis loop:</strong> The up-curve (increasing shear rate) and down-curve (decreasing shear rate) do not coincide, forming a hysteresis loop. The area of the loop indicates the degree of thixotropy.</li>
+</ul>
+
+<h3>Rheogram (Hysteresis Loop)</h3>
+<div class="ascii-diagram">
+Shear Stress (&tau;)
+^
+|  * Up-curve
+|   *
+|    *         * Down-curve
+|     *       *
+|      *     *
+|       *   *
+|        * *
+|         *  <-- Hysteresis area (thixotropic breakdown)
+|        
++-----------------------------------> Shear Rate (&gamma;)
+  (Structure breaks down)
+  (On reversing, recovery follows lower path)
+</div>
+
+<h3>Mechanism</h3>
+<p>Thixotropic systems have a three-dimensional network structure formed by weak interactions (van der Waals forces, hydrogen bonds) between particles or polymer chains. Under shear, these bonds break progressively and the structure collapses, reducing viscosity. On resting, bonds reform gradually, restoring the gel structure.</p>
+
+<h3>Pharmaceutical Examples</h3>
+<ul>
+<li><strong>Magmas and gels:</strong> Aluminum hydroxide gel, bentonite magma</li>
+<li><strong>Semisolid dosage forms:</strong> Certain creams and ointments</li>
+<li><strong>Suspensions:</strong> Flocculated suspensions that settle but redisperse on shaking</li>
+<li><strong>Biological systems:</strong> Blood, synovial fluid</li>
+<li><strong>Other examples:</strong> Ketchup, paints, printing inks, toothpaste</li>
+</ul>
+
+<h3>Pharmaceutical Significance</h3>
+<ul>
+<li><strong>Suspensions:</strong> Thixotropy is desirable &mdash; high viscosity at rest prevents settling, low viscosity on shaking ensures easy pouring and administration.</li>
+<li><strong>Topical products:</strong> Easy to spread on application (shear thinning), stays in place after application (viscosity recovery).</li>
+<li><strong>Parenteral gels:</strong> Injectable depot formulations that are fluid during injection but gel at the site.</li>
+</ul>
+
+<div class="rev-box"><div class="lbl">Short Revision Note</div>Thixotropy = Isothermal + Reversible + Time-dependent shear thinning. Key feature: Hysteresis loop in rheogram. Area of loop = degree of thixotropy. Desirable in suspensions (prevents settling, easy redispersion). Mechanism: weak bond breakage under shear, reform on rest.</div>
+`
+},
+{
+id:"q3a",num:"Q.3(a)",marks:"[06 Marks]",
+title:"Discuss non-Newtonian flow with rheogram, mechanism and explain with suitable example.",
+answer:`
+<h3>Non-Newtonian Flow</h3>
+<div class="def-box"><em>Non-Newtonian flow</em> is defined as flow behavior in which the shear stress is not directly proportional to the shear rate, i.e., the viscosity changes with changing shear rate. The rheogram is non-linear and does not pass through the origin (except pseudoplastic).</div>
+
+<p>Non-Newtonian systems are classified into three main types:</p>
+
+<h3>1. Pseudoplastic Flow (Shear-Thinning)</h3>
+<p><strong>Definition:</strong> Viscosity decreases with increasing shear rate. No yield value is required.</p>
+<p><strong>Equation:</strong> <strong>&eta; = K &middot; &gamma;&#775;<sup>n-1</sup></strong> (Power Law / Ostwald-de Waele equation, where n &lt; 1)</p>
+
+<div class="ascii-diagram">
+&tau; (Shear Stress)
+^
+|        *  (Concave downward curve)
+|      *
+|    *
+|  *
+|*
++--------------------------> &gamma;&#775; (Shear Rate)
+ Passes through origin, no yield value
+</div>
+
+<p><strong>Mechanism:</strong> Long, irregularly shaped particles or polymer chains are randomly oriented at rest, creating entanglements that resist flow. As shear rate increases, these particles/ chains align in the direction of flow, reducing internal friction and hence viscosity.</p>
+<p><strong>Examples:</strong> Sodium alginate solution, CMC solution, natural and synthetic gums (acacia, tragacanth), latex emulsions, blood.</p>
+
+<h3>2. Dilatant Flow (Shear-Thickening)</h3>
+<p><strong>Definition:</strong> Viscosity increases with increasing shear rate. No yield value.</p>
+<p><strong>Equation:</strong> Power Law with n &gt; 1.</p>
+
+<div class="ascii-diagram">
+&tau; (Shear Stress)
+^
+|                          *
+|                       *
+|                    *
+|                 *
+|              *
+|           *
+|        *
+|     *
+|  *
++--------------------------> &gamma;&#775; (Shear Rate)
+ Convex upward curve, passes through origin
+</div>
+
+<p><strong>Mechanism:</strong> At rest, particles are closely packed with minimum void volume (interstitial liquid lubricates). Under shear, particles are forced apart, increasing void volume. The insufficient liquid cannot lubricate, causing increased friction and higher viscosity. The system literally &ldquo;dilates&rdquo; (expands) under shear.</p>
+<p><strong>Examples:</strong> Suspension of starch in water, zinc oxide suspension, concentrated suspensions with high solid content (above 50%), quicksand, wet sand.</p>
+
+<h3>3. Plastic Flow (Bingham Body)</h3>
+<p><strong>Definition:</strong> The material does not flow until a minimum shear stress called the <strong>yield value (f)</strong> is exceeded. Above the yield value, it may show Newtonian or non-Newtonian flow.</p>
+<p><strong>Equation:</strong> <strong>&tau; = f + &eta;&prime; &middot; &gamma;&#775;</strong> (Bingham equation)</p>
+
+<div class="ascii-diagram">
+&tau; (Shear Stress)
+^
+|       /
+|      /  (Linear above yield value)
+|     /
+|    /
+|   *
+|   |  f = Yield value
+|   |
++---+--------------------------> &gamma;&#775; (Shear Rate)
+ Does NOT pass through origin
+</div>
+
+<p><strong>Mechanism:</strong> Particles form a three-dimensional network through van der Waals forces or other attractive interactions. This network resists deformation until the applied stress exceeds the interparticle bonding force (yield value). Once overcome, the structure breaks and flow occurs.</p>
+<p><strong>Examples:</strong> Toothpaste, ointments, bentonite magma, butter, certain paints, canned frosting.</p>
+
+<div class="imp-box"><div class="lbl">Comparison Summary</div>
+<strong>Pseudoplastic:</strong> &tau; &uarr; non-linearly with &gamma;&#775;, no yield value, viscosity &darr; (concave curve). <br>
+<strong>Dilatant:</strong> &tau; &uarr; non-linearly with &gamma;&#775;, no yield value, viscosity &uarr; (convex curve). <br>
+<strong>Plastic:</strong> Linear above yield value, yield value required, straight line shifted from origin.</div>
+
+<div class="tip-box"><div class="lbl">Exam Tip</div>Draw all three rheograms clearly with labels. For each type, write: definition, equation (if applicable), rheogram, mechanism, and 2 examples. This is a frequently repeated question.</div>
+`
+},
+{
+id:"q3b",num:"Q.3(b)",marks:"[05 Marks]",
+title:"Describe a suitable viscometer with diagram which can measure the viscosity of dispersion of sodium alginate in water.",
+answer:`
+<h3>Brookfield Viscometer (Rotational Viscometer)</h3>
+
+<p>Sodium alginate in water exhibits <strong>pseudoplastic (shear-thinning) behavior</strong>. Since pseudoplastic systems show varying viscosity at different shear rates, a <strong>rotational viscometer</strong> (specifically the Brookfield viscometer) is the most suitable instrument. Capillary viscometers give only a single viscosity value and cannot characterize non-Newtonian behavior.</p>
+
+<h3>Principle</h3>
+<p>A spindle (rotor) is immersed in the test sample and rotated at a defined speed (RPM). The viscous drag of the sample exerts a torque on the spindle, which is measured by a calibrated spring and displayed as viscosity in centipoise (cP) or Pascal-seconds (Pa&middot;s).</p>
+
+<h3>Construction and Diagram</h3>
+<div class="ascii-diagram">
+         Dial (Viscosity reading in cP)
+          +------+
+          | 100  |
+          |  80  |
+          |  60  |
+          |  40  |
+          |  20  |
+          |   0  |
+          +------+
+              |
+         [Calibrated Spring]
+              |
+         [Drive Shaft]
+              |
+         [Spindle]     <-- Immersed in sample
+              |
+     +------------------+
+     |   Beaker with    |
+     | Sodium Alginate  |
+     |   Dispersion     |
+     +------------------+
+     [Variable Speed Motor]
+         (Different RPM)
+</div>
+
+<h3>Components</h3>
+<ul>
+<li><strong>Motor:</strong> Variable speed drive, typically offering 4&ndash;8 speeds (0.3, 0.6, 1.5, 3, 6, 12, 30, 60 RPM).</li>
+<li><strong>Spindles:</strong> Interchangeable spindles of different sizes and geometries (LV-1 to LV-4 for low viscosity, RV spindles for high viscosity). Larger spindles are used for low-viscosity samples.</li>
+<li><strong>Calibrated Spring:</strong> Connects the spindle to the drive shaft; its deflection is proportional to the torque.</li>
+<li><strong>Dial/Display:</strong> Shows viscosity reading (analog dial or digital display).</li>
+<li><strong>Sample Container:</strong> Usually a 600 mL beaker (standard).</li>
+<li><strong>Guard Leg (optional):</strong> Prevents vortex formation at high speeds.</li>
+</ul>
+
+<h3>Procedure for Sodium Alginate Dispersion</h3>
+<ol>
+<li>Prepare the sodium alginate dispersion at the desired concentration (e.g., 1&ndash;5% w/v) and allow it to equilibrate.</li>
+<li>Select an appropriate spindle (start with LV-2 or LV-3 for moderate viscosity).</li>
+<li>Immerse the spindle into the sample up to the marked groove on the shaft.</li>
+<li>Start the motor at the lowest RPM and record the dial reading.</li>
+<li>Gradually increase the RPM and record corresponding dial readings at each speed.</li>
+<li>Calculate viscosity at each shear rate using: <strong>&eta; = TK &times; dial reading</strong> (where TK = spindle factor specific to each spindle).</li>
+<li>Plot &tau; vs &gamma;&#775; to obtain the rheogram &mdash; a concave downward curve confirms pseudoplastic behavior.</li>
+</ol>
+
+<h3>Why Brookfield Viscometer?</h3>
+<ul>
+<li>Measures viscosity at multiple shear rates (different RPM) &rarr; characterizes non-Newtonian behavior.</li>
+<li>Wide viscosity range (1 cP to 2,000,000 cP depending on model).</li>
+<li>Simple operation, rapid results, minimal sample volume.</li>
+<li>Can measure structured systems (gels, suspensions) that capillary viscometers cannot handle.</li>
+</ul>
+
+<div class="tip-box"><div class="lbl">Exam Tip</div>Draw a neat diagram of the Brookfield viscometer. Mention that sodium alginate is pseudoplastic, hence rotational viscometer is preferred over capillary. Write the formula: Viscosity = TK &times; dial reading. List at least 4 RPM values.</div>
+`
+},
+{
+id:"q3c",num:"Q.3(c)",marks:"[05 Marks]",
+title:"Define suspension. Differentiate between flocculated and deflocculated suspension.",
+answer:`
+<h3>Definition of Suspension</h3>
+<div class="def-box"><em>Suspension</em> is a coarse dispersion in which insoluble solid particles (usually > 0.5 &mu;m) are dispersed in a liquid (aqueous or non-aqueous) medium. The particles tend to settle on standing but are easily redispersed on shaking. It is a thermodynamically unstable but kinetically stable system.</div>
+
+<h3>Difference Between Flocculated and Deflocculated Suspension</h3>
+
+<table>
+<tr><th>Parameter</th><th>Flocculated Suspension</th><th>Deflocculated Suspension</th></tr>
+<tr><td>Particle arrangement</td><td>Particles form loose aggregates called flocs</td><td>Particles exist as separate individuals</td></tr>
+<tr><td>Interparticle forces</td><td>Weak attractive forces (secondary minimum)</td><td>Strong repulsive forces between particles</td></tr>
+<tr><td>Sedimentation rate</td><td>Faster (flocs are larger and heavier)</td><td>Slower (individual small particles)</td></tr>
+<tr><td>Nature of sediment</td><td>Loose, voluminous, easily redispersible</td><td>Dense, hard cake, difficult to redisperse</td></tr>
+<tr><td>Sedimentation volume (F)</td><td>Large (F &rarr; 1 or F = 1)</td><td>Small (F &lt; 1)</td></tr>
+<tr><td>Supernatant liquid</td><td>Clear (flocs entrap small particles)</td><td>Cloudy (small particles remain suspended)</td></tr>
+<tr><td>Bridging</td><td>Flocculating agents bridge particles</td><td>No bridging; electrostatic repulsion</td></tr>
+<tr><td>Redispersibility</td><td>Easy (by gentle shaking)</td><td>Difficult (hard cake formation)</td></tr>
+<tr><td>Flow properties</td><td>Pseudoplastic or plastic</td><td>Newtonian or near-Newtonian</td></tr>
+<tr><td>Pharmaceutical preference</td><td>Preferred (easy redispersion)</td><td>Not preferred (caking problem)</td></tr>
+<tr><td>Zeta potential</td><td>Reduced (partial neutralization, 10&ndash;30 mV)</td><td>High (fully charged, > &plusmn;30 mV)</td></tr>
+<tr><td>Example</td><td>Calamine lotion, milk of magnesia</td><td>Unflocculated sulfadimidine suspension</td></tr>
 </table>
+
+<div class="imp-box"><div class="lbl">Key Concept</div><strong>Sedimentation Volume (F) = V<sub>u</sub>/V<sub>o</sub></strong> where V<sub>u</sub> = ultimate sediment volume, V<sub>o</sub> = original volume of suspension. For flocculated suspension, F &asymp; 1 (sediment occupies same volume as original). For deflocculated, F &ll; 1 (compact cake).</div>
+
+<div class="tip-box"><div class="lbl">Exam Tip</div>Draw two beakers side by side: one showing flocs settling loosely with clear supernatant (flocculated) and other showing compact hard cake with cloudy supernatant (deflocculated). Always write "Flocculated is pharmaceutically preferred" with reason.</div>
+`
+},
+{
+id:"q4a",num:"Q.4(a)",marks:"[06 Marks]",
+title:"Discuss different approaches used to achieve flocculation in suspensions.",
+answer:`
+<h3>Approaches to Achieve Flocculation in Suspensions</h3>
+<p>Flocculation is the process of converting a deflocculated suspension into a flocculated one by reducing the repulsive forces between particles so that they form loose aggregates (flocs). The following approaches are used:</p>
+
+<h3>1. Controlled Addition of Electrolytes</h3>
+<p>Adding a small, controlled amount of electrolyte compresses the electrical double layer around particles, reducing zeta potential to an optimal range (10&ndash;30 mV). At this range, attractive van der Waals forces dominate at secondary minimum, forming flocs.</p>
+<ul>
+<li><strong>Example:</strong> Addition of potassium dihydrogen phosphate or sodium chloride to sulfadimidine suspension.</li>
+<li>The concentration must be carefully controlled &mdash; too little has no effect, too much causes complete coagulation (primary minimum).</li>
+<li><strong>Schulze-Hardy rule:</strong> Ions with higher valency are more effective at lower concentrations.</li>
+</ul>
+
+<h3>2. Use of Flocculating Agents (Polymers)</h3>
+<p>Long-chain polymers can bridge adjacent particles by adsorbing onto more than one particle surface simultaneously (bridging flocculation).</p>
+<ul>
+<li><strong>Example:</strong> Gelatin, acacia, alginate, CMC, PVP.</li>
+<li>The polymer must have sufficient chain length to span the gap between particles.</li>
+<li>Concentration is critical &mdash; optimal dose gives good flocs; excess polymer can cause restabilization (steric stabilization).</li>
+</ul>
+
+<h3>3. Surfactants</h3>
+<p>Ionic surfactants adsorb on particle surfaces and modify the surface charge. Non-ionic surfactants can promote flocculation by reducing the effective zeta potential without complete neutralization.</p>
+<ul>
+<li><strong>Example:</strong> Polysorbate 80, sodium lauryl sulfate (at low concentration).</li>
+</ul>
+
+<h3>4. pH Adjustment</h3>
+<p>Many drug particles have pH-dependent surface charge. Adjusting pH towards the isoelectric point (IEP) of the particles reduces zeta potential, promoting flocculation.</p>
+<ul>
+<li><strong>Example:</strong> Bismuth subnitrate particles are positively charged in acidic medium and negatively charged in alkaline medium. Near neutral pH, charge is minimum, leading to flocculation.</li>
+</ul>
+
+<h3>5. Temperature Adjustment</h3>
+<p>Changing temperature can affect the solubility of the dispersed phase and the adsorption of stabilizers, thereby altering interparticle forces. Cooling can promote flocculation in some systems.</p>
+
+<h3>6. Mechanical Agitation</h3>
+<p>Mild agitation can bring particles closer together, increasing collision frequency and promoting floc formation. However, excessive agitation can break formed flocs.</p>
+
+<h3>7. Combination Approach</h3>
+<p>In practice, a combination of electrolyte and polymer is often used for optimal flocculation. The electrolyte reduces zeta potential partially, and the polymer provides bridging.</p>
+
+<div class="imp-box"><div class="lbl">Important Points</div>
+<ul>
+<li>The goal is to reduce zeta potential to 10&ndash;30 mV (not to zero &mdash; zero leads to coagulation, not flocculation).</li>
+<li>Flocculation must be controlled &mdash; too much causes irreversible aggregation; too little leaves the system deflocculated.</li>
+<li>The flocculation approach must be compatible with other formulation components and the route of administration.</li>
+</ul></div>
+
+<div class="tip-box"><div class="lbl">Exam Tip</div>Write at least 5 approaches with mechanism and example for each. The most important are: (1) Electrolytes &mdash; double layer compression, (2) Polymers &mdash; bridging, (3) pH adjustment &mdash; IEP concept. Always mention zeta potential range for flocculation (10&ndash;30 mV).</div>
+`
+},
+{
+id:"q4b",num:"Q.4(b)",marks:"[05 Marks]",
+title:"Explain sedimentation parameter of suspension in detail.",
+answer:`
+<h3>Sedimentation Parameters of Suspension</h3>
+<p>Sedimentation parameters are quantitative measures used to evaluate the physical stability of suspensions. The key parameters are:</p>
+
+<h3>1. Sedimentation Volume (F)</h3>
+<div class="def-box"><em>Sedimentation Volume (F)</em> is the ratio of the ultimate (equilibrium) volume of sediment (V<sub>u</sub>) to the original volume of suspension (V<sub>o</sub>).</div>
+<p><strong>F = V<sub>u</sub> / V<sub>o</sub></strong></p>
+<ul>
+<li>F is a dimensionless number.</li>
+<li><strong>F = 1:</strong> Sediment volume equals original volume (ideal, no apparent settling). Seen in well-flocculated suspensions.</li>
+<li><strong>F &lt; 1:</strong> Clear supernatant is visible. Smaller F means more compact sedimentation.</li>
+<li>F depends on particle size, shape, and degree of flocculation.</li>
+</ul>
+
+<h3>2. Degree of Flocculation (&beta;)</h3>
+<div class="def-box"><em>Degree of Flocculation (&beta;)</em> is the ratio of the sedimentation volume of the flocculated suspension (F) to the sedimentation volume of the deflocculated suspension (F<sub>&infin;</sub>).</div>
+<p><strong>&beta; = F / F<sub>&infin;</sub> = V<sub>u</sub> / V<sub>&infin;</sub></strong></p>
+<ul>
+<li>V<sub>&infin;</sub> = ultimate sediment volume of completely deflocculated suspension.</li>
+<li><strong>&beta; = 1:</strong> No flocculation (deflocculated system).</li>
+<li><strong>&beta; &gt; 1:</strong> System is flocculated. Higher &beta; means better flocculation.</li>
+<li>&beta; indicates how much the sediment volume has increased due to flocculation.</li>
+</ul>
+
+<h3>3. Sedimentation Rate</h3>
+<p>The rate at which particles settle is governed by <strong>Stokes&rsquo; Law</strong>:</p>
+<p><strong>v = 2r&sup2;(&rho; &minus; &rho;&#8320;)g / 9&eta;</strong></p>
+<p>For flocculated suspensions, flocs settle as single entities, so r is replaced by effective floc radius. Sedimentation rate is faster for flocculated systems but the sediment is loose and redispersible.</p>
+
+<h3>Practical Measurement</h3>
+<ol>
+<li>Take a known volume (V<sub>o</sub>) of suspension in a graduated cylinder.</li>
+<li>Allow to stand undisturbed for a defined period (usually 1&ndash;7 days).</li>
+<li>Record the volume of clear supernatant and the volume of sediment (V<sub>u</sub>).</li>
+<li>Calculate F = V<sub>u</sub> / V<sub>o</sub>.</li>
+<li>Compare with the deflocculated system to get &beta;.</li>
+</ol>
+
+<div class="ascii-diagram">
+  Flocculated (F ~ 1)     Deflocculated (F << 1)
+  +-----------+           +-----------+
+  | SEDIMENT  |           | CLEAR     |
+  | (loose)   |           | SUPERNATANT|
+  | Flocs     |           |           |
+  +-----------+           |-----------|
+  Vo = Vu                | HARD CAKE |
+                          +-----------+
+                          Vu << Vo
 </div>
+
+<div class="rev-box"><div class="lbl">Short Revision Note</div>Sedimentation Volume F = V<sub>u</sub>/V<sub>o</sub> (ideal = 1). Degree of Flocculation &beta; = F/F<sub>&infin;</sub> (&beta; = 1 means no flocculation, &beta; &gt; 1 means flocculated). Higher F and &beta; indicate better physical stability. Stokes&rsquo; law governs sedimentation rate.</div>
+`
+},
+{
+id:"q4c",num:"Q.4(c)",marks:"[05 Marks]",
+title:"Enlist the physical instability markers of emulsion and discuss any two.",
+answer:`
+<h3>Physical Instability Markers of Emulsion</h3>
+<ol>
+<li>Cracking (Breaking)</li>
+<li>Coalescence</li>
+<li>Creaming</li>
+<li>Phase Inversion</li>
+<li>Flocculation</li>
+<li>Ostwald Ripening</li>
+</ol>
+
+<h3>1. Cracking (Breaking)</h3>
+<div class="def-box"><em>Cracking</em> is the complete and irreversible separation of the dispersed phase as a distinct layer from the dispersion medium, destroying the emulsion permanently.</div>
+
+<p><strong>Causes:</strong></p>
+<ul>
+<li><strong>Addition of incompatible emulsifying agent:</strong> Using an emulsifier of wrong HLB value that cannot stabilize the system.</li>
+<li><strong>Destruction of emulsifying agent:</strong> Decomposition of emulsifier by heat, pH change, or microbial action.</li>
+<li><strong>Excess dispersed phase:</strong> Adding more internal phase than the emulsifier can accommodate (beyond O/H ratio limit).</li>
+<li><strong>Temperature extremes:</strong> Freezing can crack emulsions by forming ice crystals that rupture interfacial film.</li>
+<li><strong>Centrifugation:</strong> High centrifugal force causes separation.</li>
+<li><strong>Incompatible electrolytes:</strong> Salts that neutralize charge on emulsified droplets.</li>
+</ul>
+<p><strong>Nature:</strong> Irreversible. Once cracked, the emulsion cannot be restored by simple shaking.</p>
+<p><strong>Prevention:</strong> Use proper emulsifier with correct HLB, store at recommended temperature, protect from freezing, avoid incompatible additives.</p>
+
+<h3>2. Creaming</h3>
+<div class="def-box"><em>Creaming</em> is the migration of dispersed droplets to the top (or bottom) of the emulsion under the influence of gravity, forming a concentrated layer of emulsion, without actual breakage of the emulsion. The droplets retain their identity.</div>
+
+<p><strong>Types:</strong></p>
+<ul>
+<li><strong>Upward creaming (O/W emulsion):</strong> Oil droplets, being less dense than water, rise to the top. This is the most common type.</li>
+<li><strong>Downward creaming (W/O emulsion):</strong> Water droplets, being denser than oil, settle to the bottom.</li>
+</ul>
+
+<p><strong>Causes:</strong> Governed by Stokes&rsquo; Law: <strong>v = 2r&sup2;(&rho; &minus; &rho;&#8320;)g / 9&eta;</strong></p>
+<ul>
+<li>Large droplet size (r)</li>
+<li>Large density difference (&rho; &minus; &rho;&#8320;)</li>
+<li>Low viscosity of continuous phase (&eta;)</li>
+</ul>
+
+<p><strong>Nature:</strong> <strong>Reversible.</strong> The emulsion can be restored by gentle shaking. Creaming is a warning sign &mdash; if uncorrected, it may progress to coalescence and cracking.</p>
+
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Reduce droplet size (proper homogenization).</li>
+<li>Increase viscosity of continuous phase (viscosity enhancers like CMC, methylcellulose).</li>
+<li>Reduce density difference (by adding density modifiers).</li>
+<li>Use blend of emulsifiers for tighter interfacial film.</li>
+</ul>
+
+<div class="imp-box"><div class="lbl">Key Difference</div><strong>Creaming vs Cracking:</strong> Creaming is reversible (droplets intact, can be redistributed by shaking), while cracking is irreversible (complete separation, emulsion destroyed). Creaming is a precursor to cracking if not addressed.</div>
+
+<div class="tip-box"><div class="lbl">Exam Tip</div>Enlist all 6 markers. Then discuss any two in detail with definition, causes, nature (reversible/irreversible), and prevention. Creaming and cracking are the most commonly asked pair.</div>
+`
+},
+{
+id:"q5a",num:"Q.5(a)",marks:"[06 Marks]",
+title:"Enlist the different type of densities of powder. Write the experimental method for the determination of true density.",
+answer:`
+<h3>Types of Densities of Powder</h3>
+<ol>
+<li><strong>True Density (&rho;<sub>t</sub>):</strong> The density of the pure material excluding all pores and voids. Mass per unit volume of the solid material alone.</li>
+<li><strong>Particle Density (&rho;<sub>p</sub>):</strong> Mass per unit volume of a single particle including closed pores but excluding open pores and interparticle voids.</li>
+<li><strong>Granule Density:</strong> Mass per unit volume of a granule including both closed and open pores within the granule but excluding inter-granule voids.</li>
+<li><strong>Bulk Density (&rho;<sub>b</sub>):</strong> Mass of powder per unit bulk volume, including both interparticle voids and intraparticle pores. It is measured without tapping.</li>
+<li><strong>Tapped Density (&rho;<sub>tapped</sub>):</strong> Mass of powder per unit volume after a specified tapping procedure. It is always equal to or greater than bulk density.</li>
+</ol>
+
+<h3>Experimental Determination of True Density</h3>
+
+<p><strong>Principle:</strong> True density is determined by measuring the volume of liquid displaced by a known mass of powder. A liquid that does not penetrate the pores of the particles and does not react with or dissolve the powder is used.</p>
+
+<p><strong>Method: Liquid Displacement (Pycnometer Method)</strong></p>
+
+<h3>Apparatus Required</h3>
+<ul>
+<li>Pycnometer (specific gravity bottle) &mdash; typically 25 or 50 mL capacity with a capillary stopper</li>
+<li>Analytical balance</li>
+<li>Oven/desiccator</li>
+<li>Suitable displacement liquid (e.g., xylene, toluene, liquid paraffin for water-soluble powders; water for insoluble powders)</li>
+</ul>
+
+<h3>Procedure</h3>
+<ol>
+<li><strong>Weigh empty pycnometer:</strong> Clean, dry and weigh the empty pycnometer with stopper. Let this be W<sub>1</sub>.</li>
+<li><strong>Fill with liquid:</strong> Fill the pycnometer completely with the displacement liquid, insert the stopper (ensuring no air bubbles), wipe off excess liquid from the capillary and outer surface. Weigh. Let this be W<sub>2</sub>.</li>
+<li><strong>Add powder:</strong> Empty the pycnometer, dry it. Add a known mass of powder sample (W<sub>p</sub>) into the pycnometer.</li>
+<li><strong>Add liquid and remove air:</strong> Add displacement liquid to partially fill the pycnometer. Gently agitate or apply vacuum to remove entrapped air bubbles from the powder bed.</li>
+<li><strong>Top up and weigh:</strong> Fill completely with liquid, insert stopper, wipe excess, and weigh. Let this be W<sub>3</sub>.</li>
+</ol>
+
+<h3>Calculation</h3>
+<p><strong>True Density = W<sub>p</sub> / [(W<sub>2</sub> &minus; W<sub>1</sub>) &minus; (W<sub>3</sub> &minus; W<sub>1</sub> &minus; W<sub>p</sub>)]</strong></p>
+<p>Which simplifies to:</p>
+<p><strong>&rho;<sub>t</sub> = W<sub>p</sub> / (W<sub>2</sub> &minus; W<sub>3</sub>)</strong></p>
+
+<p>Where:</p>
+<ul>
+<li>W<sub>p</sub> = mass of powder</li>
+<li>(W<sub>2</sub> &minus; W<sub>1</sub>) = mass of liquid filling the pycnometer = volume of pycnometer &times; density of liquid</li>
+<li>(W<sub>3</sub> &minus; W<sub>1</sub> &minus; W<sub>p</sub>) = mass of liquid in pycnometer with powder present</li>
+<li>(W<sub>2</sub> &minus; W<sub>3</sub>) = mass of liquid displaced by powder = volume of true solid</li>
+</ul>
+
+<div class="imp-box"><div class="lbl">Precautions</div>
+<ul>
+<li>Choose a displacement liquid that does NOT dissolve, react with, or penetrate the powder.</li>
+<li>Complete removal of entrapped air is critical &mdash; otherwise, volume will be overestimated and density underestimated.</li>
+<li>Perform at constant temperature (preferably 25&deg;C) to avoid volume changes of liquid.</li>
+<li>For very fine powders, use helium gas pycnometer (more accurate as helium penetrates all accessible pores).</li>
+</ul></div>
+
+<div class="tip-box"><div class="lbl">Exam Tip</div>Write the formula clearly: &rho;<sub>t</sub> = W<sub>p</sub> / (W<sub>2</sub> &minus; W<sub>3</sub>). Draw a simple pycnometer diagram. Mention the choice of displacement liquid and the air-removal step as key practical points.</div>
+`
+},
+{
+id:"q5b",num:"Q.5(b)",marks:"[05 Marks]",
+title:"Explain method for determining particle surface area.",
+answer:`
+<h3>Determination of Particle Surface Area</h3>
+<p>Particle surface area is an important parameter that influences dissolution rate, adsorption, bioavailability, and flow properties. The following methods are used:</p>
+
+<h3>1. Gas Adsorption Method (BET Method)</h3>
+<p>This is the most widely used and accurate method, based on the <strong>Brunauer-Emmett-Teller (BET) theory</strong>.</p>
+
+<p><strong>Principle:</strong> An inert gas (usually nitrogen) is adsorbed on the surface of powder particles at liquid nitrogen temperature (&minus;196&deg;C). The amount of gas adsorbed at various relative pressures is measured, and the BET equation is used to calculate the monolayer capacity, from which the specific surface area is determined.</p>
+
+<p><strong>BET Equation:</strong></p>
+<p><strong>P / V(P<sub>0</sub> &minus; P) = 1 / (V<sub>m</sub>C) + (C &minus; 1)P / (V<sub>m</sub>CP<sub>0</sub>)</strong></p>
+<p>Where P = gas pressure, P<sub>0</sub> = saturation pressure, V = volume of gas adsorbed, V<sub>m</sub> = monolayer capacity, C = BET constant.</p>
+
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Degas the powder sample under vacuum to remove adsorbed moisture and gases.</li>
+<li>Cool the sample to liquid nitrogen temperature.</li>
+<li>Expose to nitrogen gas at increasing pressures.</li>
+<li>Measure the volume of gas adsorbed at each pressure.</li>
+<li>Plot P/V(P<sub>0</sub>&minus;P) vs P/P<sub>0</sub> (BET plot).</li>
+<li>From the slope and intercept, calculate V<sub>m</sub>.</li>
+<li><strong>Specific Surface Area (S) = V<sub>m</sub> &times; N &times; &sigma; / (V &times; W)</strong></li>
+</ol>
+<p>Where N = Avogadro&rsquo;s number, &sigma; = cross-sectional area of N<sub>2</sub> molecule (16.2 &Aring;&sup2;), V = molar volume of gas, W = mass of sample.</p>
+
+<h3>2. Air Permeability Method</h3>
+<p><strong>Principle:</strong> Air is passed through a packed bed of powder. The pressure drop across the bed is related to the specific surface area by the <strong>Kozeny-Carman equation</strong>:</p>
+<p><strong>S = &radic;[(&epsilon;&sup3; / K(1&minus;&epsilon;&sup2;)) &times; (&Delta;P &times; A) / (&eta; &times; L &times; Q)]</strong></p>
+<p>Where &epsilon; = porosity, K = Kozeny constant, &Delta;P = pressure drop, A = cross-sectional area, &eta; = air viscosity, L = bed length, Q = flow rate.</p>
+<ul>
+<li>Apparatus: Fisher Sub-Sieve Sizer, Blaine permeameter.</li>
+<li>Used for coarse to medium particles (1&ndash;100 &mu;m).</li>
+<li>Limitation: Only measures external surface area, not internal pores.</li>
+</ul>
+
+<h3>3. Adsorption from Solution</h3>
+<p>A solute (e.g., methylene blue, fatty acid) is adsorbed from solution onto the powder surface. The amount adsorbed at monolayer coverage gives the surface area. Less accurate than gas adsorption.</p>
+
+<div class="imp-box"><div class="lbl">Comparison</div>
+<strong>BET method:</strong> Most accurate, measures total surface (internal + external), suitable for fine particles, uses nitrogen gas. <strong>Air permeability:</strong> Simpler, faster, measures only external surface, suitable for coarser particles. <strong>Solution adsorption:</strong> Least accurate, but simple and inexpensive.</div>
+
+<div class="tip-box"><div class="lbl">Exam Tip</div>BET method is the most important. Write the BET equation, explain the procedure stepwise, and write the formula for calculating S. Mention nitrogen as the commonly used gas and liquid nitrogen temperature.</div>
+`
+},
+{
+id:"q5c",num:"Q.5(c)",marks:"[05 Marks]",
+title:"Give factors affecting powder flow.",
+answer:`
+<h3>Factors Affecting Powder Flow</h3>
+
+<h3>1. Particle Size</h3>
+<ul>
+<li>Smaller particles have larger surface area, more cohesive forces, and poorer flow.</li>
+<li>Larger particles flow better due to reduced cohesive forces relative to gravitational force.</li>
+<li>Optimal size range for good flow: 50&ndash;250 &mu;m.</li>
+<li>Very fine powders (&lt; 10 &mu;m) show extremely poor flow due to dominant van der Waals forces.</li>
+</ul>
+
+<h3>2. Particle Shape</h3>
+<ul>
+<li><strong>Spherical particles</strong> flow best (minimum surface contact, minimal interlocking).</li>
+<li><strong>Angular, irregular, needle-shaped, plate-like</strong> particles flow poorly due to mechanical interlocking and higher friction.</li>
+<li>Sphericity (degree of roundness) directly correlates with flow properties.</li>
+</ul>
+
+<h3>3. Moisture Content</h3>
+<ul>
+<li>Low moisture acts as a lubricant and may improve flow slightly.</li>
+<li>High moisture forms liquid bridges between particles, increasing cohesion and reducing flow.</li>
+<li>At critical humidity, capillary condensation occurs &rarr; very poor flow.</li>
+</ul>
+
+<h3>4. Surface Roughness</h3>
+<ul>
+<li>Rough surfaces increase frictional resistance between particles &rarr; poor flow.</li>
+<li>Smooth surfaces facilitate sliding &rarr; better flow.</li>
+</ul>
+
+<h3>5. Electrostatic Charge</h3>
+<ul>
+<li>Powder particles may acquire electrostatic charge during processing (milling, sieving, mixing).</li>
+<li>Like charges repel, causing particles to fly apart &rarr; erratic flow.</li>
+<li>Opposite charges cause particle adhesion &rarr; arching, bridging in hoppers.</li>
+</ul>
+
+<h3>6. Density and Porosity</h3>
+<ul>
+<li>Higher bulk density generally indicates better packing and improved flow.</li>
+<li>Highly porous or low-density powders tend to flow poorly.</li>
+</ul>
+
+<h3>7. Additives (Glidants)</h3>
+<ul>
+<li><strong>Glidants</strong> (e.g., colloidal silica, talc, magnesium stearate in small amounts) improve flow by reducing interparticle friction.</li>
+<li>Typical concentration: 0.1&ndash;2% w/w.</li>
+<li>Excess glidant can have adverse effect (increases cohesion).</li>
+</ul>
+
+<h3>8. Temperature</h3>
+<ul>
+<li>Elevated temperature may cause softening, melting, or increased moisture uptake &rarr; reduced flow.</li>
+<li>Low temperature may cause condensation of atmospheric moisture.</li>
+</ul>
+
+<h3>9. Particle Size Distribution</h3>
+<ul>
+<li>Narrow size distribution: particles pack loosely, may have poor flow.</li>
+<li>Wide size distribution: smaller particles fill voids between larger ones &rarr; denser packing &rarr; better flow (up to a point).</li>
+</ul>
+
+<div class="rev-box"><div class="lbl">Short Revision Note</div>Key factors in order of importance: Particle size (smaller = poor), Shape (spherical = best), Moisture (high = poor), Surface roughness (rough = poor), Electrostatic charge (interferes), Glidants (improve at optimal conc.), Density (higher = better). Evaluate flow using angle of repose, Carr&rsquo;s index, Hausner ratio.</div>
+`
+},
+{
+id:"q6a",num:"Q.6(a)",marks:"[06 Marks]",
+title:"Enlist methods of particle size estimation. Explain conductivity method in detail.",
+answer:`
+<h3>Methods of Particle Size Estimation</h3>
+<ol>
+<li>Microscopy (Optical &amp; Electron)</li>
+<li>Sieving Method</li>
+<li>Sedimentation Method (Andreasen pipette)</li>
+<li>Conductivity Method (Coulter Counter)</li>
+<li>Laser Light Diffraction Method</li>
+<li>Air Permeability Method</li>
+<li>Dynamic Light Scattering (Photon Correlation Spectroscopy)</li>
+<li>Cascade Impactor (for aerosol particles)</li>
+</ol>
+
+<h3>Conductivity Method (Coulter Counter / Coulter Principle)</h3>
+<div class="def-box"><em>The Coulter Counter</em> is an instrument that determines particle size distribution by measuring the change in electrical resistance (conductivity) as individual particles pass through a small aperture (orifice) suspended in an electrolyte solution.</div>
+
+<h3>Principle</h3>
+<p>Particles are suspended in an electrically conductive liquid (electrolyte). This suspension is drawn through a small orifice (aperture) of known diameter. On either side of the orifice, electrodes are placed. As a particle passes through the orifice, it displaces a volume of electrolyte equal to its own volume. Since the particle is non-conductive, the electrical resistance across the orifice momentarily increases, producing a voltage pulse. The <strong>height of the pulse is proportional to the particle volume</strong>, and the <strong>number of pulses gives the particle count</strong>.</p>
+
+<div class="ascii-diagram">
+      Electrode (+)        
+         |                
+    +----+----+           
+    |          |          
+    |  Glass  |  Orifice  -->  -->  --> (Particles flow)
+    |  Tube   |  (small aperture, 10-1000 &mu;m)
+    |         |          
+    +----+----+           
+         |                
+      Electrode (-)       
+
+  Pulse height  ~  Particle Volume
+  Number of pulses  ~  Number of particles
 </div>
 
-<!-- ========== TOPIC: DRUG ABSORPTION ========== -->
-<div class="topic-section" id="topic-absorption" data-years="w2019,s2021,s2020,s2019">
-<div class="q-map"><h4><i class="fas fa-link"></i> Questions Mapped</h4><div class="q-tags"><span class="q-tag">W2019 Q2(b)</span><span class="q-tag">S2021 Q5(b)</span><span class="q-tag">S2020 Q2(a)</span><span class="q-tag">S2019 Q3(b)</span><span class="q-tag">W2022 Q5(a)</span></div></div>
-<div class="answer-card">
-<span class="marks-badge">06 Marks</span>
-<h3>Factors Affecting Drug Absorption</h3>
-<div class="def-box"><strong>Drug Absorption:</strong> The process by which a drug moves from the site of administration into the systemic circulation. Most drugs are absorbed by <strong>passive diffusion</strong> across lipid membranes.</div>
+<h3>Apparatus</h3>
+<ul>
+<li><strong>Manometer tube (glass):</strong> Contains the orifice and electrolyte.</li>
+<li><strong>Orifice:</strong> Made of ruby/sapphire; size selected based on particle size (orifice diameter should be 2&ndash;40 times the particle diameter).</li>
+<li><strong>Electrodes:</strong> Platinum electrodes on either side of orifice.</li>
+<li><strong>Mercury siphon system:</strong> Provides precise volume displacement for drawing suspension through orifice.</li>
+<li><strong>Amplifier and pulse counter:</strong> Amplifies the small voltage changes and counts/sorts pulses by size.</li>
+<li><strong>Electrolyte:</strong> Typically 0.9% NaCl in water, or isotonic saline with a small amount of surfactant.</li>
+</ul>
 
-<div class="subhead"><i class="fas fa-pills"></i> A. Drug-Related Factors</div>
-<div class="point"><span class="bullet">1.</span><span class="text"><strong>Lipid Solubility:</strong> More lipid-soluble (higher lipid/water partition coefficient) drugs diffuse more readily across cell membranes. E.g., thiopentone (highly lipid soluble) crosses BBB rapidly; penicillin G (lipid insoluble) does not.</span></div>
-<div class="point"><span class="bullet">2.</span><span class="text"><strong>Degree of Ionization (pH-partition hypothesis):</strong> Unionized form is lipid-soluble and absorbed; ionized form is water-soluble and not absorbed.</span></div>
-<div class="formula-box"><div class="formula-label">Henderson-Hasselbalch Equation</div>For weak acid: pKa = pH + log([HA]/[A⁻]) &nbsp;|&nbsp; For weak base: pKa = pH + log([B]/[BH⁺])</div>
-<div class="note-box"><i class="fas fa-info-circle"></i> Weak acids (pKa 3–5) are primarily unionized in acidic stomach → well absorbed from stomach. Weak bases (pKa 8–10) are unionized in alkaline intestine → well absorbed from intestine.</div>
-<div class="point"><span class="bullet">3.</span><span class="text"><strong>Molecular Size:</strong> Small molecules (<500 Da) diffuse more easily. Large molecules require carrier-mediated or active transport.</span></div>
-<div class="point"><span class="bullet">4.</span><span class="text"><strong>Dosage Form:</strong> Solutions > suspensions > capsules > compressed tablets (in order of absorption speed). Disintegration and dissolution rate are rate-limiting for tablets.</span></div>
-<div class="point"><span class="bullet">5.</span><span class="text"><strong>Chemical Nature:</strong> Drugs structurally similar to nutrients may use carrier transport (e.g., L-DOPA uses amino acid transporter).</span></div>
+<h3>Procedure</h3>
+<ol>
+<li><strong>Prepare suspension:</strong> Disperse a known mass of powder in electrolyte. Use ultrasonication to break agglomerates. Add a wetting agent if needed.</li>
+<li><strong>Select orifice:</strong> Choose aperture size appropriate for the expected particle size range.</li>
+<li><strong>Calibration:</strong> Calibrate using monodisperse latex particles of known size.</li>
+<li><strong>Measurement:</strong> Draw the suspension through the orifice by mercury displacement. As each particle passes, a voltage pulse is generated.</li>
+<li><strong>Pulse analysis:</strong> Pulses are classified into size channels by height (each channel corresponds to a size range). Count in each channel gives the number distribution.</li>
+<li><strong>Calculation:</strong> Particle diameter d = (6V/&pi;)<sup>1/3</sup> where V = pulse volume (proportional to particle volume).</li>
+</ol>
 
-<div class="subhead"><i class="fas fa-user"></i> B. Patient-Related Factors</div>
-<div class="point"><span class="bullet">6.</span><span class="text"><strong>Gastric Emptying Rate:</strong> Faster emptying → drug reaches intestine sooner (larger surface area) → faster absorption. Delayed by food, anticholinergics, opioids. Accelerated by metoclopramin.</span></div>
-<div class="point"><span class="bullet">7.</span><span class="text"><strong>GI Motility:</strong> Increased motility reduces absorption time; decreased motility increases contact time but may not help if drug is poorly permeable.</span></div>
-<div class="point"><span class="bullet">8.</span><span class="text"><strong>Gastric pH:</strong> Affects ionization and stability of drugs. Antacids ↑ pH → affect absorption of ketoconazole (needs acid), etc.</span></div>
-<div class="point"><span class="bullet">9.</span><span class="text"><strong>Food:</strong> Can increase (griseofulvin with fatty meal), decrease (tetracycline with milk — chelation), or delay absorption.</span></div>
-<div class="point"><span class="bullet">10.</span><span class="text"><strong>Surface Area:</strong> Intestine has villi + microvilli (~200 m²) >> stomach surface area → most absorption occurs in small intestine regardless of drug properties.</span></div>
-<div class="point"><span class="bullet">11.</span><span class="text"><strong>GI Blood Flow:</strong> Increased perfusion enhances absorption (post-prandial state).</span></div>
-<div class="point"><span class="bullet">12.</span><span class="text"><strong>Presence of Other Agents:</strong> Adsorbents (charcoal), chelating agents, enzyme inhibitors can affect absorption.</span></div>
+<h3>Advantages</h3>
+<ul>
+<li>High speed: thousands of particles counted per second.</li>
+<li>Direct measurement of volume (not projected area like microscopy).</li>
+<li>Number distribution directly obtained; can be converted to weight distribution.</li>
+<li>High resolution and reproducibility.</li>
+<li>Applicable range: 0.4&ndash;1200 &mu;m.</li>
+</ul>
 
-<div class="subhead"><i class="fas fa-syringe"></i> C. Factors Affecting Parenteral Absorption</div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Blood flow to injection site:</strong> Exercised muscle has higher blood flow → faster IM absorption</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Drug formulation:</strong> Aqueous solutions absorb faster than oily suspensions or depot preparations</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Molecular size:</strong> Larger molecules absorb slower from SC/IM sites</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>pKa & ionization:</strong> Unionized drugs diffuse faster from injection site into blood</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Vasoactive substances:</strong> Vasodilators increase; vasoconstrictors (epinephrine with LA) decrease absorption</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Volume & concentration:</strong> Larger volumes may create pressure and spread, increasing absorption area</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Tissue permeability:</strong> SC tissue is less vascular than muscle → SC < IM < IV in absorption speed</span></div>
-</div>
-</div>
+<h3>Limitations</h3>
+<ul>
+<li>Requires electrolyte medium &mdash; cannot be used for water-soluble or reactive powders.</li>
+<li>Only measures particles in suspension (wet method).</li>
+<li>Particles must be non-conductive.</li>
+<li>Orifice clogging with large particles or agglomerates.</li>
+<li>Requires careful sample preparation to avoid agglomerates.</li>
+</ul>
 
-<!-- ========== TOPIC: DRUG DISTRIBUTION ========== -->
-<div class="topic-section" id="topic-distribution" data-years="w2020">
-<div class="q-map"><h4><i class="fas fa-link"></i> Questions Mapped</h4><div class="q-tags"><span class="q-tag">W2020 Q3(a)</span><span class="q-tag">S2021 Q1(c)</span></div></div>
-<div class="answer-card">
-<span class="marks-badge">06 Marks</span>
-<h3>Plasma Protein Binding & Blood-Brain Barrier</h3>
-<div class="subhead"><i class="fas fa-link"></i> 1. Plasma Protein Binding</div>
-<div class="def-box"><strong>Plasma Protein Binding:</strong> Many drugs reversibly bind to plasma proteins (mainly albumin for acidic drugs, α₁-acid glycoprotein for basic drugs). Only the unbound (free) fraction is pharmacologically active and available for distribution, metabolism, and excretion.</div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Significance:</strong> Bound drug acts as a reservoir → prolongs duration of action; reduces free drug concentration; limits distribution (large molecules can't cross membranes when bound).</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Highly bound drugs (>90%):</strong> Warfarin (99%), Phenytoin (90%), Diazepam (98%), NSAIDs. Small displacement can cause large increase in free fraction → toxicity.</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Clinical importance of displacement interactions:</strong> Warfarin displaced by phenylbutazone/sulfonamides → increased bleeding. Phenytoin displaced by valproic acid → increased toxicity.</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Does NOT usually affect steady-state level</strong> (free concentration returns to original as total decreases due to increased elimination of displaced drug), but can cause transient toxicity.</span></div>
-<div class="formula-box"><div class="formula-label">Volume of Distribution (Vd)</div>V<sub>d</sub> = Amount of drug in body / Plasma drug concentration</div>
+<div class="tip-box"><div class="lbl">Exam Tip</div>Draw the orifice diagram with electrodes. Key principle: "Pulse height proportional to particle volume." Write the range (0.4&ndash;1200 &mu;m). Mention advantages and limitations. Know that it gives number distribution directly.</div>
+`
+},
+{
+id:"q6b",num:"Q.6(b)",marks:"[05 Marks]",
+title:"Discuss angle of repose and Carr's Index with their pharmacopoeial specification.",
+answer:`
+<h3>Angle of Repose</h3>
+<div class="def-box"><em>Angle of Repose (&theta;)</em> is the maximum angle between the surface of a cone of powder and the horizontal plane, formed when powder is allowed to flow freely through a funnel onto a flat surface.</div>
 
-<div class="subhead"><i class="fas fa-brain"></i> 2. Blood-Brain Barrier (BBB)</div>
-<div class="def-box"><strong>BBB:</strong> A specialized barrier formed by brain capillary endothelial cells with tight junctions, astrocyte foot processes, and a basement membrane. It restricts passage of most drugs from blood into brain tissue.</div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Features:</strong> Tight junctions between endothelial cells (no fenestrations), limited pinocytosis, presence of P-glycoprotein efflux pump, astrocyte coverage.</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Drugs that CROSS BBB:</strong> Highly lipid-soluble (thiopentone, diazepam), small molecular weight, unionized at blood pH, non-protein bound. Also use specific transporters (L-DOPA uses L-amino acid transporter).</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Drugs that DO NOT cross BBB:</strong> Highly ionized (heparin, penicillin G), large molecules (insulin), highly protein-bound drugs, substrates of P-gp efflux.</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>BBB is disrupted in:</strong> Meningitis, encephalitis, brain tumors, trauma → drugs that normally don't cross may enter → useful for antibiotic treatment of meningitis.</span></div>
-<div class="note-box"><i class="fas fa-info-circle"></i> <strong>Volume of Distribution interpretation:</strong> High Vd (>0.6 L/kg) = drug concentrated in tissues (e.g., digoxin 7 L/kg). Low Vd (<0.3 L/kg) = drug mainly in plasma (e.g., warfarin 0.1 L/kg).</div>
-</div>
-</div>
+<p><strong>Formula:</strong> <strong>tan &theta; = h / r</strong></p>
+<p>Where h = height of the powder cone, r = radius of the base of the cone.</p>
 
-<!-- ========== TOPIC: DRUG METABOLISM ========== -->
-<div class="topic-section" id="topic-metabolism" data-years="w2020,w2019,s2021,s2020">
-<div class="q-map"><h4><i class="fas fa-link"></i> Questions Mapped</h4><div class="q-tags"><span class="q-tag">W2022 Q6(c)</span><span class="q-tag">W2020 Q3(a)</span><span class="q-tag">W2019 Q3(b)</span><span class="q-tag">S2021 Q6(c)</span><span class="q-tag">S2020 Q3(a)</span></div></div>
-<div class="answer-card">
-<span class="marks-badge">06 Marks</span>
-<h3>Drug Metabolism (Biotransformation) & Role of Enzymes</h3>
-<div class="def-box"><strong>Drug Metabolism:</strong> The enzymatic conversion of drugs into metabolites, generally rendering them more water-soluble (polar) for easier excretion. Site: primarily liver (hepatocytes); also kidney, lung, intestine, plasma, skin.</div>
+<h3>Determination Methods</h3>
+<ul>
+<li><strong>Fixed funnel method:</strong> Powder is allowed to flow through a funnel at a fixed height above a flat surface.</li>
+<li><strong>Fixed height cone method:</strong> Funnel height is adjusted to maintain a fixed cone height; radius is measured.</li>
+<li><strong>Revolving cylinder method:</strong> Powder in a rotating drum; angle measured from the surface profile.</li>
+</ul>
 
-<div class="subhead"><i class="fas fa-layer-group"></i> Phase I Reactions (Functionalization / Modification)</div>
-<p style="color:var(--text2);font-size:13px;margin:6px 0">Introduce or expose a functional group (–OH, –COOH, –NH₂) on the drug molecule. Usually <strong style="color:var(--text)">inactivate</strong> the drug, but can also activate prodrugs or generate toxic metabolites.</p>
-<table class="class-table">
-<thead><tr><th>Reaction Type</th><th>Enzyme System</th><th>Example</th></tr></thead>
-<tbody>
-<tr><td><strong style="color:var(--text)">Oxidation</strong></td><td>CYP450 (microsomal); MAO, flavin MO (mitochondrial)</td><td>Phenytoin → HPPA; Barbiturates; Ethanol → Acetaldehyde (ALDH)</td></tr>
-<tr><td><strong style="color:var(--text)">Reduction</strong></td><td>CYP450, reductases</td><td>Chloramphenicol → inactive metabolite; Nitrazepam reduction</td></tr>
-<tr><td><strong style="color:var(--text)">Hydrolysis</strong></td><td>Esterases, amidases (non-microsomal)</td><td>Aspirin → Salicylic acid + Acetic acid; Procaine → PABA + DEAE</td></tr>
-<tr><td><strong style="color:var(--text)">Cyclization</strong></td><td>Various</td><td>Less common</td></tr>
-<tr><td><strong style="color:var(--text)">Decyclization</strong></td><td>CYP450</td><td>Barbiturate ring opening</td></tr>
-</tbody>
+<h3>Pharmacopoeial Specifications (IP/BP Interpretation)</h3>
+<table>
+<tr><th>Angle of Repose (&theta;)</th><th>Flow Character</th></tr>
+<tr><td>&lt; 25&deg;</td><td>Excellent flow</td></tr>
+<tr><td>25&ndash;30&deg;</td><td>Good flow</td></tr>
+<tr><td>30&ndash;40&deg;</td><td>Passable flow</td></tr>
+<tr><td>&gt; 40&deg;</td><td>Poor flow (very cohesive)</td></tr>
 </table>
-<div class="note-box"><i class="fas fa-flask"></i> <strong>CYP450 System:</strong> Cytochrome P450 is a superfamily of heme-containing enzymes located in smooth endoplasmic reticulum. Major families: CYP3A4 (metabolizes ~50% drugs), CYP2D6, CYP2C9, CYP2C19, CYP1A2. Requires NADPH and O₂. Located primarily in liver.</div>
 
-<div class="subhead"><i class="fas fa-plus-circle"></i> Phase II Reactions (Conjugation / Synthetic)</div>
-<p style="color:var(--text2);font-size:13px;margin:6px 0">Attach a polar moiety to the drug or Phase I metabolite. <strong style="color:var(--text)">Always inactivates</strong> the drug (except few exceptions like morphine-6-glucuronide). Mostly non-microsomal (cytosolic) enzymes.</p>
-<table class="class-table">
-<thead><tr><th>Conjugation Type</th><th>Co-factor</th><th>Drug Example</th></tr></thead>
-<tbody>
-<tr><td><strong style="color:var(--text)">Glucuronidation</strong></td><td>UDPGA (most important)</td><td>Morphine, Paracetamol, Diazepam, Salicylic acid</td></tr>
-<tr><td><strong style="color:var(--text)">Sulfation</strong></td><td>PAPS</td><td>Paracetamol, Steroids, Estradiol</td></tr>
-<tr><td><strong style="color:var(--text)">Acetylation</strong></td><td>Acetyl-CoA</td><td>Isoniazid, Dapsone, Sulfonamides (genetically variable)</td></tr>
-<tr><td><strong style="color:var(--text)">Methylation</strong></td><td>SAM</td><td>Catecholamines, Histamine, Nicotinamide</td></tr>
-<tr><td><strong style="color:var(--text)">Glutathione conjugation</strong></td><td>GSH</td><td>Paracetamol (toxic metabolite NAPQI detoxified)</td></tr>
-<tr><td><strong style="color:var(--text)">Glycine conjugation</strong></td><td>Glycine</td><td>Benzoic acid → Hippuric acid; Salicylic acid</td></tr>
-</tbody>
+<h3>Carr's Index (Compressibility Index)</h3>
+<div class="def-box"><em>Carr's Index (CI)</em> is an indirect measure of powder flow based on the compressibility of the powder bed. It is calculated from bulk density and tapped density.</div>
+
+<p><strong>Formula:</strong></p>
+<p><strong>CI (%) = [(Tapped Density &minus; Bulk Density) / Tapped Density] &times; 100</strong></p>
+
+<p><strong>Related parameter &mdash; Hausner Ratio (HR):</strong></p>
+<p><strong>HR = Tapped Density / Bulk Density</strong></p>
+
+<h3>Determination</h3>
+<ol>
+<li>Weigh a known mass of powder and carefully pour into a graduated cylinder.</li>
+<li>Record the initial volume (V<sub>b</sub>). Calculate bulk density = mass / V<sub>b</sub>.</li>
+<li>Tap the cylinder using a tap density tester (100&ndash;500 taps) until constant volume is reached.</li>
+<li>Record the final tapped volume (V<sub>t</sub>). Calculate tapped density = mass / V<sub>t</sub>.</li>
+<li>Calculate Carr&rsquo;s Index and Hausner Ratio.</li>
+</ol>
+
+<h3>Pharmacopoeial Specifications</h3>
+<table>
+<tr><th>Carr's Index (%)</th><th>Hausner Ratio</th><th>Flow Character</th></tr>
+<tr><td>5&ndash;10</td><td>1.05&ndash;1.11</td><td>Excellent flow</td></tr>
+<tr><td>11&ndash;15</td><td>1.12&ndash;1.18</td><td>Good flow</td></tr>
+<tr><td>16&ndash;20</td><td>1.19&ndash;1.25</td><td>Fair flow</td></tr>
+<tr><td>21&ndash;25</td><td>1.26&ndash;1.34</td><td>Passable flow</td></tr>
+<tr><td>26&ndash;31</td><td>1.35&ndash;1.45</td><td>Poor flow</td></tr>
+<tr><td>32&ndash;38</td><td>1.46&ndash;1.60</td><td>Very poor flow</td></tr>
+<tr><td>&gt; 38</td><td>&gt; 1.60</td><td>Extremely poor flow</td></tr>
 </table>
 
-<div class="subhead"><i class="fas fa-arrow-up"></i> Enzyme Induction</div>
-<div class="def-box"><strong>Enzyme Induction:</strong> Increased synthesis of metabolizing enzymes (especially CYP450) by certain drugs, leading to <strong>decreased</strong> drug effect (faster metabolism).</div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Inducers:</strong> Phenobarbitone, Rifampicin, Carbamazepine, Phenytoin, Griseofulvin, St. John's Wort, Alcohol (chronic)</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Clinical consequence:</strong> Warfarin + Rifampicin → decreased INR → clot risk. Oral contraceptives + Phenytoin → breakthrough bleeding/failure. Auto-induction (carbamazepine accelerates its own metabolism).</span></div>
+<div class="imp-box"><div class="lbl">Important</div>Both angle of repose and Carr&rsquo;s Index should be used together for reliable flow assessment. Angle of repose measures static flow; Carr&rsquo;s Index measures dynamic flow (compressibility). Discrepancies between the two indicate complex flow behavior.</div>
 
-<div class="subhead"><i class="fas fa-arrow-down"></i> Enzyme Inhibition</div>
-<div class="def-box"><strong>Enzyme Inhibition:</strong> Decreased activity of metabolizing enzymes, leading to <strong>increased</strong> drug effect (slower metabolism). Usually competitive and reversible.</div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Inhibitors:</strong> Cimetidine, Erythromycin, Ketoconazole, Grapefruit juice, Metronidazole, Isoniazid, Allopurinol</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Clinical consequence:</strong> Warfarin + Cimetidine → increased INR → bleeding. Statins + Erythromycin → rhabdomyolysis. Terfenadine + Ketoconazole → fatal arrhythmia (QT prolongation).</span></div>
+<div class="tip-box"><div class="lbl">Exam Tip</div>Memorize both specification tables. Write formulas clearly. Angle of repose: tan &theta; = h/r. Carr&rsquo;s Index: (Tapped &minus; Bulk)/Tapped &times; 100. Also know Hausner Ratio = Tapped/Bulk. For direct compression, Carr&rsquo;s Index &lt; 20% and angle &lt; 30&deg; are preferred.</div>
+`
+},
+{
+id:"q6c",num:"Q.6(c)",marks:"[05 Marks]",
+title:"Write a short note on accelerated stability study.",
+answer:`
+<h3>Accelerated Stability Study</h3>
+<div class="def-box"><em>Accelerated stability testing</em> is a procedure that subjects the drug product to elevated stress conditions (temperature, humidity, light) to increase the rate of chemical degradation and physical change, allowing prediction of shelf life under normal storage conditions in a shorter time period.</div>
 
-<div class="subhead"><i class="fas fa-exchange-alt"></i> Phase I vs Phase II — Comparison</div>
-<table class="diff-table">
-<tr><th class="col-head">Feature</th><th class="col-head">Phase I</th><th class="col-head">Phase II</th></tr>
-<tr><td>Also called</td><td>Functionalization</td><td>Conjugation/Synthetic</td></tr>
-<tr><td>Reaction type</td><td>Oxidation, reduction, hydrolysis</td><td>Glucuronidation, sulfation, acetylation, etc.</td></tr>
-<tr><td>Enzyme location</td><td>Microsomal (SER) mainly</td><td>Cytosolic mainly</td></tr>
-<tr><td>Product</td><td>May be active or inactive</td><td>Almost always inactive</td></tr>
-<tr><td>Solubility</td><td>Slight increase in polarity</td><td>Marked increase in water solubility</td></tr>
-<tr><td>Drug size</td><td>Same or slightly smaller</td><td>Always larger (molecule + conjugate)</td></tr>
-<tr><td>Sequence</td><td>Usually precedes Phase II</td><td>Usually follows Phase I</td></tr>
-</table>
-</div>
-</div>
+<h3>Purpose</h3>
+<ul>
+<li>To predict the shelf life (expiration date) of a product without waiting for real-time data.</li>
+<li>To identify likely degradation pathways and degradation products.</li>
+<li>To determine appropriate storage conditions and packaging requirements.</li>
+<li>To support regulatory submissions (ICH guidelines).</li>
+</ul>
 
-<!-- ========== TOPIC: ELIMINATION KINETICS ========== -->
-<div class="topic-section" id="topic-elimination" data-years="w2019">
-<div class="q-map"><h4><i class="fas fa-link"></i> Questions Mapped</h4><div class="q-tags"><span class="q-tag">W2019 Q3(a)</span><span class="q-tag">S2020 Q4(b)</span></div></div>
-<div class="answer-card">
-<span class="marks-badge">06 Marks</span>
-<h3>Zero Order & First Order Kinetics of Drug Elimination</h3>
-<div class="subhead"><i class="fas fa-minus"></i> Zero Order Kinetics</div>
-<div class="def-box"><strong>Zero Order Elimination:</strong> A constant <strong>amount</strong> of drug is eliminated per unit time, regardless of drug concentration. Elimination rate is independent of concentration.</div>
-<div class="formula-box"><div class="formula-label">Zero Order Rate Equation</div>dC/dt = –K<sub>0</sub> &nbsp;&nbsp;→&nbsp;&nbsp; C<sub>t</sub> = C<sub>0</sub> – K<sub>0</sub> × t</div>
-<div class="point"><span class="bullet">•</span><span class="text">Plasma concentration vs time plot is a <strong>straight line</strong> (linear decline)</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Half-life is NOT constant</strong> — increases with increasing concentration</span></div>
-<div class="point"><span class="bullet">•</span><span class="text">Occurs when metabolizing enzymes are <strong>saturated</strong> (capacity-limited / Michaelis-Menten kinetics)</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Examples:</strong> Ethanol (at moderate-high doses), Phenytoin (at therapeutic doses), Aspirin (at high doses), Theophylline</span></div>
-<div class="warn-box"><i class="fas fa-exclamation-triangle"></i> <strong>Clinical implication:</strong> Small increase in dose can cause disproportionate increase in plasma concentration → toxicity. Phenytoin dose adjustment requires careful monitoring.</div>
+<h3>Theoretical Basis</h3>
+<p>Based on the <strong>Arrhenius equation</strong>:</p>
+<p><strong>k = A &middot; e<sup>&minus;Ea/RT</sup></strong></p>
+<p>Taking log: <strong>log k = log A &minus; Ea / (2.303 RT)</strong></p>
+<p>Where k = rate constant, A = frequency factor, E<sub>a</sub> = activation energy, R = gas constant, T = absolute temperature.</p>
 
-<div class="subhead"><i class="fas fa-percentage"></i> First Order Kinetics</div>
-<div class="def-box"><strong>First Order Elimination:</strong> A constant <strong>fraction/percentage</strong> of drug is eliminated per unit time. Elimination rate is proportional to drug concentration.</div>
-<div class="formula-box"><div class="formula-label">First Order Rate Equation</div>dC/dt = –K<sub>e</sub> × C<sub>t</sub> &nbsp;&nbsp;→&nbsp;&nbsp; C<sub>t</sub> = C<sub>0</sub> × e<sup>–K<sub>e</sub>t</sup> &nbsp;&nbsp;→&nbsp;&nbsp; log C<sub>t</sub> = log C<sub>0</sub> – (K<sub>e</sub>/2.303) × t</div>
-<div class="formula-box"><div class="formula-label">Half-Life</div>t<sub>½</sub> = 0.693 / K<sub>e</sub></div>
-<div class="point"><span class="bullet">•</span><span class="text">Log concentration vs time plot is a <strong>straight line</strong> (exponential decline on linear scale)</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Half-life is CONSTANT</strong> — independent of concentration</span></div>
-<div class="point"><span class="bullet">•</span><span class="text">Applies to majority of drugs at therapeutic concentrations (enzymes NOT saturated)</span></div>
-<div class="point"><span class="bullet">•</span><span class="text">Time to reach steady-state = <strong>4–5 half-lives</strong> regardless of dose</span></div>
-<div class="formula-box"><div class="formula-label">Clearance</div>Cl = K<sub>e</sub> × V<sub>d</sub> &nbsp;&nbsp;|&nbsp;&nbsp; Cl = Rate of elimination / C<sub>p</sub></div>
+<p>A plot of log k vs 1/T gives a straight line with slope = &minus;E<sub>a</sub>/(2.303R). The rate constant at room temperature (k<sub>25</sub>) can be extrapolated, and from k<sub>25</sub>, the shelf life (t<sub>90</sub> &mdash; time to 90% potency) is calculated.</p>
 
-<div class="subhead"><i class="fas fa-table"></i> Comparison</div>
-<table class="diff-table">
-<tr><th class="col-head">Feature</th><th class="col-head">Zero Order</th><th class="col-head">First Order</th></tr>
-<tr><td>Eliminated per unit time</td><td>Constant amount</td><td>Constant fraction</td></tr>
-<tr><td>Dependence on concentration</td><td>Independent</td><td>Proportional</td></tr>
-<tr><td>Half-life</td><td>Variable (increases with conc.)</td><td>Constant</td></tr>
-<tr><td>Semilog plot</td><td>Curved</td><td>Straight line</td></tr>
-<tr><td>Linear plot</td><td>Straight line</td><td>Exponential curve</td></tr>
-<tr><td>Enzyme status</td><td>Saturated</td><td>Unsaturated</td></tr>
-<tr><td>Examples</td><td>Ethanol, Phenytoin</td><td>Most drugs</td></tr>
-</table>
-</div>
-</div>
-
-<!-- ========== TOPIC: DRUG INTERACTIONS ========== -->
-<div class="topic-section" id="topic-interactions" data-years="w2021,s2021,s2020,s2019">
-<div class="q-map"><h4><i class="fas fa-link"></i> Questions Mapped</h4><div class="q-tags"><span class="q-tag">W2021 Q2(a)</span><span class="q-tag">S2021 Q2(a)</span><span class="q-tag">S2020 Q5(a)</span><span class="q-tag">S2019 Q5(a)</span></div></div>
-<div class="answer-card">
-<span class="marks-badge">06 Marks</span>
-<h3>Drug Interactions — Classification & Pharmacokinetic Interactions</h3>
-<div class="def-box"><strong>Drug Interaction:</strong> When the effects of one drug are altered by the concurrent administration of another drug, food, or chemical agent. Can be beneficial or harmful.</div>
-
-<div class="subhead"><i class="fas fa-sitemap"></i> Classification</div>
-<div class="point"><span class="bullet">A.</span><span class="text"><strong>Pharmacokinetic Interactions:</strong> One drug alters the ADME of another — changes plasma concentration without altering pharmacological effect per se.</span></div>
-<div class="point"><span class="bullet">B.</span><span class="text"><strong>Pharmacodynamic Interactions:</strong> Both drugs reach the site of action but their effects are modified at the receptor/physiological level.</span></div>
-
-<div class="subhead"><i class="fas fa-flask"></i> Pharmacokinetic Drug Interactions (Detailed)</div>
-<table class="class-table">
-<thead><tr><th>Type</th><th>Mechanism</th><th>Example</th></tr></thead>
-<tbody>
-<tr><td><strong style="color:var(--text)">Absorption</strong></td><td>Altered pH, chelation, GI motility change, altered GI flora</td><td>Antacids ↓ absorption of tetracyclines, ketoconazole; Metoclopramide ↑ absorption of paracetamol</td></tr>
-<tr><td><strong style="color:var(--text)">Distribution</strong></td><td>Displacement from plasma protein binding sites</td><td>Phenylbutazone displaces warfarin from albumin → transient ↑ bleeding</td></tr>
-<tr><td><strong style="color:var(--text)">Metabolism — Enzyme Induction</strong></td><td>Increased CYP synthesis → faster metabolism → ↓ drug effect</td><td>Rifampicin ↓ effect of warfarin, OCPs; Carbamazepine ↑ its own metabolism (auto-induction)</td></tr>
-<tr><td><strong style="color:var(--text)">Metabolism — Enzyme Inhibition</strong></td><td>Decreased CYP activity → slower metabolism → ↑ drug effect/toxicity</td><td>Cimetidine ↑ warfarin, theophylline; Erythromycin ↑ statins (rhabdomyolysis); Grapefruit juice ↑ felodipine</td></tr>
-<tr><td><strong style="color:var(--text)">Excretion — Renal</strong></td><td>Altered GFR, active tubular secretion, tubular reabsorption (pH change)</td><td>Probenecid blocks penicillin secretion → prolongs action; NSAIDs ↓ lithium excretion → toxicity</td></tr>
-<tr><td><strong style="color:var(--text)">Excretion — Biliary</strong></td><td>Interrupting enterohepatic circulation</td><td>Cholestyramine binds digoxin in gut → prevents reabsorption</td></tr>
-</tbody>
+<h3>ICH Guidelines for Accelerated Studies</h3>
+<table>
+<tr><th>Zone</th><th>Long-term Temp</th><th>Accelerated Temp/RH</th><th>Duration</th></tr>
+<tr><td>I (Temperate)</td><td>25&deg;C / 60% RH</td><td>40&deg;C / 75% RH</td><td>6 months</td></tr>
+<tr><td>II (Subtropical)</td><td>30&deg;C / 65% RH</td><td>40&deg;C / 75% RH</td><td>6 months</td></tr>
+<tr><td>III (Hot/Dry)</td><td>30&deg;C / 35% RH</td><td>40&deg;C / 75% RH</td><td>6 months</td></tr>
+<tr><td>IVa (Hot/Humid)</td><td>30&deg;C / 75% RH</td><td>40&deg;C / 75% RH</td><td>6 months</td></tr>
 </table>
 
-<div class="subhead"><i class="fas fa-heartbeat"></i> Pharmacodynamic Drug Interactions</div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Antagonism:</strong> Atropine + ACh (receptor antagonism); Naloxone + Morphine (receptor antagonism); Vit K + Warfarin (physiological antagonism)</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Additive:</strong> Alcohol + Diazepam → excessive CNS depression</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Synergism:</strong> Sulfamethoxazole + Trimethoprim → sequential blockade of folate synthesis</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Potentiation:</strong> Allopurinol + 6-MP → enhanced antineoplastic effect</span></div>
-</div>
-</div>
+<h3>Procedure</h3>
+<ol>
+<li>Pack the product in the proposed market packaging.</li>
+<li>Store samples at elevated temperatures (e.g., 40&deg;C, 50&deg;C, 60&deg;C) along with control at room temperature (25&deg;C).</li>
+<li>Withdraw samples at regular intervals (0, 1, 2, 3, 6 months).</li>
+<li>Analyze for assay, degradation products, physical properties (appearance, pH, viscosity, dissolution).</li>
+<li>Calculate rate constants at each temperature.</li>
+<li>Plot log k vs 1/T and extrapolate to room temperature.</li>
+<li>Calculate t<sub>90</sub> = 0.105 / k<sub>25</sub> (for first-order reactions).</li>
+</ol>
 
-<!-- ========== TOPIC: ADR ========== -->
-<div class="topic-section" id="topic-adr" data-years="w2022,w2021,w2020,w2019,s2021">
-<div class="q-map"><h4><i class="fas fa-link"></i> Questions Mapped</h4><div class="q-tags"><span class="q-tag">W2022 Q3(b)</span><span class="q-tag">W2021 Q4(a)</span><span class="q-tag">W2020 Q4(b)</span><span class="q-tag">W2019 Q4(b)</span><span class="q-tag">S2021 Q4(a)</span></div></div>
-<div class="answer-card">
-<span class="marks-badge">06 Marks</span>
-<h3>Adverse Drug Reactions — Rawlins-Thompson Classification</h3>
-<div class="def-box"><strong>ADR (WHO):</strong> "A response to a drug which is noxious and unintended, and which occurs at doses normally used in man for the prophylaxis, diagnosis, or therapy of disease, or for the modification of physiological function."</div>
+<h3>Limitations</h3>
+<ul>
+<li>Assumes the same degradation mechanism at all temperatures (may not hold true if phase changes occur).</li>
+<li>Physical changes (crystal growth, polymorphic transition) may not follow Arrhenius behavior.</li>
+<li>Cannot accurately predict very long shelf lives (>5 years) from short-term data.</li>
+</ul>
 
-<div class="subhead"><i class="fas fa-sitemap"></i> Rawlins-Thompson Classification (1977)</div>
-<div class="phase-card">
-<h5>Type A — Augmented (Predictable, Dose-dependent)</h5>
-<p>Based on pharmacological properties of the drug; dose-dependent; predictable from known pharmacology; account for ~80% of ADRs.</p>
-<p style="margin-top:6px"><strong style="color:var(--text)">Examples:</strong> Hypotension from antihypertensives; Bleeding from warfarin; Bradycardia from propranolol; Hypoglycemia from insulin; Atropine-like effects of TCAs (dry mouth, constipation, blurred vision); GI irritation from NSAIDs.</p>
-</div>
-<div class="phase-card">
-<h5>Type B — Bizarre (Unpredictable, Non-dose-dependent)</h5>
-<p>Not related to pharmacological action; idiosyncratic or immunological; not predictable; independent of dose; account for ~10–15% but are more serious.</p>
-<p style="margin-top:6px"><strong style="color:var(--text)">Examples:</strong> Drug allergy (penicillin anaphylaxis, sulfa rash); Idiosyncrasy (barbiturate excitement, primaquine hemolysis in G6PD deficiency); Agranulocytosis from chloramphenicol; SJS/TEN from carbamazepine.</p>
-</div>
-<div class="phase-card">
-<h5>Type C — Chronic (Continuous, Dose & Time-related)</h5>
-<p>Occurs with prolonged use; related to cumulative dose.</p>
-<p style="margin-top:6px"><strong style="color:var(--text)">Examples:</strong> Osteoporosis from long-term corticosteroids; Tardive dyskinesia from long-term antipsychotics; Analgesic nephropathy from chronic NSAID use.</p>
-</div>
-<div class="phase-card">
-<h5>Type D — Delayed (Time-related)</h5>
-<p>Appears after some time, even after drug withdrawal.</p>
-<p style="margin-top:6px"><strong style="color:var(--text)">Examples:</strong> Teratogenicity (thalidomide phocomelia); Carcinogenicity (alkylating agents); Cyanocobalamin deficiency from metformin (years).</p>
-</div>
-<div class="phase-card">
-<h5>Type E — End of Use (Withdrawal)</h5>
-<p>Occurs after cessation of drug, usually due to adaptive physiological changes.</p>
-<p style="margin-top:6px"><strong style="color:var(--text)">Examples:</strong> Opioid withdrawal (agitation, lacrimation, diarrhea); Benzodiazepine withdrawal (anxiety, insomnia, seizures); Corticosteroid withdrawal (adrenal crisis); β-blocker withdrawal (rebound tachycardia, angina).</p>
-</div>
-<div class="phase-card">
-<h5>Type F — Failure (Therapeutic Failure)</h5>
-<p>Unexpected failure of therapy.</p>
-<p style="margin-top:6px"><strong style="color:var(--text)">Examples:</strong> Antibiotic resistance; Oral contraceptive failure with enzyme inducers; Loss of efficacy in Parkinson's with long-term levodopa.</p>
-</div>
-</div>
-</div>
+<div class="rev-box"><div class="lbl">Short Revision Note</div>Accelerated stability = elevated stress &rarr; predict shelf life. Based on Arrhenius equation: log k vs 1/T plot. ICH Zone I: 40&deg;C/75% RH for 6 months. Shelf life = t<sub>90</sub> = 0.105/k<sub>25</sub>. Limitation: assumes same mechanism at all temperatures.</div>
+`
+},
+{
+id:"q7a",num:"Q.7(a)",marks:"[06 Marks]",
+title:"Describe the various methods of determination of reaction order.",
+answer:`
+<h3>Methods for Determination of Reaction Order</h3>
 
-<!-- ========== TOPIC: TOLERANCE, DEPENDENCE, ADDICTION ========== -->
-<div class="topic-section" id="topic-tolerance" data-years="w2019,s2019">
-<div class="q-map"><h4><i class="fas fa-link"></i> Questions Mapped</h4><div class="q-tags"><span class="q-tag">W2019 Q6(c)</span><span class="q-tag">S2019 Q4(c)</span><span class="q-tag">S2019 Q5(a)</span><span class="q-tag">W2021 Q1(a)</span></div></div>
-<div class="answer-card">
-<span class="marks-badge">05 Marks</span>
-<h3>Tolerance, Dependence & Addiction</h3>
-<div class="def-box"><strong>Drug Tolerance:</strong> Decreased response to a drug after repeated administration, requiring progressively larger doses to achieve the same effect.</div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Pharmacokinetic tolerance:</strong> Increased metabolism (enzyme induction) → lower plasma levels. E.g., Barbiturates induce their own metabolism; Tolerance to ethanol.</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Pharmacodynamic tolerance:</strong> Cellular adaptive changes (receptor down-regulation, desensitization) → reduced response. E.g., Tolerance to morphine analgesia; Tachyphylaxis to ephedrine.</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Cross-tolerance:</strong> Tolerance to one drug confers tolerance to related drugs. E.g., Alcohol ↔ benzodiazepines; Morphine ↔ methadone.</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Tachyphylaxis:</strong> Rapid development of tolerance on repeated dosing within short time intervals. E.g., Ephedrine, amphetamine (due to depletion of neuronal catecholamine stores).</span></div>
+<h3>1. Substitution Method (Trial and Error Method)</h3>
+<p>Concentration data at various time intervals is substituted into the integrated rate equations of zero, first, and second order reactions. The equation that gives a constant value of the rate constant (k) is the correct order.</p>
+<ul>
+<li><strong>Zero order:</strong> C = C<sub>0</sub> &minus; kt &rarr; k = (C<sub>0</sub> &minus; C) / t</li>
+<li><strong>First order:</strong> log C = log C<sub>0</sub> &minus; kt/2.303 &rarr; k = 2.303/t &times; log(C<sub>0</sub>/C)</li>
+<li><strong>Second order:</strong> 1/C = 1/C<sub>0</sub> + kt &rarr; k = (1/C &minus; 1/C<sub>0</sub>) / t</li>
+</ul>
+<p><strong>Advantage:</strong> Simple. <strong>Disadvantage:</strong> Tedious for complex data, may not work for fractional orders.</p>
 
-<div class="def-box"><strong>Drug Dependence:</strong> A state in which the individual relies on a drug for normal functioning. Physical and/or psychological components.</div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Physical dependence:</strong> Adaptive physiological changes → withdrawal syndrome on cessation. E.g., Opioids, alcohol, benzodiazepines, corticosteroids. Withdrawal is typically opposite of drug effect.</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Psychological dependence:</strong> Compulsive drug-seeking behavior for emotional/psychological comfort; no physical withdrawal but intense craving. E.g., Cocaine, nicotine, cannabis.</span></div>
-
-<div class="def-box"><strong>Drug Addiction:</strong> A chronic, relapsing brain disorder characterized by compulsive drug seeking and use despite harmful consequences. It involves the reward pathway (mesolimbic dopamine system). Key features: loss of control, craving, continued use despite harm.</div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Factors in development:</strong> Genetic predisposition, pharmacological properties of drug (rapid onset, short duration = higher addiction potential), environmental factors (peer pressure, availability), psychological factors (stress, trauma, mental illness).</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>High addiction potential drugs:</strong> Heroin, cocaine, nicotine, alcohol, methamphetamine. The faster the drug reaches brain (IV > smoking > oral), the higher the addiction potential.</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Drug Abuse:</strong> Use of a drug for non-therapeutic purposes or in a manner inconsistent with medical/social norms. Not synonymous with addiction (recreational use ≠ addiction).</span></div>
-</div>
-</div>
-
-<!-- ========== TOPIC: ANS COMPARISON ========== -->
-<div class="topic-section" id="topic-ans" data-years="w2022,w2019">
-<div class="q-map"><h4><i class="fas fa-link"></i> Questions Mapped</h4><div class="q-tags"><span class="q-tag">W2022 Q3(a)</span><span class="q-tag">W2019 Q5(a)</span></div></div>
-<div class="answer-card">
-<span class="marks-badge">06 Marks</span>
-<h3>Sympathetic vs Parasympathetic Nervous System</h3>
-<div class="diagram-container">
-<svg viewBox="0 0 680 320" xmlns="http://www.w3.org/2000/svg">
-<!-- Central -->
-<ellipse cx="340" cy="45" rx="80" ry="25" fill="#162219" stroke="#10b981" stroke-width="2"/>
-<text x="340" y="42" text-anchor="middle" fill="#10b981" font-size="12" font-weight="700">CNS</text>
-<text x="340" y="56" text-anchor="middle" fill="#8fa898" font-size="9">Hypothalamus</text>
-<!-- Sympathetic side -->
-<rect x="40" y="100" width="200" height="30" rx="8" fill="#ef4444" opacity="0.15" stroke="#ef4444" stroke-width="1.5"/>
-<text x="140" y="120" text-anchor="middle" fill="#ef4444" font-size="13" font-weight="700">SYMPATHETIC</text>
-<text x="140" y="155" text-anchor="middle" fill="#8fa898" font-size="10">"Fight or Flight"</text>
-<!-- Para side -->
-<rect x="440" y="100" width="200" height="30" rx="8" fill="#06b6d4" opacity="0.15" stroke="#06b6d4" stroke-width="1.5"/>
-<text x="540" y="120" text-anchor="middle" fill="#06b6d4" font-size="13" font-weight="700">PARASYMPATHETIC</text>
-<text x="540" y="155" text-anchor="middle" fill="#8fa898" font-size="10">"Rest & Digest"</text>
-<!-- Lines from CNS -->
-<line x1="280" y1="60" x2="140" y2="100" stroke="#ef4444" stroke-width="1.5"/>
-<line x1="400" y1="60" x2="540" y2="100" stroke="#06b6d4" stroke-width="1.5"/>
-<!-- Symp details -->
-<text x="20" y="185" fill="#ef4444" font-size="10" font-weight="600">Origin:</text>
-<text x="70" y="185" fill="#dce8e0" font-size="10">T1–L2 (Thoracolumbar)</text>
-<text x="20" y="200" fill="#ef4444" font-size="10" font-weight="600">Ganglia:</text>
-<text x="70" y="200" fill="#dce8e0" font-size="10">Paravertebral chain</text>
-<text x="20" y="215" fill="#ef4444" font-size="10" font-weight="600">Preganglionic:</text>
-<text x="95" y="215" fill="#dce8e0" font-size="10">Short, cholinergic (Nn)</text>
-<text x="20" y="230" fill="#ef4444" font-size="10" font-weight="600">Postganglionic:</text>
-<text x="105" y="230" fill="#dce8e0" font-size="10">Long, adrenergic (α,β)</text>
-<text x="20" y="245" fill="#ef4444" font-size="10" font-weight="600">NT at ganglia:</text>
-<text x="110" y="245" fill="#dce8e0" font-size="10">ACh (nicotinic)</text>
-<text x="20" y="260" fill="#ef4444" font-size="10" font-weight="600">NT at organ:</text>
-<text x="100" y="260" fill="#dce8e0" font-size="10">Noradrenaline (α,β)</text>
-<text x="20" y="275" fill="#ef4444" font-size="10" font-weight="600">Diffuse:</text>
-<text x="70" y="275" fill="#dce8e0" font-size="10">Widespread, mass discharge</text>
-<text x="20" y="290" fill="#ef4444" font-size="10" font-weight="600">Exceptions:</text>
-<text x="85" y="290" fill="#dce8e0" font-size="10">Sweat glands (cholinergic)</text>
-<!-- Para details -->
-<text x="440" y="185" fill="#06b6d4" font-size="10" font-weight="600">Origin:</text>
-<text x="490" y="185" fill="#dce8e0" font-size="10">CN III,VII,IX,X + S2–S4</text>
-<text x="440" y="200" fill="#06b6d4" font-size="10" font-weight="600">Ganglia:</text>
-<text x="490" y="200" fill="#dce8e0" font-size="10">Terminal/close to organ</text>
-<text x="440" y="215" fill="#06b6d4" font-size="10" font-weight="600">Preganglionic:</text>
-<text x="520" y="215" fill="#dce8e0" font-size="10">Long, cholinergic (Nn)</text>
-<text x="440" y="230" fill="#06b6d4" font-size="10" font-weight="600">Postganglionic:</text>
-<text x="525" y="230" fill="#dce8e0" font-size="10">Short, cholinergic (M)</text>
-<text x="440" y="245" fill="#06b6d4" font-size="10" font-weight="600">NT at ganglia:</text>
-<text x="530" y="245" fill="#dce8e0" font-size="10">ACh (nicotinic)</text>
-<text x="440" y="260" fill="#06b6d4" font-size="10" font-weight="600">NT at organ:</text>
-<text x="520" y="260" fill="#dce8e0" font-size="10">ACh (muscarinic)</text>
-<text x="440" y="275" fill="#06b6d4" font-size="10" font-weight="600">Diffuse:</text>
-<text x="490" y="275" fill="#dce8e0" font-size="10">Localized, discrete effects</text>
-<text x="440" y="290" fill="#06b6d4" font-size="10" font-weight="600">Exceptions:</text>
-<text x="505" y="290" fill="#dce8e0" font-size="10">Few (some sweat glands)</text>
-</svg>
-<div class="diagram-label">Figure: Sympathetic vs Parasympathetic Nervous System — Overview</div>
-</div>
-
-<table class="diff-table">
-<tr><th class="col-head">Organ/System</th><th class="col-head">Sympathetic (α, β)</th><th class="col-head">Parasympathetic (M)</th></tr>
-<tr><td><strong>Heart</strong></td><td>↑ HR (β₁), ↑ contractility (β₁), ↑ conduction (β₁)</td><td>↓ HR (M₂), ↓ contractility (M₂), ↓ AV conduction</td></tr>
-<tr><td><strong>Blood vessels</strong></td><td>Vasoconstriction (α₁), vasodilation (β₂ — skeletal muscle)</td><td>Vasodilation (limited — erectile tissue)</td></tr>
-<tr><td><strong>Blood pressure</strong></td><td>↑ (α₁ vasoconstriction, β₁ cardiac)</td><td>↓ (minor direct effect)</td></tr>
-<tr><td><strong>Lungs/Bronchi</strong></td><td>Bronchodilation (β₂)</td><td>Bronchoconstriction (M₃)</td></tr>
-<tr><td><strong>Eye</strong></td><td>Mydriasis (α₁), ↑ IOP (α₁)</td><td>Miosis (M₃), ↓ IOP, accommodation (M₃)</td></tr>
-<tr><td><strong>GI tract</strong></td><td>↓ motility (α₂, β₂), ↓ secretion, relaxes sphincters</td><td>↑ motility (M₃), ↑ secretion, contracts sphincters</td></tr>
-<tr><td><strong>Bladder</strong></td><td>Relaxes detrusor (β₂), contracts sphincter (α₁) → urinary retention</td><td>Contracts detrusor (M₃), relaxes sphincter → micturition</td></tr>
-<tr><td><strong>Sweat glands</strong></td><td>↑ sweating (cholinergic sympathetic — M)</td><td>—</td></tr>
-<tr><td><strong>Salivary glands</strong></td><td>↑ scanty, thick secretion (α₁)</td><td>↑ copious, watery secretion (M₃)</td></tr>
-<tr><td><strong>Male sex organs</strong></td><td>Ejaculation (α₁)</td><td>Erection (M₃)</td></tr>
-<tr><td><strong>Metabolism</strong></td><td>↑ Glycogenolysis (β₂), ↑ lipolysis (β₃), ↑ glucagon (β₂)</td><td>↓ (minor direct effect)</td></tr>
+<h3>2. Graphical Method</h3>
+<p>Concentration-time data is plotted in different ways. The plot that gives a straight line indicates the reaction order:</p>
+<table>
+<tr><th>Plot</th><th>Straight line indicates</th></tr>
+<tr><td>C vs t</td><td>Zero order</td></tr>
+<tr><td>log C vs t</td><td>First order</td></tr>
+<tr><td>1/C vs t</td><td>Second order</td></tr>
+<tr><td>1/C<sup>2</sup> vs t</td><td>Third order</td></tr>
 </table>
-</div>
-</div>
+<p><strong>Advantage:</strong> Visual, easy to interpret. <strong>Disadvantage:</strong> Cannot distinguish between orders if data range is limited.</p>
 
-<!-- ========== TOPIC: NEUROHUMORAL TRANSMISSION ========== -->
-<div class="topic-section" id="topic-neurotrans" data-years="s2020,w2019">
-<div class="q-map"><h4><i class="fas fa-link"></i> Questions Mapped</h4><div class="q-tags"><span class="q-tag">S2020 Q3(c)</span><span class="q-tag">W2019 Q1(c)</span></div></div>
-<div class="answer-card">
-<span class="marks-badge">05–06 Marks</span>
-<h3>Neurohumoral Transmission & Adrenergic Neurotransmitter Synthesis</h3>
-<div class="def-box"><strong>Neurohumoral Transmission:</strong> The process by which nerve impulses are transmitted across synapses and neuroeffector junctions through the release of chemical neurotransmitters that act on specific receptors on the postsynaptic membrane.</div>
+<h3>3. Half-Life Method</h3>
+<p>The half-life (t<sub>1/2</sub>) is determined at different initial concentrations. The relationship between t<sub>1/2</sub> and initial concentration indicates order:</p>
+<ul>
+<li><strong>t<sub>1/2</sub> &prop; C<sub>0</sub><sup>1&minus;n</sup></strong> (general relation)</li>
+<li><strong>Zero order:</strong> t<sub>1/2</sub> = C<sub>0</sub> / 2k &rarr; t<sub>1/2</sub> is proportional to C<sub>0</sub></li>
+<li><strong>First order:</strong> t<sub>1/2</sub> = 0.693/k &rarr; t<sub>1/2</sub> is independent of C<sub>0</sub></li>
+<li><strong>Second order:</strong> t<sub>1/2</sub> = 1/kC<sub>0</sub> &rarr; t<sub>1/2</sub> is inversely proportional to C<sub>0</sub></li>
+</ul>
+<p>Plotting log t<sub>1/2</sub> vs log C<sub>0</sub> gives: slope = 1 &minus; n &rarr; n = 1 &minus; slope.</p>
 
-<div class="subhead"><i class="fas fa-step-forward"></i> Steps of Neurohumoral Transmission</div>
-<div class="point"><span class="bullet">1.</span><span class="text"><strong>Impulse conduction:</strong> Action potential arrives at nerve terminal → depolarization of presynaptic membrane.</span></div>
-<div class="point"><span class="bullet">2.</span><span class="text"><strong>Ca²⁺ influx:</strong> Voltage-gated Ca²⁺ channels open → Ca²⁺ enters terminal.</span></div>
-<div class="point"><span class="bullet">3.</span><span class="text"><strong>Vesicle fusion & release:</strong> Ca²⁺ triggers fusion of synaptic vesicles with presynaptic membrane → exocytosis of neurotransmitter into synaptic cleft.</span></div>
-<div class="point"><span class="bullet">4.</span><span class="text"><strong>Receptor interaction:</strong> Neurotransmitter diffuses across cleft → binds to postsynaptic receptors → conformational change → biological response.</span></div>
-<div class="point"><span class="bullet">5.</span><span class="text"><strong>Termination:</strong> Neurotransmitter action is terminated by: (a) Reuptake (most common — e.g., NET, DAT, SERT); (b) Enzymatic degradation (AChE for ACh, MAO/COMT for catecholamines); (c) Diffusion away from cleft.</span></div>
+<h3>4. Initial Rate Method (Differential Method)</h3>
+<p>The initial rate of reaction (v<sub>0</sub>) is measured at different initial concentrations while keeping other reactants in large excess:</p>
+<p><strong>v<sub>0</sub> = k &middot; C<sub>0</sub><sup>n</sup></strong></p>
+<p>Taking log: <strong>log v<sub>0</sub> = log k + n &middot; log C<sub>0</sub></strong></p>
+<p>Plot of log v<sub>0</sub> vs log C<sub>0</sub> gives slope = n (order).</p>
+<p><strong>Advantage:</strong> Avoids complications from product effects. <strong>Disadvantage:</strong> Requires accurate initial rate measurement.</p>
 
-<div class="subhead"><i class="fas fa-arrows-alt"></i> Synthesis of Adrenergic Neurotransmitter (Noradrenaline)</h3>
-<div class="diagram-container">
-<svg viewBox="0 0 650 200" xmlns="http://www.w3.org/2000/svg">
-<defs>
-<marker id="arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#10b981"/></marker>
-</defs>
-<!-- Tyrosine -->
-<rect x="10" y="60" width="90" height="50" rx="8" fill="#162219" stroke="#10b981" stroke-width="1.5"/>
-<text x="55" y="82" text-anchor="middle" fill="#10b981" font-size="11" font-weight="700">Tyrosine</text>
-<text x="55" y="100" text-anchor="middle" fill="#8fa898" font-size="9">(Dietary amino acid)</text>
-<!-- Arrow + enzyme -->
-<line x1="100" y1="85" x2="155" y2="85" stroke="#10b981" stroke-width="1.5" marker-end="url(#arr)"/>
-<text x="128" y="78" text-anchor="middle" fill="#f59e0b" font-size="9" font-weight="600">Tyrosine</text>
-<text x="128" y="68" text-anchor="middle" fill="#f59e0b" font-size="9" font-weight="600">Hydroxylase</text>
-<!-- L-DOPA -->
-<rect x="160" y="60" width="90" height="50" rx="8" fill="#162219" stroke="#10b981" stroke-width="1.5"/>
-<text x="205" y="82" text-anchor="middle" fill="#10b981" font-size="11" font-weight="700">L-DOPA</text>
-<text x="205" y="100" text-anchor="middle" fill="#8fa898" font-size="9">(Levodopa)</text>
-<!-- Arrow -->
-<line x1="250" y1="85" x2="305" y2="85" stroke="#10b981" stroke-width="1.5" marker-end="url(#arr)"/>
-<text x="278" y="78" text-anchor="middle" fill="#f59e0b" font-size="9" font-weight="600">DOPA</text>
-<text x="278" y="68" text-anchor="middle" fill="#f59e0b" font-size="9" font-weight="600">Decarboxylase</text>
-<!-- Dopamine -->
-<rect x="310" y="60" width="90" height="50" rx="8" fill="#162219" stroke="#f59e0b" stroke-width="1.5"/>
-<text x="355" y="82" text-anchor="middle" fill="#f59e0b" font-size="11" font-weight="700">Dopamine</text>
-<text x="355" y="100" text-anchor="middle" fill="#8fa898" font-size="9">(Vesicular uptake)</text>
-<!-- Arrow -->
-<line x1="400" y1="85" x2="455" y2="85" stroke="#10b981" stroke-width="1.5" marker-end="url(#arr)"/>
-<text x="428" y="78" text-anchor="middle" fill="#f59e0b" font-size="9" font-weight="600">Dopamine</text>
-<text x="428" y="68" text-anchor="middle" fill="#f59e0b" font-size="9" font-weight="600">β-Hydroxylase</text>
-<!-- Noradrenaline -->
-<rect x="460" y="60" width="90" height="50" rx="8" fill="#162219" stroke="#ef4444" stroke-width="1.5"/>
-<text x="505" y="82" text-anchor="middle" fill="#ef4444" font-size="11" font-weight="700">Noradrenaline</text>
-<text x="505" y="100" text-anchor="middle" fill="#8fa898" font-size="9">(Primary NT)</text>
-<!-- Arrow to Adrenaline -->
-<line x1="550" y1="85" x2="580" y2="85" stroke="#10b981" stroke-width="1.5" marker-end="url(#arr)"/>
-<text x="565" y="68" text-anchor="middle" fill="#f59e0b" font-size="8" font-weight="600">PNMT</text>
-<!-- Adrenaline -->
-<rect x="585" y="60" width="55" height="50" rx="8" fill="#162219" stroke="#a78bfa" stroke-width="1.5"/>
-<text x="612" y="82" text-anchor="middle" fill="#a78bfa" font-size="10" font-weight="700">Adrenaline</text>
-<text x="612" y="100" text-anchor="middle" fill="#8fa898" font-size="8">(Adrenal med.)</text>
-<!-- Rate limiting step indicator -->
-<text x="128" y="110" text-anchor="middle" fill="#ef4444" font-size="8">★ Rate-limiting step</text>
-<!-- Metabolism note -->
-<text x="325" y="150" text-anchor="middle" fill="#8fa898" font-size="10"><tspan font-weight="600" fill="#10b981">Metabolism:</tspan> MAO (mitochondrial) → deamination; COMT (cytosolic) → methylation</text>
-<text x="325" y="170" text-anchor="middle" fill="#8fa898" font-size="10">Final metabolite: <tspan fill="#f59e0b" font-weight="600">VMA</tspan> (3-Methoxy-4-hydroxymandelic acid) — excreted in urine</text>
-<text x="325" y="190" text-anchor="middle" fill="#8fa898" font-size="10"><tspan fill="#10b981" font-weight="600">Termination:</tspan> Reuptake-1 (uptake into nerve terminal by NET) > 80%; Diffusion; COMT in extraneuronal tissue</text>
-</svg>
-<div class="diagram-label">Figure: Catecholamine Biosynthesis Pathway</div>
-</div>
-</div>
-</div>
+<h3>5. Van't Hoff Differential Method</h3>
+<p>The rate at any point is determined from the slope of the concentration-time curve at that point (dc/dt). Then:</p>
+<p><strong>log(&minus;dc/dt) = log k + n &middot; log C</strong></p>
+<p>Plot of log(&minus;dc/dt) vs log C gives slope = n.</p>
 
-<!-- ========== TOPIC: CHOLINERGIC DRUGS ========== -->
-<div class="topic-section" id="topic-cholinergic" data-years="w2022,w2019,s2019">
-<div class="q-map"><h4><i class="fas fa-link"></i> Questions Mapped</h4><div class="q-tags"><span class="q-tag">W2022 Q1(b)</span><span class="q-tag">W2022 Q2(c)</span><span class="q-tag">W2019 Q5(c)</span><span class="q-tag">S2019 Q7(a)</span></div></div>
-<div class="answer-card">
-<span class="marks-badge">05 Marks</span>
-<h3>Pharmacological Uses of Acetylcholine</h3>
-<div class="def-box"><strong>Acetylcholine (ACh):</strong> The primary neurotransmitter at cholinergic synapses (neuromuscular junction, autonomic ganglia, parasympathetic neuroeffector junctions, some CNS synapses). Synthesized from choline + acetyl-CoA by choline acetyltransferase (ChAT). Degraded by acetylcholinesterase (AChE).</div>
-<div class="note-box"><i class="fas fa-info-circle"></i> <strong>Important:</strong> ACh itself has <strong>no therapeutic use</strong> due to: (a) Rapid hydrolysis by AChE and plasma pseudocholinesterase; (b) Non-selective action on all cholinergic receptors (muscarinic + nicotinic); (c) Multiple undesirable effects. Instead, <strong>cholinergic agonists</strong> and <strong>anticholinesterases</strong> are used clinically.</div>
-<div class="subhead"><i class="fas fa-flask"></i> Pharmacological Actions of ACh (basis for understanding cholinergic drugs)</div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Cardiovascular:</strong> ↓ Heart rate (M₂), ↓ AV conduction, ↓ contractility, vasodilation (M₃ on endothelium → NO release) → ↓ BP</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>GI tract:</strong> ↑ Motility, ↑ secretion (M₃), relaxes sphincters → may cause cramps, diarrhea</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Respiratory:</strong> Bronchoconstriction (M₃), ↑ bronchial secretion</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Eye:</strong> Miosis (M₃), accommodation for near vision, ↓ IOP</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Bladder:</strong> Detrusor contraction (M₃), sphincter relaxation → micturition</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Glands:</strong> ↑ Sweating, salivation, lacrimation</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>NMJ:</strong> Muscle contraction (Nₙ — nicotinic), then paralysis (depolarizing block at high doses)</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Ganglia:</strong> Stimulation (Nₙ) → sympathetic + parasympathetic effects</span></div>
+<h3>6. Isolation Method (Ostwald's Method)</h3>
+<p>For reactions with multiple reactants, all reactants except one are kept in large excess (so their concentration remains essentially constant). The order with respect to the isolated reactant is determined. The process is repeated for each reactant, and the overall order is the sum of individual orders.</p>
 
-<div class="subhead"><i class="fas fa-sitemap"></i> Classification of Parasympathomimetic Agents</div>
-<table class="class-table">
-<thead><tr><th>Class</th><th>Mechanism</th><th>Examples</th></tr></thead>
-<tbody>
-<tr><td><strong style="color:var(--text)">Direct-acting (Cholinoceptor agonists)</strong></td><td>Directly bind & activate cholinergic receptors</td><td>
-<span class="drug">Bethanechol</span> (M-selective — urinary retention)<br>
-<span class="drug">Pilocarpine</span> (M-selective — glaucoma)<br>
-<span class="drug">Carbachol</span> (M+N — glaucoma)<br>
-<span class="drug">Cevimeline</span> (M₃ — Sjögren's syndrome)
-</td></tr>
-<tr><td><strong style="color:var(--text)">Indirect-acting (Anticholinesterases)</strong></td><td>Inhibit AChE → ↑ endogenous ACh</td><td>
-<span class="drug">Neostigmine</span> (reversible — myasthenia)<br>
-<span class="drug">Physostigmine</span> (reversible — crosses BBB)<br>
-<span class="drug">Donepezil</span> (reversible — Alzheimer's)<br>
-<span class="drug">Sarin</span>, <span class="drug">Malathion</span> (irreversible — OP poisoning)
-</td></tr>
-</tbody>
-</table>
-</div>
-</div>
+<div class="imp-box"><div class="lbl">Summary Table</div>
+<strong>Substitution:</strong> Put values in equations, check constant k. <strong>Graphical:</strong> Plot different graphs, find straight line. <strong>Half-life:</strong> Vary C<sub>0</sub>, find t<sub>1/2</sub> vs C<sub>0</sub> relation. <strong>Initial rate:</strong> log v<sub>0</sub> vs log C<sub>0</sub>, slope = n. <strong>Van't Hoff:</strong> log(&minus;dc/dt) vs log C, slope = n. <strong>Isolation:</strong> One reactant at a time.</div>
 
-<!-- ========== TOPIC: ANTICHOLINESTERASES ========== -->
-<div class="topic-section" id="topic-anticholin" data-years="w2020,s2021,s2020">
-<div class="q-map"><h4><i class="fas fa-link"></i> Questions Mapped</h4><div class="q-tags"><span class="q-tag">W2020 Q3(c)</span><span class="q-tag">S2020 Q1(b)</span><span class="q-tag">S2021 Q7(c)</span></div></div>
-<div class="answer-card">
-<span class="marks-badge">05 Marks</span>
-<h3>Organophosphorus Poisoning & Anticholinesterase Uses</h3>
-<div class="subhead"><i class="fas fa-skull-crossbones"></i> Organophosphorus (OP) Poisoning</div>
-<div class="def-box"><strong>Organophosphates:</strong> Irreversible anticholinesterases that phosphorylate the serine hydroxyl group at the active site of AChE. The phosphorylated enzyme is extremely stable (aging — loss of an alkyl group makes it irreversibly inactivated). Common agents: Parathion, Malathion (agricultural), Sarin, Soman (nerve gases), Dichlorvos.</div>
-<div class="subhead"><i class="fas fa-list-alt"></i> Signs & Symptoms (SLUDGE + DUMBELS)</div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>SLUDGE:</strong> Salivation, Lacrimation, Urination, Defecation, GI distress, Emesis</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>DUMBELS:</strong> Diarrhea, Urination, Miosis, Bronchospasm, Excitation (CNS), Lacrimation, Salivation</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Muscle:</strong> Fasciculations → flaccid paralysis (NMJ overstimulation → depolarizing block)</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>CNS:</strong> Anxiety, restlessness, confusion, convulsions → coma, respiratory depression</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Cardiovascular:</strong> Bradycardia, hypotension (early); tachycardia, hypertension (CNS-mediated, late)</span></div>
+<div class="tip-box"><div class="lbl">Exam Tip</div>For each method, write: principle/procedure, equation used, and how order is determined. Half-life method and initial rate method are the most frequently asked. Also write the general relation: t<sub>1/2</sub> &prop; C<sub>0</sub><sup>1&minus;n</sup>.</div>
+`
+},
+{
+id:"q7b",num:"Q.7(b)",marks:"[05 Marks]",
+title:"Explain factors which govern the rate of chemical reaction.",
+answer:`
+<h3>Factors Governing the Rate of Chemical Reaction</h3>
 
-<div class="subhead"><i class="fas fa-first-aid"></i> Treatment of OP Poisoning</div>
-<div class="point"><span class="bullet">1.</span><span class="text"><strong>Atropine (Antidote for muscarinic effects):</strong> Large doses (2–5 mg IV, repeated). Blocks muscarinic receptors → controls secretions, bronchospasm, bradycardia, GI effects. Does NOT reverse NMJ paralysis or CNS effects.</span></div>
-<div class="point"><span class="bullet">2.</span><span class="text"><strong>Pralidoxime (2-PAM) (Antidote for nicotinic effects):</strong> Oxime that reactivates phosphorylated AChE by cleaving the P-O bond. Must be given early (<24 hrs, before "aging"). Given IV 1–2 g. Reverses NMJ paralysis and muscle fasciculations. Does NOT cross BBB well.</span></div>
-<div class="point"><span class="bullet">3.</span><span class="text"><strong>Supportive care:</strong> Airway maintenance, artificial ventilation, gastric lavage (if oral ingestion), activated charcoal, diazepam for seizures.</span></div>
-<div class="point"><span class="bullet">4.</span><span class="text"><strong>Decontamination:</strong> Remove contaminated clothing, wash skin thoroughly (important for dermal exposure).</span></div>
+<h3>1. Temperature</h3>
+<p>The most important factor. Rate of reaction increases with temperature. Quantitatively described by the <strong>Arrhenius equation</strong>:</p>
+<p><strong>k = A &middot; e<sup>&minus;Ea/RT</sup></strong></p>
+<p><strong>Rule of thumb (Van't Hoff rule):</strong> Rate approximately doubles for every 10&deg;C rise in temperature (Q<sub>10</sub> = 2).</p>
+<p>Higher temperature increases kinetic energy of molecules, leading to more frequent and more energetic collisions, increasing the fraction of molecules exceeding activation energy (E<sub>a</sub>).</p>
 
-<div class="subhead"><i class="fas fa-prescription"></i> Therapeutic Uses of Anticholinesterases</div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Myasthenia Gravis:</strong> Neostigmine, Pyridostigmine → improve muscle strength by increasing ACh at NMJ</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Post-operative paralytic ileus / urinary retention:</strong> Neostigmine → ↑ GI motility and bladder tone</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Alzheimer's disease:</strong> Donepezil, Rivastigmine, Galantamine → enhance cholinergic transmission in brain</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Glaucoma (narrow angle):</strong> Physostigmine, Echothiophate (long-acting) → miosis → open trabecular meshwork</span></div>
-<div class="point"><span class="bullet">•</span><span class="text"><strong>Antidote for curare/competitive NMJ block:</strong> Neostigmine reverses non-depolarizing block</span></div>
-<div class="point
+<h3>2. Concentration of Reactants</h3>
+<p>According to the law of mass action, rate is directly proportional to the concentration of reactants raised to their stoichiometric powers (molecularity). For a reaction: aA + bB &rarr; products:</p>
+<p><strong>Rate = k[A]<sup>n</sup>[B]<sup>m</sup></strong></p>
+<p>Higher concentration means more molecules per unit volume, more frequent collisions, higher rate.</p>
+
+<h3>3. Catalyst</h3>
+<p>A catalyst provides an alternative reaction pathway with lower activation energy (E<sub>a</sub>), thereby increasing the rate without being consumed. It does not change the equilibrium position.</p>
+<ul>
+<li>Positive catalyst: increases rate (e.g., enzymes, metal catalysts).</li>
+<li>Negative catalyst (inhibitor): decreases rate (e.g., preservatives).</li>
+</ul>
+
+<h3>4. pH / Hydrogen Ion Concentration</h3>
+<p>For many drug degradation reactions, pH is the critical factor. Specific acid-base catalysis occurs when H<sup>+</sup> or OH<sup>&minus;</sup> ions directly participate in the reaction.</p>
+<p><strong>k<sub>obs</sub> = k<sub>0</sub> + k<sub>H</sub>[H<sup>+</sup>] + k<sub>OH</sub>[OH<sup>&minus;</sup>]</strong></p>
+<p>The pH-rate profile (log k vs pH) helps identify the pH of maximum stability. Many drugs show a V-shaped or U-shaped profile with an optimum pH for stability.</p>
+
+<h3>5. Solvent</h3>
+<p>The nature of solvent affects reaction rate through:</p>
+<ul>
+<li><strong>Dielectric constant:</strong> Affects ionic reactions. For reactions between ions of same charge, rate decreases with increasing dielectric constant; for opposite charges, rate increases.</li>
+<li><strong>Polarity:</strong> Polar solvents stabilize polar transition states.</li>
+<li><strong>Protic vs aprotic:</strong> Protic solvents can participate in hydrogen bonding, affecting rates.</li>
+</ul>
+
+<h3>6. Ionic Strength</h3>
+<p>Described by the <strong>Debye-H&uuml;ckel equation</strong> (primary salt effect):</p>
+<p><strong>log k = log k<sub>0</sub> + 1.02Z<sub>A</sub>Z<sub>B</sub>&radic;&mu;</strong></p>
+<p>Where Z<sub>A</sub>, Z<sub>B</sub> = charges of reacting ions, &mu; = ionic strength.</p>
+<ul>
+<li>Same charge ions: rate increases with ionic strength.</li>
+<li>Opposite charge ions: rate decreases with ionic strength.</li>
+<li>Neutral molecules: ionic strength has no effect.</li>
+</ul>
+
+<h3>7. Light (Photodegradation)</h3>
+<p>Light energy can initiate photochemical reactions, accelerating degradation. Reactions that do not occur in the dark may proceed rapidly under light exposure. UV light is particularly damaging.</p>
+<p><strong>Prevention:</strong> Amber containers, opaque packaging, light-resistant coatings.</p>
+
+<h3>8. Particle Size (for Solid-State Reactions)</h3>
+<p>Smaller particle size means larger surface area, increasing the rate of dissolution and solid-state degradation reactions. Micronized powders may degrade faster than coarse particles.</p>
+
+<div class="rev-box"><div class="lbl">Short Revision Note</div>Temperature (Arrhenius, Q<sub>10</sub>=2) &rarr; Concentration (mass action) &rarr; Catalyst (lowers E<sub>a</sub>) &rarr; pH (acid-base catalysis, pH-rate profile) &rarr; Solvent (dielectric constant) &rarr; Ionic strength (Debye-H&uuml;ckel, primary salt effect) &rarr; Light (photodegradation) &rarr; Particle size (surface area effect).</div>
+`
+},
+{
+id:"q7c",num:"Q.7(c)",marks:"[05 Marks]",
+title:"Discuss the various means of stabilization of product which is sensitive to oxidation.",
+answer:`
+<h3>Stabilization of Oxidation-Sensitive Products</h3>
+<p>Oxidation is one of the most common degradation pathways for pharmaceutical products. It involves loss of electrons and is typically a free radical chain reaction (initiation &rarr; propagation &rarr; termination). The following strategies are employed for stabilization:</p>
+
+<h3>1. Use of Antioxidants</h3>
+<p>Antioxidants are added in small concentrations (0.01&ndash;0.1%) to interrupt the oxidation chain reaction.</p>
+
+<p><strong>a) Chain-breaking (Primary) Antioxidants:</strong></p>
+<p>Donate hydrogen atoms to free radicals, converting them to stable molecules:</p>
+<ul>
+<li><strong>Tocopherols (Vitamin E):</strong> Oil-soluble, used in lipid-based formulations.</li>
+<li><strong>Butylated hydroxytoluene (BHT):</strong> Widely used in oils and fats.</li>
+<li><strong>Butylated hydroxyanisole (BHA):</strong> Often combined with BHT for synergistic effect.</li>
+<li><strong>Propyl gallate:</strong> Effective in fats and oils.</li>
+<li><strong>Sodium metabisulfite, sodium thiosulfate:</strong> Water-soluble antioxidants for aqueous formulations.</li>
+<li><strong>Ascorbic acid (Vitamin C):</strong> Water-soluble, acts as reducing agent.</li>
+</ul>
+
+<p><strong>b) Preventive (Secondary) Antioxidants:</strong></p>
+<p>Decompose peroxides before they can form free radicals:</p>
+<ul>
+<li><strong>Phosphoric acid, citric acid, tartaric acid</strong> &mdash; chelate metal ions and decompose peroxides.</li>
+<li><strong>Thiols (cysteine, glutathione)</strong> &mdash; reduce peroxides.</li>
+</ul>
+
+<h3>2. Use of Chelating Agents (Sequestrants)</h3>
+<p>Trace metal ions (Fe, Cu, Mn) act as powerful pro-oxidants by catalyzing the initiation step. Chelating agents bind these metals and inactivate them:</p>
+<ul>
+<li><strong>EDTA (Disodium edetate):</strong> Most widely used chelating agent (0.01&ndash;0.05%).</li>
+<li><strong>Citric acid:</strong> Dual function &mdash; chelating + antioxidant.</li>
+<li><strong>Tartaric acid, phosphoric acid.</strong></li>
+</ul>
+
+<h3>3. Inert Atmosphere (Oxygen Exclusion)</h3>
+<p>Replacing air with an inert gas removes oxygen, the oxidizing agent:</p>
+<ul>
+<li><strong>Nitrogen (N<sub>2</sub>):</strong> Most commonly used; sparging and headspace replacement.</li>
+<li><strong>Carbon dioxide (CO<sub>2</sub>):</strong> Used in some formulations; can affect pH of aqueous systems.</li>
+<li><strong>Argon:</strong> Used for highly sensitive biologics.</li>
+</ul>
+<p>Techniques: Sparge the product with nitrogen during manufacturing, purge the headspace of containers with nitrogen before sealing.</p>
+
+<h3>4. Light Protection</h3>
+<p>Light can initiate photo-oxidation reactions:</p>
+<ul>
+<li>Use <strong>amber glass containers</strong> (absorbs UV light below 470 nm).</li>
+<li>Opaque or overwrapped packaging.</li>
+<li>Store in dark conditions.</li>
+</ul>
+
+<h3>5. Reduced Temperature Storage</h3>
+<p>Lower temperatures slow down oxidation rate (Arrhenius relationship). Refrigerated or cold storage (2&ndash;8&deg;C) is used for highly labile products.</p>
+
+<h3>6. pH Optimization</h3>
+<p>Many oxidation reactions are pH-dependent. Formulating at the pH of maximum stability minimizes oxidation. Buffer systems can maintain optimal pH throughout shelf life.</p>
+
+<h3>7. Complexation</h3>
+<p>Forming inclusion complexes (e.g., with cyclodextrins) can shield susceptible functional groups from exposure to oxygen and oxidizing agents.</p>
+
+<h3>8. Packaging in Airtight Containers</h3>
+<ul>
+<li>Use of hermetically sealed containers to prevent oxygen ingress.</li>
+<li>Use of containers with low oxygen permeability (glass, aluminum, high-barrier plastics).</li>
+<li>Use of oxygen scavengers in packaging.</li>
+<li>Avoid rubber closures that are permeable to oxygen.</li>
+</ul>
+
+<div class="imp-box"><div class="lbl">Key Strategy Summary</div><strong>Primary antioxidants</strong> (BHT, BHA, tocopherol) break the chain. <strong>Chelating agents</strong> (EDTA) remove metal catalysts. <strong>Inert atmosphere</strong> (N<sub>2</sub>) removes oxygen. <strong>Light protection</strong> prevents photo-oxidation. Often a combination of approaches gives best results.</div>
+
+<div class="tip-box"><div class="lbl">Exam Tip</div>Write 6&ndash;8 strategies with at least 2 examples each. The most important are: Antioxidants (with examples), Chelating agents (EDTA), Inert atmosphere (N<sub>2</sub>), and Light protection. Mention that combination approach is preferred in practice.</div>
+`
+}
+];
+
+// Build nav links
+const navLinks = document.getElementById('navLinks');
+DATA.forEach((q, i) => {
+    const a = document.createElement('a');
+    a.href = '#' + q.id;
+    a.textContent = q.num;
+    a.addEventListener('click', () => {
+        document.querySelectorAll('.nav-links a').forEach(l => l.classList.remove('active'));
+        a.classList.add('active');
+    });
+    navLinks.appendChild(a);
+});
+
+// Build question cards
+const qSection = document.getElementById('qSection');
+DATA.forEach((q, i) => {
+    const card = document.createElement('div');
+    card.className = 'q-card';
+    card.id = q.id;
+    card.innerHTML = `
+        <div class="q-header" onclick="toggleCard(this)">
+            <div class="q-num">${q.num}<br>${q.marks}</div>
+            <div class="q-title">${q.title}</div>
+            <button class="q-toggle" aria-label="Toggle answer">&#9660;</button>
+        </div>
+        <div class="q-body">
+            <div class="q-answer">${q.answer}</div>
+            <div class="copy-bar">
+                <button class="copy-btn" onclick="copyAnswer(this, event)">&#128203; Copy Answer</button>
+            </div>
+        </div>
+    `;
+    qSection.appendChild(card);
+});
+
+// Toggle card
+function toggleCard(header) {
+    const card = header.parentElement;
+    card.classList.toggle('open');
+}
+
+// Copy answer
+function copyAnswer(btn, e) {
+    e.stopPropagation();
+    const answerDiv = btn.closest('.q-body').querySelector('.q-answer');
+    const text = answerDiv.innerText;
+    navigator.clipboard.writeText(text).then(() => {
+        btn.innerHTML = '&#10003; Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+            btn.innerHTML = '&#128203; Copy Answer';
+            btn.classList.remove('copied');
+        }, 2000);
+    }).catch(() => {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        btn.innerHTML = '&#10003; Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+            btn.innerHTML = '&#128203; Copy Answer';
+            btn.classList.remove('copied');
+        }, 2000);
+    });
+}
+
+// Search
+const searchInput = document.getElementById('searchInput');
+const noResults = document.getElementById('noResults');
+searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    let found = 0;
+    DATA.forEach(q => {
+        const card = document.getElementById(q.id);
+        const text = (q.title + ' ' + q.answer).toLowerCase();
+        if (!query || text.includes(query)) {
+            card.classList.remove('hidden');
+            found++;
+        } else {
+            card.classList.add('hidden');
+        }
+    });
+    noResults.style.display = found === 0 && query ? 'block' : 'none';
+});
+
+// Dark mode
+const darkBtn = document.getElementById('darkBtn');
+let dark = localStorage.getItem('darkMode') === 'true';
+function applyDark() {
+    document.body.classList.toggle('dark', dark);
+    darkBtn.innerHTML = dark ? '&#9788;' : '&#9790;';
+    localStorage.setItem('darkMode', dark);
+}
+applyDark();
+darkBtn.addEventListener('click', () => { dark = !dark; applyDark(); });
+
+// Scroll spy for nav
+const sections = DATA.map(q => document.getElementById(q.id));
+const navAnchors = navLinks.querySelectorAll('a');
+window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < 150) current = sec.id;
+    });
+    navAnchors.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+}, { passive: true });
+
+// Auto-expand first card on load for better UX
+setTimeout(() => {
+    const first = document.querySelector('.q-card');
+    if (first) first.classList.add('open');
+}, 300);
+</script>
+
+
+  <a href="https://buntykakabhavnagari.github.io/website2/" 
+   target="_blank"
+   style="
+     text-decoration:none;
+     padding:14px 28px;
+     background:#111;
+     color:#fff;
+     border-radius:8px;
+     font-size:16px;
+     transition:all 0.3s ease;
+     box-shadow:0 4px 10px rgba(0,0,0,0.1);
+     display:inline-block;
+   "
+   onmouseover="this.style.background='#333'; this.style.transform='translateY(-2px)'"
+   onmouseout="this.style.background='#111'; this.style.transform='translateY(0)'"
+>
+  Paper 2 - Click here 
+</a>
+</body>
+</html>
